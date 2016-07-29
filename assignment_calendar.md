@@ -1,6 +1,4 @@
-#Online Python
-
-Welcome everyone! See below for our assignment calendar.
+#Assignment Calendar
 
 #Python Fundamentals
 
