@@ -4,7 +4,6 @@
 
 | Assignments to Push to Repository
 ---
-[Basic 13 Challenges](https://github.com/CodingDojoInc/Algorithms/blob/master/pre-work/basic13.md) |
 [Multiples](Solutions/Fundamentals/multiples.py) |
 Sum List |
 Average List |
