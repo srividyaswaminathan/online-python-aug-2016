@@ -1,10 +1,9 @@
-﻿##The Basic 13
+##The Basic 13
 
-Completing in 25 minutes 
+Completing in 25 minutes.
 
-###Print 1-255> Print all the integers from 1 to 255.
-
-
+###Print 1-255
+> Print all the integers from 1 to 255.
 
 function print1To255() {
     for(var i = 1; i < 256; i++) {
