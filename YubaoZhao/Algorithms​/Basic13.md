@@ -1,6 +1,6 @@
 ##The Basic 13
 
-Completing in 25 minutes.
+Completed in 25 minutes.
 
 ###Print 1-255   
 > Print all the integers from 1 to 255.     
