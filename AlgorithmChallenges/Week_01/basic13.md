@@ -1,4 +1,4 @@
-##The Basic 13
+##The Basic 13 ([Solutions](basic13.js))
 Completing the following algorithms starting with only a blank sheet of paper in fewer than 30 minutes is an essential ingredient to success in all the challenges to come. Make sure you have a syntax and concepts nailed before moving on to any additional challenges:
 
 ###Print 1-255
