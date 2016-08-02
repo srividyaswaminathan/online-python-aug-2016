@@ -1,4 +1,4 @@
-This took me about an hour to complete
+//This took me about an hour to complete
 
 //Print 1 to 255 integers
 function get_array(){
