@@ -5,7 +5,8 @@
 
 def print_odds():
     for num in range(1,1001):
-        print num
+    	if num % 2 == 1:
+		print num
 
 # print_odds()
 
