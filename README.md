@@ -11,6 +11,6 @@ Probably the easiest workflow for you is to:
 
 Now, whenever you make changes inside your personal directory, you can first **pull** any updates from the main repository to your local machine, commit your changes to the local repo, push those commits to your forked version on GitHub, and finally make a **pull request**.
 
-You guys will be version-control masters by the end of this course because we'll use this repository to submit and review assignments. You can track the schedule and solutions in the [Assignment Calendar](assignment_calendar.md).
+You guys will be version-control masters by the end of this course because we'll use this repository to submit and review assignments. You can track the schedule and solutions in the [Assignment Calendar](assignment_calendar.md). Likewise, the algorithm challenges you'll be expected to complete can be found in the [Algorithms Calendar](AlgorithmChallenges/schedule.md).
 
 Happy coding!
