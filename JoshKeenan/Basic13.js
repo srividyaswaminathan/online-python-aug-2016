@@ -3,14 +3,14 @@
 printOddsTo255 = function(){
 	for (var i = 1; i<= 255;i++){
 		if (i % 2 != 0){
-			console.log(i)
+			debug(i)
 		}
 	}
 };
 
 print1To255 = function(){
 	for (var i = 1;i <= 255; i++){
-		console.log(i);
+		debug(i);
 	}
 };
 
@@ -18,13 +18,13 @@ printIntsAndSum0To255 = function(){
 	var count = 0;
 	for (var i =0;i <= 255; i++){
 		count += i;
-		console.log("Sum:" + count + " " + "Integer:" + i);
+		debug("Sum:" + count + " " + "Integer:" + i);
 	}
 };
 
 printArrayVals = function (arr){
 	for (var i = 0; i < arr.length; i++){
-		console.log(arr[i]);
+		debug(arr[i]);
 	}
 };
 
@@ -35,7 +35,7 @@ PrintMaxOfArray = function(arr){
 			count = arr[i];
 		}	
 	}
-  console.log(count);
+  debug(count);
 };
 
 PrintAverageOfArray = function(arr){
@@ -43,7 +43,7 @@ var count = 0;
 for (var i = 0;i < arr.length; i++){
     count += arr[i];
     }
-    console.log(count / arr.length);
+    debug(count / arr.length);
 }
 
 ReturnOddsArray1To255 = function(){
@@ -53,7 +53,7 @@ ReturnOddsArray1To255 = function(){
     arr.push(i);
     }
   }
-  console.log(arr)
+  debug(arr)
 }
 
 
@@ -61,7 +61,7 @@ SquareArrayVals= function(arr){
 	for (var i = 0;i < arr.length; i++){
 		arr[i] = arr[i]*arr[i];
 	}
-	console.log(arr);
+	debug(arr);
 }
 
 ReturnArrayCountGreaterThanY = function(arr, y){
@@ -71,7 +71,7 @@ ReturnArrayCountGreaterThanY = function(arr, y){
 			count += 1;
 		}
 	}
-  console.log(count);
+  debug(count);
 }
 
 ZeroOutArrayNegativeVals= function(arr){
@@ -80,7 +80,7 @@ ZeroOutArrayNegativeVals= function(arr){
 			arr[i] = 0;
 		}
 	}
-  console.log(arr);
+  debug(arr);
 }
 
 SwapStringForArrayNegativeVals = function(arr){
@@ -95,4 +95,5 @@ SwapStringForArrayNegativeVals = function(arr){
 ShiftArrayValsLeft = function(arr){
 	arr.shift();
 	arr.push(0);
+	debug(arr);
 }
