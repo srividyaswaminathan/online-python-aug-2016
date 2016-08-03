@@ -11,9 +11,9 @@
 [Coin Tosses](Solutions/Fundamentals/coin_tosses.py) |
 Names |
 Stars |
+Basic 13... in Python! |
 
 | Optional Assignments
 ---
 Crawler |
 CSV |
-Regular Expressions |
