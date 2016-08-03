@@ -1,4 +1,4 @@
-import random
+import random, datetime
 numbers = [int] 
 
 for cntr in range(0,100):
@@ -8,7 +8,6 @@ def bubble_sort(arr):
 	src_data = None
 	dest_data = None
 	last_index = len(arr)
-	cntr = 0
 	for first in range(last_index):
 		for second in range(1, last_index):
 			if arr[second - 1] > arr[second]:
@@ -19,5 +18,8 @@ def bubble_sort(arr):
 		
 		last_index -= 1
 
+start = datetime.datetime.now()
 bubble_sort(numbers)
+elapsed = datetime.datetime.now() - start
+print "Execution Time: " + str(elapsed)
 print numbers
