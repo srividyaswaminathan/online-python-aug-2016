@@ -46,11 +46,53 @@ for (var i = 0;i < arr.length; i++){
     console.log(count / arr.length);
 }
 
-ReturnOddsArray1To255 = function(arr){
+ReturnOddsArray1To255 = function(){
+	var arr = []
 	for (var i = 1;i <= 255; i++){
-  	if (arr[i] % 2 != 0){
-    console.log(arr[i]);
+  	if (i % 2 != 0){
+    arr.push(i);
     }
   }
+  console.log(arr)
 }
 
+
+SquareArrayVals= function(arr){
+	for (var i = 0;i < arr.length; i++){
+		arr[i] = arr[i]*arr[i];
+	}
+	console.log(arr);
+}
+
+ReturnArrayCountGreaterThanY = function(arr, y){
+	var count = 0;
+	for (var i =0;i < arr.length; i++){
+		if (arr[i] > y){
+			count += 1;
+		}
+	}
+  console.log(count);
+}
+
+ZeroOutArrayNegativeVals= function(arr){
+	for (var i =0;i < arr.length; i++){
+		if (arr[i] < 0){
+			arr[i] = 0;
+		}
+	}
+  console.log(arr);
+}
+
+SwapStringForArrayNegativeVals = function(arr){
+	for (var i = 0;i < arr.length; i++){
+		if (arr[i] < 0){
+			arr[i] = "Dojo";
+		}
+	}
+	debug(arr)
+}
+
+ShiftArrayValsLeft = function(arr){
+	arr.shift();
+	arr.push(0);
+}
