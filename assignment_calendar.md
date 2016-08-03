@@ -5,10 +5,10 @@
 | Assignments to Push to Repository
 ---
 [Multiples](Solutions/Fundamentals/multiples.py) |
-Sum List |
-Average List |
-Scores and Grades |
-Coin Tosses |
+[Sum List](Solutions/Fundamentals/sum_list.py) |
+[Average List](Solutions/Fundamentals/average_list.py) |
+[Scores and Grades](Solutions/Fundamentals/scores_grades.py) |
+[Coin Tosses](Solutions/Fundamentals/coin_tosses.py) |
 Names |
 Stars |
 
