@@ -8,8 +8,8 @@ students = [
      {'first_name' : 'KB', 'last_name' : 'Tonel'}
 ]
 def print_student_fullname(dict):
-    for name in dict:
-        print name['first_name'],name['last_name']
+    for student_dict in dict:
+        print student_dict['first_name'],student_dict['last_name']
 print_student_fullname(students)
 
 #Part II
@@ -28,10 +28,8 @@ users = {
 def print_user_fullname(dict):
     for user,data in dict.items():
         print user
-        idx = 1
-        for name in data:
-            fir = name['first_name'].upper()
-            las = name['last_name'].upper()
-            print "{} - {} {} - {}".format(str(idx),fir,las,len(fir+las))
-            idx += 1
+        for idx in range(len(data)):
+            fir = data[idx]['first_name'].upper()
+            las = data[idx]['last_name'].upper()
+            print "{} - {} {} - {}".format(idx+1,fir,las,len(fir+las))
 print_user_fullname(users)
