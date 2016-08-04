@@ -9,17 +9,18 @@ x_rounded = round(x)
 y_rounded = round(y)
 # y_rounded will be rounded up to 1
 
-x_rounded = "head"
-y_rounded = "tail"
-
-print x_rounded
-print y_rounded
-print random_num
 
 def coin_toss():
-	input
+	number_head = 0
+	number_tail = 0
+	for number in range (1, 2000):
+		random_num = round(random.random())
+		if random_num == 1:
+			random_num = "head"
+			number_head += 1
+		if random_num == 0:
+			random_num = "tail"
+			number_tail += 1
 
-'''
-
-Attempt #1: Throwing a coin... It's a head!  Got 1 head(s) so far and 0 tail(s) so far
-'''
+		print 'Attempt #' + str(number) + " Throwing a coin... It's a " + str(random_num) + '! Got ' + str(number_head) + ' head(s) so far and ' + str(number_tail) + ' tail(s) so far'
+coin_toss()
