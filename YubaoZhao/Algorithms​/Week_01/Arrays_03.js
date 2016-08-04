@@ -33,8 +33,10 @@ function arrayMinToFront(arr) {
             minIdx = i;
         }
     }
-    temp = arr[0];
-    arr[0] = arr[minIdx];
-    arr[minIdx] = temp;
+    temp = arr[minIdx];
+    for(i = minIdx; i > 0; i--) {
+        arr[i] = arr[i-1];
+    }
+    arr[0] = temp;
     return arr;
 }
