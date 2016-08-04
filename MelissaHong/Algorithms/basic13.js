@@ -33,15 +33,15 @@ function intsandsum(){
 	}
 
 //Print Array Vals
-function vals(){
-	var arr=[1,2,3,4];
-	console.log(arr);
+function vals(arr){
+	for (var index = 0; index < arr.length; index++){
+		console.log("array[", index,"] is equal to", arr[index]);
+	}
 }
 
 //Print Max Array
-function findMax(){
+function findMax(arr){
 	var max=0;
-	var arr=[1,2,3,4];
 	for (var i=0; i<arr.length; i++){
 		if (arr[i]>max){
 			max=arr[i];
@@ -51,8 +51,7 @@ function findMax(){
 }
 
 //Print Avg Array
-function findAvg(){
-	var arr=[10,20,30,40];
+function findAvg(arr){
 	var sum=0;
 	for (var i=0; i<arr.length; i++){
 		sum+=arr[i];
@@ -73,8 +72,7 @@ function returnOdds(){
 }
 
 //Square value of array #s
-function squareArray(){
-	var arr=[1,2,3,4];
+function squareArray(arr){
 	for (var i=0; i<arr.length; i++){
 		arr[i]=arr[i]*arr[i];
 	}
@@ -82,9 +80,8 @@ function squareArray(){
 }
 
 //Return array count greater than Y (arr, y)
-function greaterThanY(){
+function greaterThanY(arr. Y){
 	var Y=0;
-	var arr=[1,2,3,4];
 	var count=0;
 	for (var i=0; i<arr.length; i++){
 		if (arr[i]>Y){
@@ -95,8 +92,7 @@ function greaterThanY(){
 }
 
 //Set neg values to zero of an array
-function zeroNeg(){
-	var arr=[0, -2, -3, -5, 1];
+function zeroNeg(arr){
 	for (var i=0; i<arr.length; i++){
 		if (arr[i]<0){
 			arr[i]=0;
@@ -106,8 +102,7 @@ function zeroNeg(){
 }
 
 //Max Min Avg values
-function maxMinAvg(){
-	var arr=[0,1,2,3,4];
+function maxMinAvg(arr){
 	var max=arr[0];
 	var min=arr[0];
 	var sum=arr[0];
@@ -128,19 +123,17 @@ function maxMinAvg(){
 //Shift the array by 1, with index 0 at the end
 
 function shiftOne(arr){
-	var arr=[0,2,4,6,8];
 	for (var i=0; i<arr.length; i++){
 		arr[i]=arr[i+1];
 	}
-	arr[4]=0;
+	arr[arr.length-1]=0;
 	}
 	return arr;
 }
 
 
 //Replace neg values to dojo
-function negDojo(){
-	var  arr=[0, -2, -6, 8];
+function negDojo(arr){
 	for (var i=0; i<arr.length; i++){
 		if (arr[i]<0){
 			arr[i]='dojo';

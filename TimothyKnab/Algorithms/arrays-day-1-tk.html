@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays 01 Challenges Testing Ground</title>
+</head>
+
+<body>
+
+<div id='output' style='overflow-wrap: break-word;'></div>
+
+
+<script>
+
+
+function insertAt(){
+	var arr = [1,2,3,5,6,7];
+	// splice(position, numberOfItemsToRemove, item)
+	arr.splice(3, 0, 4); // this should insert the number '4' in arr[2]
+	return arr;
+};
+
+
+document.getElementById('output').innerHTML = insertAt();
+
+
+
+</script>
+	
+</body>
+</html>
