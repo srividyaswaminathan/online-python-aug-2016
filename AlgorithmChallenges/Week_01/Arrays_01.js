@@ -27,6 +27,7 @@ function popFront(arr) {
     }
 
     arr.length = arr.length - 1;
+    // Or you can use arr.pop();
 
     return valToReturn;
 }
