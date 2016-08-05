@@ -25,7 +25,7 @@ function reverseArray(arr) {
 //Change [4,2,1,3,5] to [1,4,2,3,5].
 
 function arrayMinToFront(arr) {
-    var minIdx,temp;
+    var minIdx;
     var min = arr[0];
     for(var i = 1; i < arr.length; i++) {
         if(min > arr[i]) {
@@ -33,10 +33,9 @@ function arrayMinToFront(arr) {
             minIdx = i;
         }
     }
-    temp = arr[minIdx];
     for(i = minIdx; i > 0; i--) {
         arr[i] = arr[i-1];
     }
-    arr[0] = temp;
+    arr[0] = min;
     return arr;
 }
