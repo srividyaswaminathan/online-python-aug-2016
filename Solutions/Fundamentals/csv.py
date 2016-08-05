@@ -1,8 +1,5 @@
 import csv
-print csv
-# import pprint
-# pp = pprint.PrettyPrinter()
-#
+
 # MAKE SURE YOU HAVE ACCESS TO THE FILE
 with open('us-500.csv', 'rU') as csv_file:
     reader = csv.reader(csv_file)
