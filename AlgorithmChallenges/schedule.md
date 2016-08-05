@@ -9,3 +9,4 @@ Challenges will be linked to answersheets a few hours after they've been assigne
 | [Arrays Day 1](Week_01/Arrays_01.md) |
 | [Arrays Day 2](Week_01/Arrays_02.md) |
 | [Arrays Day 3](Week_01/Arrays_03.md) |
+| [Arrays Day 4](Week_01/Arrays_04.md) |
