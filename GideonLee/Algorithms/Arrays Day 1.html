@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<title></title>
+	<!-- Write in JavaScript first then rewrite it in Python -->
+	<script>
+		var arr = [0, 1, 2, 3, 4, 5];
+		var addition = -1; 
+
+	// Push Front
+	// Given array and an additional value, insert this value at the beginning of the array.
+
+		function pushFront(arr, addition) {
+			// var newArr = [];
+			// newArr.push(addition);
+			// for (var i = 0; i < arr.length; i++) {
+			// 	newArr.push(arr[i]);
+			// }	
+			// console.log(newArr);
+
+			for (var i = arr.length; i > 0; i--) {
+				arr[i] = arr[i-1];
+			}
+			arr[0] = addition; 
+			return arr;
+		};
+		console.log('Push ' + addition + ' to the front of the array: [' + pushFront(arr, addition) + ']');
+
+	// Pop Front
+	// Given array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop().
+		function removeFront(arr) {
+			var first = arr[0];
+			for (var i = 0; i < arr.length; i++) {
+				arr[i] = arr[i+1];
+			}
+			arr.pop();
+			return arr; 
+		};
+		removeFront(arr);
+		console.log('Remove the first element of an arr. The new array will be: [' + removeFront(arr) + ']');
+
+	// Insert At
+
+	// Given array, index, and additional value, insert the value into array at given index. You can think of PushFront(arr,val) as equivalent to InsertAt(arr,0,val). -->
+		function insertAt(arr, index, value) {
+			for (var i = 0; i < arr.length; i++) {
+				if (i === index) {
+					arr[i] = value; 
+				}
+				else {
+					if (i > index) {
+						continue; 
+					}
+					else {
+						arr[i] = arr[i+1]; 
+					}
+				}
+			}
+			return arr; 
+		};
+		console.log('The value of 99 will be added the 3rd index. The arr will now be: [' + insertAt(arr, 3, 99) + ']');
+
+	</script>
+</head>
+<body>
+</body>
+</html>
+
+<!-- From your work with the Basic 13 challenges, we assume that you already know how to read from numerical arrays, and that you can easily create JavaScript functions to get the minimum or maximum value, the sum of all values in the array, or the average of all values in the array. If this is not the case, definitely review those implementations before continuing to today’s challenges.
