@@ -5,14 +5,16 @@ from datetime import datetime
 def random_list():
     list = []
     while 1:
-        len = input("Input List Length:")
-        if len > 1:
-            break
+        length = input("Input list length:")
+        if length > 1:
+            r = input("Input random value range:")
+            if r > 0:
+                break
+            print "Invalid Range!"
         else:
-            print "Invalid Value!"
-            continue
-    for i in range(len):
-        list.append(randint(0,9999))
+            print "Invalid Length!"
+    for i in range(length):
+        list.append(randint(0,r))
     return list
 
 def get_digit_from_position(num,pos):
@@ -27,16 +29,22 @@ def generate_list(two_dimension_list):
     return list
 
 def radix_sort(list):
+    counter = 0
+    max_digit = 0
+    for num in list:                       # calculate max digit of number in the list
+        if max_digit < len(str(num)):
+            max_digit = len(str(num))
     begin_time = datetime.now()
-    for i in range(4):            # number in the random list is from 0--9999,there are 4 digits
+    for i in range(max_digit):
         two_dim_list = [[] for j in range(10)]   # create a two-dimensin list
         for num in list:
             digit = get_digit_from_position(num,i)
             two_dim_list[digit].append(num)
+            counter += 1
         list = generate_list(two_dim_list)
     end_time = datetime.now()
     time = end_time - begin_time
-    return (list,time)
+    return (list,counter,time)
 
 
 list = random_list()
@@ -45,6 +53,6 @@ print "Original List:",list
 print
 print "  Sorted List:",radix_sort(list)[0]
 print
-print "Operations Counter:{}".format(4*len(list))  # digits * numbers of list
+print "Operations Counter:{}".format(radix_sort(list)[1])
 print
-print "Time Counter: {}s".format(radix_sort(list)[1])
+print "Time Counter: {}s".format(radix_sort(list)[2])
