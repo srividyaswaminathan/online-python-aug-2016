@@ -1,4 +1,4 @@
-##Arrays Day 2
+##Arrays Day 2 ([Solutions](Arrays_02.js))
 
 ###Remove At
 Given array and an index into array, remove and return the array value at that index. Do this without using built-in array methods except `pop()`. Think of `PopFront(arr)` as equivalent to `RemoveAt(arr,0)`.
