@@ -33,11 +33,15 @@ function filterRange(arr,min,max) {
         return;
     }
     else {
-        for(var i = arr.length-1; i >= 0; i--) {
+        var i = 0;
+        while(i < arr.length)  {
             if(arr[i] >= min && arr[i] <= max) {
                 for(var j = i; j < arr.length-1; j++)
                     arr[j] = arr[j+1];
-                arr.pop();
+                arr.length -= 1;
+            }
+            else {
+                i += 1;
             }
         }
         return arr;
