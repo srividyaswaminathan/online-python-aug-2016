@@ -1,4 +1,4 @@
-# had trouble making the "Your grade is ... print on the same line as the input"
+# had trouble making the "Your grade is ..." print on the same line as the input
 
 def ScoresAndGrades():
 	x = 0
