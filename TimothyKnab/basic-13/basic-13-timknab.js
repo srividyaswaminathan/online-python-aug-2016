@@ -11,10 +11,11 @@
 //
 /////////////////////
 //
-// 		Step 1: Directly *above* the </body> tag of your document create: <script></script>
-//		Step 2: Paste the entire algorithm code you want to see into action between the <script> and </script> tags.
-// 		Step 2: Directly *beneath* the <body> tag of your document create: <div id='output' style='overflow-wrap: break-word;'></div> 
-// 		Save the page as .html and open it in your browser to see the output.
+//		Step 1: Create an index.html file with a basic html5 frame.
+// 		Step 2: Directly *above* the </body> tag of your document create: <script></script>
+//		Step 3: Paste the entire algorithm code you want to see into action between the <script> and </script> tags.
+// 		Step 4: Directly *beneath* the <body> tag of your document create: <div id='output' style='overflow-wrap: break-word;'></div> 
+// 		Steo 5: Save the page and open it in your browser to see the output.
 //
 // 	Note: you may only run one of these functions at a time, as all use #output for their display.
 // 	Thank you!
@@ -207,7 +208,6 @@ document.getElementById('output').innerHTML = PrintArrayVals(arr);
 
 
 function PrintMaxOfArray(arr){
-	var arr = [1,2,3,4,5,6,7,8,9,10];
 	var max = arr[0]; // sets our max val to index[0] in our array to begin
 
 	for (var i = 0; i < arr.length; i++){
@@ -218,13 +218,12 @@ function PrintMaxOfArray(arr){
 	return max;
 };
 
-
-
-// document.getElementById('output').innterHTML = PrintMaxOfArray(arr);
+var arr = [1,2,3,4,5,6,7,8,9,10];
+document.getElementById('output').innterHTML = PrintMaxOfArray(arr);
 
 	// QUESTION #1: Why won't this print to my innerHTML, #output? It does appear in console when I manually run the function. 
 
-	// QUESTION #2: What exactly is the name for the object inside of the '()'? ie, the '(arr)'' in 'PrintMaxOfArray(arr)'?
+	// QUESTION #2: What exactly is the name for the object inside of the '()'? ie, the '(arr)'' in 'PrintMaxOfArray(arr)'? -- parameter
 
 
 
@@ -253,10 +252,9 @@ function PrintMaxOfArray(arr){
 
 
 function PrintAverageOfArray(arr){
-	var arr = [1,2,3,4,5];
 	var avg = 0;
 
-	for (i = 0; i < arr.length; i++){
+	for ( var i = 0; i < arr.length; i++){
 		avg = avg + arr[i];
 	}
 
@@ -264,7 +262,8 @@ function PrintAverageOfArray(arr){
 	return avg;
 }
 
-document.getElementById('output').innerHTML = PrintAverageOfArray();
+var arr = [1,2,3,4,5];
+document.getElementById('output').innerHTML = PrintAverageOfArray(arr);
 
 
 
@@ -299,7 +298,6 @@ document.getElementById('output').innerHTML = PrintAverageOfArray();
 
 
 function ReturnOddsArray1To255(){
-	var arr = [];
 	for ( var i = 1; i <= 255; i++ ){ 
 		if ( i % 2 === 1 ) { 
 			arr.push(i); 
@@ -309,6 +307,7 @@ function ReturnOddsArray1To255(){
 	return arr; 
 };
 
+var arr = [];
 document.getElementById('output').innerHTML = ReturnOddsArray1To255();
 
 
@@ -342,7 +341,6 @@ function SquareArrayVals(arr){
 };
 
 var arr = [1,2,3,4,5];
-
 document.getElementById('output').innerHTML = SquareArrayVals(arr);
 
 
@@ -367,11 +365,10 @@ document.getElementById('output').innerHTML = SquareArrayVals(arr);
 
 
 function ReturnArrayCountGreaterThanY(arr,y){
-	var arr = [1,2,3,4,5];
 	var y = 1;
 	var count = 0
 
-	for (i = 0; i < arr.length; i++){
+	for ( var i = 0; i < arr.length; i++){
 		if ( arr[i] > y ) {
 			count = count + 1;
 		}
@@ -379,9 +376,7 @@ function ReturnArrayCountGreaterThanY(arr,y){
 	return count;
 };
 
-
-
-
+var arr = [1,2,3,4,5];
 document.getElementById('output').innerHTML = ReturnArrayCountGreaterThanY();
 
 
@@ -408,8 +403,6 @@ document.getElementById('output').innerHTML = ReturnArrayCountGreaterThanY();
 
 
 function ZeroOutArrayNegativeVals(arr){
-	var arr = [-1,0,1,2,3,4,5,-1];
-
 	for ( var i = 0; i < arr.length; i++){
 		if( arr[i] < 0 ){
 			arr[i] = 0;
@@ -419,7 +412,7 @@ function ZeroOutArrayNegativeVals(arr){
 	return arr;
 };
 
-
+var arr = [-1,0,1,2,3,4,5,-1];
 document.getElementById('output').innerHTML = ZeroOutArrayNegativeVals();
 
 
@@ -445,19 +438,18 @@ document.getElementById('output').innerHTML = ZeroOutArrayNegativeVals();
 
 
 
-
+var i ="something"
 
 
 
 
 
 function PrintMaxMinAverageArrayVals(arr){
-	var arr = [1,2,3,4,5,6,7,8,9,10];
 	var max = arr[0];
 	var min = arr[0];
 	var avg = 0;
 
-	for (i = 0; i < arr.length; i++){
+	for (var i = 0; i < arr.length; i++){
 		if ( max < arr[i] ){
 			max = arr[i];
 		}
@@ -467,14 +459,15 @@ function PrintMaxMinAverageArrayVals(arr){
 		avg = avg + arr[i];
 	}
 
-	avg / arr.length;
+	avg = avg / arr.length;
 	
 	var arrNew = [max, min, avg];
 	return arrNew;
 
 }
 
-
+var arr = [1,2,3,4,5,6,7,8,9,10];
+document.getElementById('output').innerHTML = PrintMaxMinAverageArrayVals(arr)
 // QUESTION #3 - Why can't I get this to print to my screen?
 
 
@@ -506,13 +499,12 @@ function PrintMaxMinAverageArrayVals(arr){
 
 
 function ShiftArrayValsLeft(arr){
-	var arr = [1,2,3,4,5];
 	arr.shift(); // shifts array removing index[0]
 	arr.push(0);  // adds extra 0 to the end of the array
 	return arr;
 };
-
-document.getElementById('output').innerHTML = ShiftArrayValsLeft();
+var arr = [1,2,3,4,5];
+document.getElementById('output').innerHTML = ShiftArrayValsLeft(arr);
 
 
 
@@ -543,7 +535,6 @@ document.getElementById('output').innerHTML = ShiftArrayValsLeft();
 
 
 function SwapStringForArrayNegativeVals(arr){
-	var arr = [-1,-2,0,1,2];
 	for (var i = 0; i < arr.length; i++){
 		if ( arr[i] < 0 ){
 			arr[i] = 'Dojo';
@@ -552,9 +543,8 @@ function SwapStringForArrayNegativeVals(arr){
 	return arr;
 };
 
-
-
-// Question #4 -- Again, why can I can not get this to print using my standard 'document.getElementById' method from above?
+var arr = [-1,-2,0,1,2];
+document.getElementById('output').innerHTML = SwapStringForArrayNegativeVals(arr);
 
 
 
