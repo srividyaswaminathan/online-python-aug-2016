@@ -14,7 +14,6 @@ function skylineHeights(arr) {
       minHeight = arr[i];
     }
   }
-
   return viewableBuildings;
 }
 
