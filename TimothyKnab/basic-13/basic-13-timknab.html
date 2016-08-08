@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic 13 Alogrithm Challenges</title>
+</head>
+
+<body>
+
+<div id='output' style='overflow-wrap: break-word;'></div>
+
+
+<script>
+
+function SwapStringForArrayNegativeVals(arr){
+	for (var i = 0; i < arr.length; i++){
+		if ( arr[i] < 0 ){
+			arr[i] = 'Dojo';
+		}
+	}
+	return arr;
+};
+
+var arr = [-1,-2,0,1,2];
+document.getElementById('output').innerHTML = SwapStringForArrayNegativeVals(arr);
+
+
+</script>
+	
+</body>
+</html>

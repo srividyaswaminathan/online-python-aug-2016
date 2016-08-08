@@ -1,0 +1,32 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: arial;
+	background-color: #eee;
+}
+#ninja {
+	margin: 10px 0 0 600px;
+}
+div {
+	width: 750px;
+	margin: 0 auto;
+}
+	div img {
+		margin: 0 40px;
+	}
+	span {
+		font-size: 2em;
+		font-weight: bold;
+		color: #4e5358;
+	}
+	span#yellow {
+		margin-left: 100px;
+		display: none;
+	}
+	span#black {
+		margin-left: 445px;
+		display: none;
+	}
