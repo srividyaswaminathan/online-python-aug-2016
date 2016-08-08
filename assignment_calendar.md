@@ -11,7 +11,6 @@
 [Coin Tosses](Solutions/Fundamentals/coin_tosses.py) |
 [Names](Solutions/Fundamentals/names.py) |
 [Stars](Solutions/Fundamentals/stars.py) |
-Basic 13... in Python! |
 
 | Optional Assignments
 ---
@@ -19,15 +18,14 @@ Basic 13... in Python! |
 [CSV](Solutions/Fundamentals/csv.py) |
 
 ## Week 2: Flask Basics
-Note: By Monday, Aug. 8, try to get to at least the **Landing Page** assignment.
 
 | Assignments to Push to Repository
 ---
-Landing Page |
+[Landing Page](Solutions/Flask Basics/Landing Page)  (Monday, Aug. 8)|
 Dojo Survey |
 Counter |
 Great Number Game |
-Ninja Gold |
+**Ninja Gold** (Thursday, Aug. 11) |
 Dojo Survey w/ Validation |
 Registration Form |
 Disappearing Ninja |
