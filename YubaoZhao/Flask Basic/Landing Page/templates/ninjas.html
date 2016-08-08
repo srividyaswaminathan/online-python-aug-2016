@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="Flask Fundamentals">
+	<title>Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ninjas.css') }}">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='img/ninja.png') }}" id="ninja" alt="Ninja">
+    <div>
+    	<img src="{{ url_for('static', filename='img/yellow belt.png') }}" id="yellow" alt="Yellow belt">
+    	<img src="{{ url_for('static', filename='img/black belt.png') }}" id="black" alt="Black belt">
+    	<p><span id="yellow">Yellow Belt</span><span id="black">Black Belt</span></p>
+    </div>
+</body>
