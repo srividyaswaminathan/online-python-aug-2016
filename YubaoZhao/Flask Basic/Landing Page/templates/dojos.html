@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="Flask Fundamentals">
+	<title>Dojos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dojos.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='img/dojo_logo.gif') }}" alt="Dojos">
+    <form action="">
+    	<select name="dojos">
+			<option value="seattle">Seattle</option>
+			<option value="siliconValley">Silicon Valley</option>
+			<option value="losAngeles">Los Angeles</option>
+			<option value="dallas">Dallas</option>
+			<option value="washington">Washington D.C.</option>
+			<option value="chicago">Chicago</option>
+		</select>
+		<input type="submit" value="Submit">
+    </form>
+</body>
+</html>

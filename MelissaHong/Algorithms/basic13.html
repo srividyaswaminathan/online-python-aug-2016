@@ -1,3 +1,7 @@
+<!Doctype html>
+<html>
+<head>
+<script>
 //This took me about an hour to complete
 
 //Print 1 to 255 integers
@@ -80,7 +84,7 @@ function squareArray(arr){
 }
 
 //Return array count greater than Y (arr, y)
-function greaterThanY(arr. Y){
+function greaterThanY(arr, Y){
 	var Y=0;
 	var count=0;
 	for (var i=0; i<arr.length; i++){
@@ -123,12 +127,12 @@ function maxMinAvg(arr){
 //Shift the array by 1, with index 0 at the end
 
 function shiftOne(arr){
+	arr = []
 	for (var i=0; i<arr.length; i++){
 		arr[i]=arr[i+1];
-	}
-	arr[arr.length-1]=0;
-	}
-	return arr;
+		arr[arr.length-1]=0;
+		console.log(arr);
+		}
 }
 
 
@@ -141,3 +145,8 @@ function negDojo(arr){
 	}
 	return arr;
 }
+</script>
+</head>
+<body>
+</body>
+</html>
