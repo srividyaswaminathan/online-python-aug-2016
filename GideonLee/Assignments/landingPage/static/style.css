@@ -1,0 +1,17 @@
+*{
+	margin: 0 auto;
+}
+
+div#container {
+	width: 75%;
+}	
+	#container h1 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	#container button:nth-child(3) {
+		margin-left: 40%;	
+	}
+	#message {
+		display: none;
+	}

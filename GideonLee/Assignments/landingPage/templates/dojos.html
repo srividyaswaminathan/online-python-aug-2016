@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='The Dojos form!'>
+	<title>Dojos!</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/dojos_style.css")}}'>
+	<script>
+		$(document).ready(function(){
+
+		});
+	</script>	
+</head>
+<body>
+	<div id='container'>
+		<form>
+			<h1 class='bg-warning'>You've Entered the Dojo...</h1>
+			<label>
+				<input type='radio' name='gender' value='male'> Male
+			</label>
+			<label>
+				<input type='radio' name='gender' value='female'> Female
+			</label>
+			<label>
+				Email: <input type='text'>
+			</label>
+			<div>
+				<p id='selectLabel'>Hello</p>
+				<select>
+					<option></option>
+					<option>Hello</option>
+					<option>Eagle</option>
+					<option>Purple</option>
+					<option>World</option>
+				</select>				
+			</div>
+			<input class='btn btn-primary' type='submit' value="Submit!">
+		</form>
+	</div>
+</body>
+</html>
