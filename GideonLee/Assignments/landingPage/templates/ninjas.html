@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='descrtion' content='NINJAS!!!!'>
+	<title>Surprise Ninjas!</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/ninja_style.css") }}'>
+</head>
+<body>
+	<div id='container'>
+		<h1 class='bg-danger text-center'>Ninjas!</h1>
+		<div class='row'>
+			<div class='col-md-2'></div>
+			<div class='col-md-4'>
+				<img class=c'enter' src='{{ url_for("static", filename="img/ninja1.png")}}'>
+			</div>
+		</div>
+		<p class='text-center'>Quick and agile! They are very dangerous!</p>
+		<button class='btn btn-primary'>Go home!</button>
+		<button class='btn btn-warning'>Go to Dojos!</button>
+	</div>
+</body>
+</html>
