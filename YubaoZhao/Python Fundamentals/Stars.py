@@ -5,10 +5,7 @@
 
 def draw_stars(arr):
     for num in arr:
-        star = ""
-        for i in range(num):
-            star += "*"
-        print star
+        print "*" * num
 
 x = [4, 6, 1, 3, 5, 7, 25]
 draw_stars(x)
@@ -22,15 +19,9 @@ draw_stars(x)
 def draw_stars2(arr):
     for item in x:
         if type(item) == int:
-            star = ""
-            for i in range(item):
-                star += "*"
-            print star
-        elif type(item) == str:
-            letter = ""
-            for i in range(len(item)):
-                letter += item[0].lower()
-            print letter
+            print "*" * item
+        else:
+            print item[0].lower() * len(item)
 
 x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
 draw_stars2(x)
