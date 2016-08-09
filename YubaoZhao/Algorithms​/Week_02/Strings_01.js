@@ -6,11 +6,16 @@
 
 function removeBlanks(str) {
     var newStr = "";
-    var arr = str.split("");
-    for(var i = 0; i < arr.length; i++) {
-        if(arr[i] != " ") newStr += arr[i];
+    for(var i = 0; i < str.length; i++) {
+        if(str[i] !== " ") {
+            newStr += str[i];
+        }
     }
     return newStr;
+}
+
+function removeBlanks2(str) {
+    return newstr = str.split(" ").join("");
 }
 // Acronyms
 // Create a function that, given a string, returns the string’s acronym (first letters only, capitalized).
@@ -18,11 +23,15 @@ function removeBlanks(str) {
 
 function acronyms(str) {
     var newStr = "";
-    var arr = str.split(" ");
-    for(var i = 0; i < arr.length; i++) {
-        var firstChar = (arr[i].split(""))[0];
-        if(firstChar != undefined) {
-            newStr += firstChar.toUpperCase();
+    var flag = 1;
+    if(var i = 0; i < str.length; i++) {
+        if(str[i] === " ") {
+            flag = 1;
+            continue;
+        }
+        if(flag) {
+            flag = 0;
+            newStr += str[i].toUpperCase();
         }
     }
     return newStr;
