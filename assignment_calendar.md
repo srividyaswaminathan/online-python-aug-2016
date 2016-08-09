@@ -25,7 +25,7 @@
 Dojo Survey |
 Counter |
 Great Number Game |
-**Ninja Gold** (Thursday, Aug. 11) |
+**Ninja Gold** (Thursday, Aug. 11) **IMPORTANT** |
 Dojo Survey w/ Validation |
 Registration Form |
 Disappearing Ninja |
