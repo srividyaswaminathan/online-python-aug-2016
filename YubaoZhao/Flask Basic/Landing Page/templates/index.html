@@ -7,9 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body style="background-image: url({{ url_for('static', filename='img/bg.png') }})" >
-    <div>
+	<div>
     	<h1>Welcome to</h1>
     	<img src="{{ url_for('static', filename='img/codingdojo_logo.png') }}" alt="Codingdojo Logo">
     </div>
+	<h2><a href="/ninjas">Ninjas</a><a href="/dojos/new">Dojos</a></h2>
 </body>
 </html>
