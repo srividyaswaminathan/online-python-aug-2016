@@ -22,9 +22,9 @@
 | Assignments to Push to Repository
 ---
 [Landing Page](Solutions/Flask Basics/Landing Page)  (Monday, Aug. 8)|
-Dojo Survey |
-Counter |
-Great Number Game |
+[Dojo Survey](Solutions/Flask Basics/Dojo Survey) |
+[Counter](Solutions/Flask Basics/Counter) |
+[Great Number Game](Solutions/Flask Basics/Great Number Game) |
 **Ninja Gold** (Thursday, Aug. 11) **IMPORTANT** |
 Dojo Survey w/ Validation |
 Registration Form |
