@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content="Now that you've learned about setting up basic routes your first assignment is to build a new Flask project that does what is shown below. The goal is to help you get familiar with sending POST requests through a form and displaying that information:">
+	<title>Dojo Survey</title>	
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/style.css") }}'>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('form').submit(function(){
+				if($('input[name=name]').val() === '' || $('input[name=email]').val() === '') {
+					return false; 
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id='container'>
+		<div class='row'>
+			<div class='col-md-4'></div>
+			<div class='col-md-4'>
+				<h1 class='text-primary text-center'>Coding Dojo Survey</h1>
+				<form action='/result' method='post'>
+					<label>
+						<span>Name:</span><input type='text' name='name' placeholder='Enter your name'>					
+					</label>
+					<label>
+						<span>Email:</span><input type='text' name='email' placeholder='Email here'>					
+					</label>
+					<label>
+						Dojo Location: 
+						<select name='location'>
+							<option>San Jose</option>
+							<option>Seattle</option>
+							<option>Mars Colony 1</option>
+						</select>
+					</label>
+					<label>
+						Favorite Language:
+						<select name='language'>
+							<option>Python</option>
+							<option>Ruby</option>
+							<option>JavaScript</option>
+						</select>
+					</label>
+					<label>
+						Comments (optional):
+						<textarea name='comments'></textarea>
+					</label>
+					<input id='submit' class='btn btn-primary' type='submit' value='Submit Survey'>
+				</form>
+			</div>
+			<div class='col-md-4'></div>
+		</div>
+	</div>
+</body>
+</html>
