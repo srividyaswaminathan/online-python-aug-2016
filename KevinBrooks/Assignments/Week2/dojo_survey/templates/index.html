@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+		<form action="result" method='post'>
+            <span>Your Name: </span><input type='text' id='name' name='name' value='{{ name }}'>
+            <span>Dojo Location: </span><select id='dojo_location' name='dojo_location' value='{{ location }}'></select>
+            <span>Favorite Language: </span><select id='fav_lang' name='fav_lang' value='{{ language }}'></select>
+            <span>Comment (optional):</span>
+            <textarea name='comments' rows='4' cols='40' >{{ comments }}</textarea>
+            <input type='submit' id="submit_survey" text='Submit'>
+        </form>
+	</div>
+</body>
+</html>
