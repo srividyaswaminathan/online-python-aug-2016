@@ -1,0 +1,35 @@
+Questions for Mentor
+
+1. Arrays day 2:
+	Remove Duplicates -- (python) How can I remove the set() from output?
+	The proper usage of set()?
+
+
+
+2. Arrays day 1 / day 3:
+	
+	(Day 2) Remove At
+
+	(Day 3) Array Min To Front
+	Given this for loop in JS:
+
+			 for (var i = idx; i < arr.length; i += 1) { 
+			 		// do something
+			 }
+
+
+			 can this also be written as,
+
+			 for ( var i = idx; i < arr.length; i++ ) {
+			 		// do something
+			 }
+
+
+			 as well as 'i -= 1'	written as 		'i--' ?
+
+
+3. General Python Question:
+	':' and '::'  -- how are these used to assess a list? 
+	I'm a little confused on how exactly we can use these...
+
+
