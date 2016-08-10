@@ -56,21 +56,18 @@ def findAvg(arr):
 findAvg(arr)
 
 def returnOdds():
+    arr = []
     for i in range (1, 256):
         if i%2==1:
             arr.append(i)
-        print arr
+    print arr
 
 returnOdds()
 
-'''def squareArray():
 
-def greaterThanY():
+def squareArray():
+    for i in range (len(arr)):
+        arr[i] = arr[i] * arr[i]
+    print arr
 
-def zeroNeg():
-
-def maxMinAvg(arr):
-
-def shiftOne(arr):
-
-def negDojo(arr):'''
+squareArray()
