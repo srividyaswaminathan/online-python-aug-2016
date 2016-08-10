@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+14-July-2016
+Assignment: Contact Card
+
+9-August-2015
+Python > Flask > Assignment: Landing Page
+
+Modified assignment to work with Flask!
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Assignment: Landing Page">
+    <title>Assignment: Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dojos.css') }}">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dojos.js') }}"></script>
+</head>
+    <body>
+        <div id="container">
+            <a href="/">Home</a>
+            <div id="input">
+                <form>
+                    <label>First Name: <input type="text" name="FirstName"></label>
+                    <label>Last Name: <input type="text" name="LastName"></label>
+                    <label>Description: <textarea rows="6" cols="50" name="description" placeholder="Enter description:"></textarea></label>
+                    <label><input type="submit" value="Add User"></label>
+                </form>
+            </div>
+            <div id="cards">
+                <!--Dynamically Generated Content will go here-->
+            </div>
+        </div> <!--End Container-->
+    </body>
+</html>
