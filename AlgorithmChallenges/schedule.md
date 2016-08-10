@@ -15,3 +15,4 @@ Challenges will be linked to answersheets a few hours after they've been assigne
 | ------------------------------ |
 | [Strings Day 1](Week_02/Strings_01.md) |
 | [Strings Day 2](Week_02/Strings_02.md) |
+| [Strings Day 3](Week_02/Strings_03.md) |
