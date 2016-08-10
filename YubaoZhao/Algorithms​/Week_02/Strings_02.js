@@ -42,3 +42,16 @@ function isPalindrome2(str) {
     else console.log("Not A Palindrome!");
     return flag;
 }
+
+
+function isPalidrome3(str) {
+    clearstr = str.toLowerCase().replace(/[^a-z]/g, '');
+	for (var i = 0; i < clearstr.length/2; i++) {
+	    if (clearstr[i] !== clearstr[str.length-1-i]) {
+            console.log("Not A Palindrome!");
+            return false;
+		}
+ 	}
+    console.log("It's A Palindrome!");
+    return true;
+}
