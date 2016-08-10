@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo survey Index</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='img/codingdojo.png') }}" alt="logo">
+    <div>
+        <h1>Submitted Info</h1>
+        <ul>
+            <li>Name:</li>
+            <li>Dojo Location:</li>
+            <li>Favorite Language:</li>
+            <li>Comment:</li>
+        </ul>
+        <ul id="result">
+            <li>{{username}}</li>
+            <li>{{location}}</li>
+            <li>{{language}}</li>
+            <li>{{comment}}</li>
+        </ul>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
