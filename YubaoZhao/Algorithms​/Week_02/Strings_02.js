@@ -16,6 +16,12 @@ function isPalindrome(str) {
     }
 }
 
+function palindrome(str) {           //use some built-in functions
+    reverseStr = str.split('').reverse().join('');
+    return reverseStr === str;
+}
+
+
 // Next, ignore white space (spaces, tabs, returns), capitalization and punctuation.
 function isPalindrome2(str) {
     var i = 0,j = str.length-1;
@@ -44,7 +50,7 @@ function isPalindrome2(str) {
 }
 
 
-function isPalidrome3(str) {
+function isPalidrome3(str) {             //use built-in function  
     clearstr = str.toLowerCase().replace(/[^a-z]/g, '');
 	for (var i = 0; i < clearstr.length/2; i++) {
 	    if (clearstr[i] !== clearstr[str.length-1-i]) {
