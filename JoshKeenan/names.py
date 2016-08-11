@@ -11,8 +11,12 @@ users = {
   ]
  }
 
-# print ("Students: {}").format(users['Students'['first_name']])
+def print_lib(lib):
+	for x in lib:
+		print x
+		for i, person in enumerate(lib[x]):
+			print "{} - {} {} - {}".format(i+1, person['first_name'].upper(),person['last_name'].upper(),len(person['first_name'])+len(person['last_name']))
 
-for student in users['Students']:
-	print "{} {}".format(student['first_name'],)
+print_lib(users)
+
 
