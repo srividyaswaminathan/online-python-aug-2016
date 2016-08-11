@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-August-2015
+Python > Flask > Assignment: Dojo Survey
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Assignment: Dojo Survey">
+        <title>Assignment: Dojo Survey</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+        <h2>Submitted Info</h2>
+            <table>
+                <tr>
+                    <td>Your Name: </td><td>{{nam}}</td>
+                </tr>
+                <tr>
+                    <td>Dojo Location: </td><td>{{loc}}</td>
+                </tr>
+                <tr>
+                    <td>Favorite Language: </td><td>{{lan}}</td>
+                </tr>
+                <tr>
+                    <td>Comment: </td><td>{{com}}</td>
+                </tr>
+            </table>
+            <a href="/"><button>Go Back</button></a>
+        </div>
+    </body>
+</html>

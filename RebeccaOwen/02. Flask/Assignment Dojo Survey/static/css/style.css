@@ -1,0 +1,48 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-August-2015
+Python > Flask > Assignment: Dojo Survey
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    width: 350px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+input {
+    width: 161px;
+}
+
+select {
+    width: 165px;
+}
+
+label {
+    text-align: left;
+}
+
+td {
+    padding: 5px 0;
+}
+
+td:first-child {
+    width: 180px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+button {
+    margin-left: 275px;
+}
