@@ -36,7 +36,13 @@ div {
     }
         #green p {
             font-size: 2.4em;
-            margin: 55px 0 0 55px;
+            text-align:center;
+            margin-top: 35px;
+        }
+        #green #count {
+            font-size: 1em;
+            text-align:center;
+            margin-top: 20px;
         }
         #green a {
             font-size: 1.4em;
@@ -63,10 +69,11 @@ div {
             font-size: 1.6em;
         }
         #red #num {
-            margin: 60px 0 0 110px;
+            text-align:center;
+            margin-top: 60px;
         }
         #red #hint {
-            margin: 10px 0 0 70px;
+            text-align:center
         }
     form {
         width: 120px;

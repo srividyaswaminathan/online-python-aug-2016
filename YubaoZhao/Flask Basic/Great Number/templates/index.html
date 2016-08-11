@@ -14,6 +14,7 @@
         {% if data['correct'] %}
             <div class="block" id="green">
                 <p>{{session['random']}} was the number!</p>
+                <p id="count">Guess {{session['counter']}} times!</p>
                 <a href="/reset">play again!</a>
             </div>
         {% endif %}
