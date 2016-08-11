@@ -13,7 +13,8 @@ def home():
 @app.route('/plustwo')
 def add():
 	session['n'] += 1
-	return redirect('/')
+	# return redirect('/')
+	return render_template('index.html')
 
 @app.route('/reset')
 def reset():
