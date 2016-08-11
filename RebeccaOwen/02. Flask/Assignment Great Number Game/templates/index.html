@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-August-2015
+Python > Flask > Assignment Great Number Game
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Assignment Great Number Game">
+        <title>Assignment Great Number Game</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+        <h1>Welcome to the Great Number Game</h1>
+        <p>I am thinking of a number between 1 and 100 Take a guess!</p>
+            <form action='/guess' method='post'>
+                <input type='text' name='guess'>
+                <input type='submit' value='submit'>
+            </form>
+        </div>
+    </body>
+</html>
