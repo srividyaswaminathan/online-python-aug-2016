@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Flask Fundamentals">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Great Number Game!</h1>
+        <h2>I am thinking of a number between 1 and 100</h2>
+        <h3>Take a guess!</h3>
+        {% if data['correct'] %}
+            <div class="block" id="green">
+                <p>{{session['random']}} was the number!</p>
+                <a href="/reset">play again!</a>
+            </div>
+        {% endif %}
+        {% if data['high'] %}
+            <div class="block" id="red">
+                <p id="num">{{number}}</p>
+                <p id="hint">Too High!</p>
+            </div>
+        {% endif %}
+        {% if data['low'] %}
+            <div class="block" id="red">
+                <p id="num">{{number}}</p>
+                <p id="hint">Too Low!</p>
+            </div>
+        {% endif %}
+        <form action="/" style="display:{{data['hide']}}" method="post">
+            <input type="number" name="number" min="1" max="100">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
