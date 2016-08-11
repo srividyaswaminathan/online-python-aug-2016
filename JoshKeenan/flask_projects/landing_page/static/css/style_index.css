@@ -1,0 +1,18 @@
+* {
+	font-family: "tahoma"
+}
+
+#container{
+	margin: 0px auto;
+	width: 980px;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    padding: 10px;
+}
