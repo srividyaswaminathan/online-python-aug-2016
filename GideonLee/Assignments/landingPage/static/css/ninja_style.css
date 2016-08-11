@@ -1,0 +1,13 @@
+* {
+	margin: 0 auto;
+}
+#container {
+	width: 75%;
+}
+	#container h1 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	#container button:nth-child(4) {
+		margin-left: 40%;
+	}

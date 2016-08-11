@@ -9,11 +9,23 @@
 [Average List](Solutions/Fundamentals/average_list.py) |
 [Scores and Grades](Solutions/Fundamentals/scores_grades.py) |
 [Coin Tosses](Solutions/Fundamentals/coin_tosses.py) |
-Names |
-Stars |
-Basic 13... in Python! |
+[Names](Solutions/Fundamentals/names.py) |
+[Stars](Solutions/Fundamentals/stars.py) |
 
 | Optional Assignments
 ---
-Crawler |
-CSV |
+[Crawler](Solutions/Fundamentals/crawler.py) |
+[CSV](Solutions/Fundamentals/csv.py) |
+
+## Week 2: Flask Basics
+
+| Assignments to Push to Repository
+---
+[Landing Page](Solutions/Flask Basics/Landing Page)  (Monday, Aug. 8)|
+[Dojo Survey](Solutions/Flask Basics/Dojo Survey) |
+[Counter](Solutions/Flask Basics/Counter) |
+[Great Number Game](Solutions/Flask Basics/Great Number Game) |
+**Ninja Gold** (Thursday, Aug. 11) **IMPORTANT** |
+Dojo Survey w/ Validation |
+Registration Form |
+Disappearing Ninja |

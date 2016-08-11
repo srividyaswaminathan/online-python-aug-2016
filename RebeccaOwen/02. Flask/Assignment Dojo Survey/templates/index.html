@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-August-2015
+Python > Flask > Assignment: Dojo Survey
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Assignment: Dojo Survey">
+        <title>Assignment: Dojo Survey</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <form action='/result' method='post'>
+                <table>
+                    <tr>
+                        <td>Your Name: </td><td><input type='text' name='name'></td>
+                    </tr>
+                    <tr>
+                        <td>Dojo Location: </td><td><select name="location"><option>ONLINE</option><option>SILICON VALLEY</option><option>SEATTLE</option><option>LOS ANGELES</option><option>DALLAS</option><option>WASHINGTON DC</option><option>CHICAGO</option></select></td>
+                    </tr>
+                    <tr>
+                        <td>Favorite Language: </td><td><select name="language"><option>Python</option><option>Javascript</option><option>HTML</option><option>CSS</option><option>Other</option></select></td>
+                    </tr>
+                </table>
+
+                <label>Comment (optional):
+                    <br>
+                    <textarea rows="6" cols="50" name="comment"></textarea>
+                </label>
+                <br>
+                <input type='submit' value='submit'>
+            </form>
+        </div>
+    </body>
+</html>
