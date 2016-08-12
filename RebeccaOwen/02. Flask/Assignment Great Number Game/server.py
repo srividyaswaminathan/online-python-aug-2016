@@ -5,37 +5,37 @@ Coding Dojo - July 5 Online Flex
 Python > Flask > Assignment Great Number Game
 """
 
-import random # import the random module
+from random import randrange # import the random module
 # The random module has many useful functions. This is one that gives a random number in a range
 
 from flask import Flask, render_template, request, redirect, session
 app = Flask(__name__)
 app.secret_key = 'ThisIsSecret'
 
-
-
 @app.route('/')
 def index():
-    if 'randomNumber' not in session:
-        session['randomNumber'] = random.randrange(0, 101) # random number between 1-100
-        print session['randomNumber']
+    if 'answer' not in session:
+        session['answer'] = randrange(1, 101) # random number between 1-100
+        session['result'] = "NA"
     return render_template('index.html')
 
 @app.route('/guess', methods=['POST'])
 def result():
-    guess = request.form['guess']
+    guess = int(request.form['guess'])
 
-    print guess, session['randomNumber']
-
-    if guess == session['randomNumber']:
-        print 'YOU GOT IT!!!'
-    elif guess < session['randomNumber']:
-        print 'Too Low'
-    elif guess > session['randomNumber']:
-        print 'Too High'
+    if guess == session['answer']:
+        session['result'] = " was the number!"
+    elif guess < session['answer']:
+        session['result'] = "Too Low!"
+    else:
+        session['result'] = "Too High!"
 
 
     return redirect('/')
 
+@app.route('/reset')
+def reset():
+    session.pop('answer')
+    return redirect('/')
 
 app.run(debug=True)                       # Run the app in debug mode.

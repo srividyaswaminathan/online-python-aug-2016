@@ -45,3 +45,30 @@ input:first-child {
     width: 161px;
 }
 
+.wrong,
+.right {
+    width: 175px;
+    height: 175px;
+    color: white;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.right {
+    background-color: green;
+}
+
+.wrong h2 {
+    padding-top: 75px;
+    padding-bottom: 40px;
+}
+
+.right h2 {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
