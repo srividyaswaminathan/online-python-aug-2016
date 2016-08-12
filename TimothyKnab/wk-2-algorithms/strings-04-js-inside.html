@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Strings Day 4 Algorithm Challenge - Tim Knab</title>
+</head>
+<body>
+	<h1></h1>
+	<h4></h4>
+	<h4></h4>
+	<div id='output'></div>
+
+
+
+	<script>
+	// ###Parens Valid
+	// Create a function that, given an input string `str`, returns a boolean whether parentheses in str are valid. Valid sets of parentheses always open before they close, for example. For `"Y(3(p)p(3)r)s"`, return `true`. Given `"N(0(p)3"`, return `false`: not every parenthesis is closed. Given `"N(0)t )0(k"`, return `false`.
+
+
+	// function validatePar(str){
+
+	// };
+
+
+	// stack = [5555]
+	// i = ''
+	// character = ''
+	// bracePosition = ''
+
+	// for i = 16 character = ')'
+	// 	bracePosition = 5
+
+	// 4/2 = 2 remainder 0
+
+
+
+
+
+	function parenthesesAreBalanced(string) {
+  		var parentheses = "[]{}()",
+    	stack = [],
+    	i, character, bracePosition;
+
+	  	for(i = 0; character = string[i]; i++) {
+	    	bracePosition = parentheses.indexOf(character);
+			console.log(i);
+
+	    	if(bracePosition === -1) {
+	      		continue;
+	    	}
+
+	    	if(bracePosition % 2 === 0) {
+	      		stack.push(bracePosition + 1); // push next expected brace position
+	      		console.log(stack);
+	    	} else {
+	    		console.log(bracePosition);
+	    		console.log(stack);
+	      		if(stack.length === 0 || stack.pop() !== bracePosition) {        // QUESTION: When we log stack before the else condition, and then log bracePosition and stack as we go into the else condition, we see that our stack array pops as we continue down the chain -- why does this happen given the if statement above?
+			        return false;
+			      }
+		    }
+		}
+
+		return stack.length === 0;
+	};
+
+	str = "(this(is(a(test))))"
+
+	</script>
+</body>
+</html>
