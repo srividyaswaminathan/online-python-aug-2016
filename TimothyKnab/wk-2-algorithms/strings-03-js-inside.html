@@ -1,0 +1,44 @@
+<!-- Strings Day 3 Algorithm Challenges - written in JS - Tim Knab, August 2016, Coding Dojo -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Strings 03 Algorithm - Tim Knab</title>
+</head>
+<body>
+	<h1>rangeString(arr)</h1>
+	<h4>given a sorted array, convert numbers to ranges in a string</h4>
+	<h4>arr = [1, 2, 3, 5, 6, 7, 9, 10, 11, 15]</h4>
+	<div id='output'></div>
+	<script>
+	// ###Book Index
+	// Martin is writing his opus: a book of algorithm challenges, set as lyrics to a suite of baroque fugues. He knows that some of those fugueing challenges will be less popular than others, so he needs a book index. Given a sorted array of pages, produce a book index string. Consecutive pages should form ranges separated by a dash. For `[1,3,4,5,7,8,10]`, return the string `"1, 3-5, 7-8, 10"`.
+	var arr = [1, 2, 3, 5, 6, 7, 9, 10, 11, 15];  // define range to convert to string
+	var rangeString = ''; // create empty string var to hold our string output
+	function getRanges(arr) { // create function
+	  var ranges = []; // create empty range array to hold ranges as we determine them
+	  var rstart = null; // create variable to use as start point on our range, set to nothing for now
+	  var rend = null; // create variable to use as our end point on our range, set to nothing for now
+	  for (var i = 0; i < arr.length; i++) {   // go through our array one index item at a time and
+	    rstart = arr[i]; // set our start point as arr[i]
+	    rend = rstart; // set our end point as our start point
+	    while (arr[i + 1] - arr[i] == 1) {   // while arr[i + 1] - arr[1] == 1 (meaning the value next to our arr[i] is only 1 value greater)
+	      rend = arr[i + 1]; // set our end variable to arr[i + 1] (as this is in the range)
+	      i++; // increase our counter
+	    }
+	    if ( rstart == rend ){   // if our start range number == end range number  (aka, this number is not in consecutive range)
+	    	ranges.push(rstart); // push only the start number to our array, 'ranges' 
+	    }
+	    if ( rstart != rend ) {  // if our start range number != our end range number (aka, this number *is* consectuive in range)
+	    	ranges.push(rstart + '-' + rend);  // add our 'start# - end#'' to the array
+	    }
+	    // ranges.push(rstart == rend ? rstart+'' : rstart + '-' + rend);   // this is away to do the above 6 lines into 1 line (source: stackoverflow)
+	  }
+	  rangeString = ranges.join([separator = ', ']); // convert our array to a string with the right separators and store as 'rangeString'
+	  return rangeString;  // return rangeString
+	}
+	document.getElementById('output').innerHTML = getRanges(arr);  // spit out our output
+	</script>
+</body>
+</html>
