@@ -35,3 +35,20 @@ function parensValid(str) {
         if(lasOpenIdx < lasCloseIdx && openNum == closeNum) return true;
         else return false;
 }
+
+
+function parensValid2(str) {
+    var parensNum = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] == "(") {
+            parensNum += 1
+        }
+        if (str[i] == ")") {
+            parensNum -= 1;
+        }
+        if (parensNum < 0) {
+            return false;
+        }
+    }
+    return (parensNum == 0);
+}
