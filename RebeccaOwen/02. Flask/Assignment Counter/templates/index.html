@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-August-2015
+Python > Flask > Assignment: Counter
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Assignment: Counter">
+        <title>Assignment: Counter</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <form action='/result' method='post'>
+                <p>Counter: <span>{{counter}}</span></p>
+                <input type='submit' value='Increment' name='inc'>
+                <input type='submit' value='Decrement' name='inc'>
+            </form>
+        </div>
+    </body>
+</html>
