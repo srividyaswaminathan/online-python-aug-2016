@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Dojo Survey</title>
+		<link rel="stylesheet"  type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<h2>Welcome to Coding Dojo Survey Form</h2> 
+		<div id="form">
+			<form action='/results' method='post'>
+				<label>
+					Your Name:<input type="text"  name="name">	
+				</label>	
+				<label>
+					Your location:
+					<select name="location">
+						<option value="San Jose">San jose</option>
+						<option value="Seattle">Seattle</option>
+						<option value="DC">DC</option>
+					</select>
+				</label>
+				<label>
+					Favorite Language:
+					<select name="language">
+						<option value="Python">Python</option>
+						<option value="Ruby">Ruby</option>
+						<option value="Java">Java</option>
+					</select>
+				</label>			
+				<label>
+					Comment:
+					<textarea name="comment"></textarea>
+				</label>	   
+				<input type="submit" value="Click here to Submit">
+			</form>
+		</div>	
+	</body>	
+<html>
+
+
+     
+        
+  
