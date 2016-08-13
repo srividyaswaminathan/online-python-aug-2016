@@ -1,7 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script>
+	<meta charset="utf-8">
+	<title>Adding User</title>
+	<script type="text/javascript">
+  array = [0,1,2,3]
+  value = 5
     function pushFront(arr, value){
       for (var i = arr.length; i > 0; i -= 1){
         arr[i] = arr[i-1];
@@ -48,7 +52,6 @@
         return arr;
       }
 
-//does not work
     function swapArrayPairs2(arr){
       for (var i = arr.length; i >= 2; i-=2){
         var temp = arr[i-1];
@@ -83,24 +86,130 @@ function arrayRemoveDuplicates(arr) {
     return newarr;
 }
 
-    function reverseArray(){
+function removeDupes(arr){
+  var i = 0;
+  while (i < arr.length){
+    if (arr[i] === arr[i+1]){
+      removeAt(arr, i+1);
+    }
+    else {
+      i += 1;
+    }
+  }
+    return arr;
+  }
 
+function reverseArr(arr){
+  for (var i = 0; i < arr.length / 2; i += 1){
+    var temp = arr[i];
+    arr[i] = arr[arr.length - (i + 1)];
+    arr[arr.length - (i + 1)] = temp;
+  }
+  return arr;
+}
+
+//does not work
+  function reverseArray(arr){
+      for (var x=0; x<arr.length; x++){
+        for (var y=arr.length-1; y>0; y--){
+          if (arr[x] > arr[y]){
+            var temp = arr[x];
+            arr[x] = arr[y];
+            arr[y] = temp;
+          }
+          if (arr[y] > arr[x]){
+            var temp = arr[y];
+            arr[y] = arr[x];
+            arr[x] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+
+    function minToFront(arr){
+      var min = 0;
+      for (var i=0; i<arr.length; i+=1){
+        if (arr[i] < arr[min]){
+          min = i;
+        }
+      }
+      mini = arr[min];
+      for (var i=min; i>0; i-=1){
+        arr[i] = arr[i-1];
+      }
+      arr[0] = mini;
+      return arr;
     }
 
     function skylineHeights(){
+      var arr = [1,-1,7,3];
+      var newarr = [],
+      min = 0;
+      for (var i = 0; i < arr.length; i += 1){
+        if (arr[i] > min){
+          newarr.push(arr[i]);
+          min = arr[i];
+        }
+      }
+      return newarr;
+      }
 
+      function skylineHeights1(){
+        var arr = [1,-1,7,3];
+        var newarr = [],
+        min = 0;
+        for (var i = 0; i < arr.length; i += 1){
+          if (arr[i] < min){
+            arr.splice(i, 1);
+            min = arr[i];
+          }
+          if (arr[i] < 0){
+            arr.splice(i, 1);
+          }
+        }
+        return arr;
+        }
+
+    function filterRange(arr, min, max){
+      arr = [0,1,2,3,4];
+      max = 3;
+      min = 1;
+      for (var i = 0; i < arr.length; i += 1){
+        if (arr[i] > max){
+          arr.splice(i, 1);
+        }
+        if (arr[i] < min){
+          arr.splice(i, 1);
+        }
+      }
+      return arr;
     }
 
-    function filterRange(){
-
+    function removeBlanks(str) {
+    var str1 = ' ';
+    for (var i = 0; i < str.length; i += 1 ){
+      if (str[i] !== ' ' ){
+        str1 += str[i];
+        }
+      }
+      return str1;
     }
 
-    function removeBlanks(){
-
-    }
-
-    function acronyms(){
-
+    function acronyms(str){
+    str1 = '',
+    initial = true;
+    for (var i = 0; i < str.length; i += 1){
+      if (str[i] === " "){
+        initial = true;
+        continue;
+      }
+      if (initial) {
+        initial = false;
+        str1 += str[i];
+        }
+      }
+      return str1.toUpperCase();
     }
 
     function palindrome(){
@@ -108,7 +217,7 @@ function arrayRemoveDuplicates(arr) {
     }
 
     function bookIndex(){
-
+      
     }
 
     function parensValid(){
