@@ -6,17 +6,13 @@ app.secret_key = 'Its A Secret'
 
 @app.route('/')
 def index():
-    try:
-        session['gold']
-    except:
+    if 'gold' not in session:
         session['gold'] = 0
-    try:
-        session['activity']
-    except:
+    if 'activity' not in session:
         session['activity'] = []
-    # print "Gold: %d"%session['gold']
-    # print "Activities: %s"%session['activity']
     length = len(session['activity'])
+    print "Gold: %d"%session['gold']
+    print "Activities: %s"%session['activity']
     return render_template("index.html",length=length)
 
 @app.route('/process_money', methods=['POST'])
@@ -25,10 +21,10 @@ def process_gold():
     gold = data[request.form['building']]
     if gold > 0:
         session['activity'].append('earn')
-        session['activity'].append('Earned {} golds from the {}! ({})'.format(gold,str(request.form['building']), datetime.now().strftime('%Y/%m/%d %H:%M:%S')) )
+        session['activity'].append('Earned {} golds from the {}! ({})'.format(gold,str(request.form['building']), datetime.now().strftime('%Y/%m/%d %I:%M:%S %p')) )
     else:
         session['activity'].append('lost')
-        session['activity'].append('Entered a casino and lost %d golds... Ouch.. (%s)'%(gold, datetime.now().strftime('%Y/%m/%d %H:%M:%S')) )
+        session['activity'].append('Entered a casino and lost %d golds... Ouch.. (%s)'%(-gold, datetime.now().strftime('%Y/%m/%d %I:%M:%S %p')) )
     session['gold'] += data[request.form['building']]
     return redirect('/')
 
