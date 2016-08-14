@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Strings 2 Algorithms - Tim Knab</title>
+</head>
+<body>
+	<h1>isPalindrome(str)</h1>
+	<h4>Enter a word to be evaluated whether or not is a palindrome (true or false return)</h4>
+	<h4>str = 'asdfsfa'</h4>
+	<div id='output'></div>
+	<script>
+	
+	// Is Palindrome
+
+	// Create a function that, given an input string, returns a boolean whether the string is a palindrome (mirrored from beginning to end). Given "abba" or "racecar", return true. Given "Non", return false.
+
+	//  Compare from both sides toward center.
+	//  Fast-fail if inequal, else success.
+
+	//this answer came from the solutions section -- see full solution under /solutions for more advanced version of this palindrome function which removes spaces or characters, etc (allows us to evaluate multiple words)
+	function isPalindrome(str) {
+	    for (var idx = str.length - 1; idx >= str.length / 2; idx -= 1) {
+	        if (str[idx] != str[str.length - 1 - idx]) {
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+
+		str = "asdfsfa"
+
+
+	document.getElementById('output').innerHTML = isPalindrome(str);
+
+	</script>
+</body>
+</html>
+

@@ -3,13 +3,13 @@ def draw_stars(list):
 	for x in list:
 		if type(x) == str:	          
 			value = len(x);     					
-			new_list.append(x[0] * value)
+			print(x[0] * value)
 		elif type(x) == int:
 			value = x
-			new_list.append("*" * value)	  
-	print(new_list)
+			print("*" * value)	  
+	# print(new_list)
 
-a= ["the","quick","brown","fox","jumps"]
-b= [1,2,3,4,5,6,7]
+a= ["the","quick",8,"fox",12]
+b= [1,2,3,4,12,6,7]
 
-draw_stars(b);
+draw_stars(a)

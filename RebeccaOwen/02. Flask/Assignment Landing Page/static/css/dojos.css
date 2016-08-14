@@ -1,0 +1,58 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+14-July-2016
+Assignment: Contact Card
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    width: 960px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+#input,
+#cards {
+    width: 460px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+article {
+    height: 100px;
+    max-width: 400px;
+    border: 2px solid #808080;
+    margin-bottom: 20px;
+    overflow: auto;
+    background-color: #CCF6FF;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+span {
+    font-weight: 200;
+}
+
+form {
+    width: 400px;
+
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
