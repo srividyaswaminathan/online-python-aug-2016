@@ -16,39 +16,34 @@ def result():
     name_regex = re.compile('^[A-Za-z\s]+$')
     user_data = request.form
     invalid = False
-    name = False
-    comment = False
     style = 'border:2px solid red'
     if len(''.join(user_data['username'].split(' '))) < 1:
         invalid = True
-        name = True
-        flash("Name field cannot be blank!","name_error")
-    if not name_regex.match(user_data['username']) and user_data['username'] != '':
-        invalid = True
-        name = True
-        flash("Invalid input! Contains non-letter character.","name_error")
-    if len(''.join(user_data['comment'].split(' '))) > 120:
-        invalid = True
-        comment = True
-        flash("No more than 120 characters!","comment_error")
-    if len(''.join(user_data['comment'].split(' '))) < 1:
-        invalid = True
-        comment = True
-        flash("Comment field cannot be blank!","comment_error")
-    if name:
         session['name'] = style
+        flash("Name field cannot be blank!","name_error")
+    elif not name_regex.match(user_data['username']) and user_data['username'] != '':
+        invalid = True
+        session['name'] = style
+        flash("Invalid input! Contains non-letter character.","name_error")
     else:
         session['name'] = ''
-    if comment:
+
+    if len(''.join(user_data['comment'].split(' '))) > 120:
+        invalid = True
         session['comment'] = style
+        flash("No more than 120 characters!","comment_error")
+    elif len(''.join(user_data['comment'].split(' '))) < 1:
+        invalid = True
+        session['comment'] = style
+        flash("Comment field cannot be blank!","comment_error")
     else:
         session['comment'] = ''
+
     if invalid:
         return redirect('/')
 
     session.pop('name')
     session.pop('comment')
-    # print user_dat
     return render_template("process.html",data=user_data)
 
 if __name__ == '__main__':
