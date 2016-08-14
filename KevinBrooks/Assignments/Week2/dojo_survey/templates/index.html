@@ -13,11 +13,18 @@
 </head>
 <body>
 	<div id="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                <p class="messages">{{message}}</p>
+              {% endfor %}
+            {% endif %}
+        {% endwith %}
 		<form action="result" method='post'>
             <span>Your Name: </span><input type='text' id='name' name='name' value='{{ name }}'>
             <span>Dojo Location: </span><select id='dojo_location' name='dojo_location' value='{{ location }}'></select>
             <span>Favorite Language: </span><select id='fav_lang' name='fav_lang' value='{{ language }}'></select>
-            <span>Comment (optional):</span>
+            <span>Comment :</span>
             <textarea name='comments' rows='4' cols='40' >{{ comments }}</textarea>
             <input type='submit' id="submit_survey" text='Submit'>
         </form>
