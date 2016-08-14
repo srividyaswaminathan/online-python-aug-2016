@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+14-August-2015
+Python > Flask > Assignment: Disappearing Ninja
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Assignment: Disappearing Ninja">
+        <title>Assignment: Disappearing Ninja</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <img src="{{ url_for('static', filename=session['img'] ) }}" alt="{{color}}">
+        </div>
+    </body>
+</html>
