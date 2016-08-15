@@ -18,6 +18,12 @@ body *{
 		border: 2px solid;
 	}
 
+		.messages{
+			color: red;
+			width: 200px;
+			margin: 0px auto;
+		}
+
 		#container div{
 			margin-left: 20px;
 		} 
