@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='This is a great number game! I am thinking of a number between 1 and 100. Take a guess!'>
+	<title>Great Number Game</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='../static/styles/style.css'>
+</head>
+<body>
+	<div id='container'>
+		<h1 class='text-center text-primary'>Welcome to the Great Number Game!</h1>
+		<h3 class='text-center text-info'>I am thinking of a number between 1 and 100</h3>
+		<h3 class='text-center text-info'>Take a guess!</h3>
+		<div class='text-center green'>
+			<div>
+				<h1>{{ session['guess'] }} was the number!</h1>
+				<form action='/guess' method='post'>
+				<!-- I would get an error: "BAD REQUEST: the browser (or proxy sent a request that this server could not understand."") if I didn't include the input below, name='guess'. -->
+					<input type='hidden' name='guess' value='{{ session["guess"] }}'>
+					<input type='hidden' name='action' value='replaying'>
+					<input class='btn btn-primary' type='submit' value='Play Again'>
+				</form>			
+			</div>
+		</div>
+	</div>
+</body>
+</html>

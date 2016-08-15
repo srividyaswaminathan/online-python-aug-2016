@@ -1,0 +1,14 @@
+* {
+	font: arial;
+	color: blue;
+
+}
+
+p {
+	color: blue;
+}
+
+form, select, input {
+	display: block;
+	margin: 10px
+}	

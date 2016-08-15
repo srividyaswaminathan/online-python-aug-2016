@@ -1,0 +1,88 @@
+<!-- Arrays Day 4 Algorithm Challenges - solutions written as Javascript within this .html file - Tim Knab, August 2016 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays Day 4</title>
+</head>
+<body>
+	<h1>Skyline Heights</h1>
+	<h4>filters any negative values in the array for buildings out of sight.</h4>
+	<h4>original array: [-1,1,7,5,-1]</h4>
+	<div id='output-1' style='overflow-wrap: break-word;'></div>
+
+	<h1>Filter Range</h1>
+	<h4>filters our array for values between 8 and 10</h4>
+	<h4>original array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</h4>
+	<div id='output-2' style='overflow-wrap: break-word;'></div>
+
+
+	<script>
+	// ###Skyline Heights
+
+	// From lovely Burbank you have a breathtaking view of the Los Angeles skyline. Let’s say you are given an array with heights of consecutive buildings, starting closest to you and extending directly away. Array `[-1,7,3]` would represent three buildings: first is actually out of view below street level, behind it is second at 7 stories high, third is 3 stories high (hidden behind the 7-story). You are situated at street level. Return array containing heights of buildings you can see, in order. Given `[1,-1,7,3]` return `[1,7]`.
+
+	// my solution:
+	function skylineHeights(arr) {
+		var iSee = [];  // create empty array
+		for (var i = 0; i < arr.length; i++){  // loop through our array
+			if ( arr[i] >= 0 ) {  // if value is less than or equal to 0
+				iSee.push(arr[i]); // push that value to our new array
+			};
+		};
+		return iSee; // return our new array
+	};
+
+	var arr = [-1,1,7,5,-1];
+
+
+	document.getElementById('output-1').innerHTML = skylineHeights(arr);
+
+
+
+
+
+	// ###Filter Range
+
+	// Alan is good at breaking secret codes. One tool is to eliminate numbers he knows are outside a certain specific range. Given `array` and values `min` and `max`, remove array values between min and max. Work in-place: return the array you are given, with values in original order. No built-in array functions.
+	
+
+	// Feedback notes: I struggled a bit with this example, as my personal algorithm was hitting some confused output. After examining the official answer (algorithm below), I was able to fully understand what's going on here.
+
+	// note the following function is used within filterRange() below and is from daily assignments.
+	function removeAt(arr, idx){
+		if ( idx >= arr.length ) { return null; }  // if idx is greater than the array don't return anything
+		var valToReturn = arr[idx];  // create a variable to store our value temporarily (so we can return it)
+		for (var i = idx; i < arr.length; i += 1) {  // overwrite the array from idx to end
+			arr[i] = arr[i + 1];  // note one extra space at end of array will be added which we'll remove
+		}
+		arr.length = arr.length - 1;  // remove extra value at end of array (not in our original array)
+		return valToReturn;  // return value we are removing or popping (not officially popping but quite similar)
+	};
+
+
+	// solution 
+	function filterRange(arr, min, max) {
+		var i = 0;		// create variable i so we can loop through our array
+		while ( i < arr.length) {		// while i is less than length of array do the following:
+		   	if (arr[i] < min || arr[i] > max) {		// if array value for i is less than min or greater than max do the following:
+		    	removeAt(arr, i);  // run our removeAt() function above for the parameters (arr, i)
+		    } else {	// if the value is not less than min and not greater than max
+		      	i += 1;		// just increase the counter and keep going through the loop
+		    };
+		};
+		return arr;  // return our newly adjusted array
+	};
+	
+
+	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+	document.getElementById('output-2').innerHTML = filterRange(arr, 8, 10);
+
+
+
+
+	</script>
+</body>
+</html>

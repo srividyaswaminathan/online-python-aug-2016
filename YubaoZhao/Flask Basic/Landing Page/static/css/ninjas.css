@@ -1,0 +1,48 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: arial;
+	background-color: #eee;
+}
+h1 {
+	font-size: 1.5em;
+	margin: 20px 0 0 50px;
+}
+h1 a {
+	text-decoration: none;
+	color: grey;
+	border: 2px solid grey;
+	border-radius: 10px;
+	padding: 2px 30px;
+}
+h1 a:hover {
+	color: white;
+	border: 2px solid white;
+	background-color: grey;
+}
+#ninja {
+	margin: 10px 0 0 600px;
+}
+div {
+	width: 750px;
+	margin: 0 auto;
+}
+	div img {
+		margin: 0 40px;
+	}
+	span {
+		font-size: 2em;
+		font-weight: bold;
+		color: #4e5358;
+	}
+	span#yellow {
+		margin-left: 100px;
+		display: none;
+	}
+	span#black {
+		margin-left: 445px;
+		display: none;
+	}

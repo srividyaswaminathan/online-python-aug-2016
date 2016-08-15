@@ -1,0 +1,37 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: arial;
+	color: white;
+	background-color: grey;
+	opacity: 0.7;
+}
+div {
+	width: 800px;
+	margin: 150px auto 50px auto;
+}
+	h1 {
+		font-size: 3.5em;
+	}
+h2 {
+	font-size: 2.5em;
+	margin-left: 420px;
+}
+	a {
+		color: grey;
+		text-decoration: none;
+		border: 5px solid grey;
+		background-color: white;
+		border-radius: 50px;
+		padding: 5px 40px;
+		margin: 0 60px;
+	}
+	a:hover {
+		color: white;
+		border: 5px solid white;
+		background-color: grey;
+		box-shadow: 4px 8px #4e5358;
+	}

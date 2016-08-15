@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="Flask Fundamentals">
+	<title>Dojo survey Index</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<img src="{{ url_for('static', filename='img/codingdojo.png') }}" alt="logo">
+	<form action="/result" method="post">
+		<label>Your Name:
+			<input size="16" class="info" type="text" name="username">
+		</label>
+		<label>Dojo Location:
+			<select style="width:238px;margin-left:52px" class="info" name="location">
+				<option value="Seattle">Seattle</option>
+				<option value="Silicon Valley">Silicon Valley</option>
+				<option value="Los Angeles">Los Angeles</option>
+				<option value="Dallas">Dallas</option>
+				<option value="Washington D.C.">Washington D.C.</option>
+				<option value="Chicago">Chicago</option>
+			</select>
+		</label>
+		<label>Favorite Language:
+			<select style="width:238px" class="info" name="language">
+				<option value="Javascript">Javascript  </option>
+				<option value="Python">Python</option>
+				<option value="Objective-C">Objective-C</option>
+				<option value="Perl">Perl</option>
+				<option value="Ruby">Ruby</option>
+				<option value="Swift">Swift</option>
+			</select>
+		</label>
+		<label>Comment(optional):
+			<textarea class="info" name="comment" rows="4" cols="47" placeholder="Your comments here!"></textarea>
+		</label>
+		<input id="submit" type="submit" value="Submit">
+	</form>
+</body>
+</html>

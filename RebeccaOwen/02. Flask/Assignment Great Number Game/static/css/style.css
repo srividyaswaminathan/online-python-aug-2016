@@ -1,0 +1,74 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+11-August-2015
+Python > Flask > Assignment Great Number Game
+*/
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    width: 450px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+p,
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+span {
+    font-weight: 600;
+}
+
+form {
+    text-align: center;
+}
+input {
+    width: 165px;
+    display: block;
+    margin: 5px auto;
+}
+
+input:first-child {
+    width: 161px;
+}
+
+.wrong,
+.right {
+    width: 175px;
+    height: 175px;
+    color: white;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.right {
+    background-color: green;
+}
+
+.wrong h2 {
+    padding-top: 75px;
+    padding-bottom: 40px;
+}
+
+.right h2 {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
