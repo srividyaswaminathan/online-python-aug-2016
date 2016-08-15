@@ -69,15 +69,14 @@ body {
         box-shadow: 1px 1px 2px grey;
         margin-top: 10px;
     }
+        #activity p{
+            padding: 5px 15px;
+        }
         #earn {
             color: green;
-            /*font-weight: bold;*/
-            padding: 5px 15px;
         }
         #lost {
             color: red;
-            /*font-weight: bold;*/
-            padding: 5px 15px;
         }
     a {
         font-size: 1em;

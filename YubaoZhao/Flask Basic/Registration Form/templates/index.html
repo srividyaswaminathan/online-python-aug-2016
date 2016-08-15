@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Flask Fundamentals">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="/register" method="post">
+        <label for="first">First Name<b>*</b></label>
+        <label for="last">Last Name<b>*</b></label>
+        <input type="text" name="first_name" id="first" style="{{session['first']}}">
+        <input type="text" name="last_name" id="last" style="{{session['last']}}">
+        <label for="email">Email Address<b>*</b></label>
+        <input type="text" name="email" id="email" placeholder="ex: name@example.com" style="{{session['email']}}">
+        <p><span>i</span> Passwords must be at least 8 characters in length and contain at least one uppercase letter and one number.</p>
+        <label for="pw">Password<b>*</b></label>
+        <input type="password" name="password" id="pw" style="{{session['pw']}}">
+        <label for="confirm_pw">Confirm Password<b>*</b></label>
+        <input type="password" name="confirm_password" id="confirm_pw" style="{{session['confirm_pw']}}">
+        <p><b>*</b> Required fields</p>
+        <input id="submit" type="submit" value="Register">
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  		{% if messages %}
+	    	{% for category, message in messages %}
+				<p class="error" id='{{ category }}'>{{ message }}</p>
+	    	{% endfor %}
+  		{% endif %}
+	{% endwith %}
+    <h3 id="msg">{{ msg }}</h3>
+</body>
+</html>
