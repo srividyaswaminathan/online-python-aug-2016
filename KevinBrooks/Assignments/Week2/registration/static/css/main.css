@@ -1,0 +1,69 @@
+body *{
+	margin: 0px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	h1{
+		font-size: 1.2em;
+		text-decoration: underline;
+	}
+
+	p{
+		width: 160px;
+	}
+
+	form{
+		display: inline-block;
+		border: 1px solid;
+		padding: 10px;
+		width: 400px;
+		height: 150px;
+	}
+
+	input{
+		display: inline-block;
+		float: right;
+	}
+
+	span{
+		display: block;
+		margin-bottom: 6px;
+	}
+
+	#container{
+		height: 250px;
+		width: 500px;
+	}
+
+		.reg_type{
+			float: none;
+		}
+
+		.radios{
+			display: inline-block;
+			padding: 0px 10px 0px 10px;
+
+		}
+
+		.messages{
+			color: red;
+			width: 400px;
+			margin: 0px auto;
+		}
+
+		.buttons{
+			display: block;
+			margin-left: 220px;
+			border: 0px none;
+			color: white;
+			height: 30px;
+			width: 80px;
+			background-color: blue;
+			font-size: 1em;
+			font-weight: bold;
+		}
+			
+		#span_radios{
+			margin-left: 45px;
+		}

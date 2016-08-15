@@ -49,8 +49,8 @@
         </div>
         <b>Activities</b>
         <div id="activity">
-            {% for idx in range(0,length,2) %}
-                <p id="{{session['activity'][idx]}}">{{session['activity'][idx+1]}}</p>
+            {% for data in session['activity'] %}
+                <p id="{{ data.status }}">{{ data.log }}</p>
             {% endfor %}
         </div>
         <a href="/reset">Reset</a>

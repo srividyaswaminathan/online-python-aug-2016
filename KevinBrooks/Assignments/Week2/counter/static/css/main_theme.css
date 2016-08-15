@@ -1,0 +1,25 @@
+body *{
+	margin: 0px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	#container{
+		border: 2px solid;
+		width: 200px;
+		text-align: center;
+	}
+
+	form{
+		width: 200px;
+		padding: 10px 0px 0px 20px;
+	}
+
+		form input{
+			border: 0px;
+			height: 30px;
+			width: 90px;
+			color: white;
+			background-color: blue;
+			font-weight: bold;
+		}

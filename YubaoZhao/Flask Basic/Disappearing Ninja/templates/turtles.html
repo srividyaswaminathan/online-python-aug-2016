@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disappearing Ninja</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    {% for pic in ninja.values() %}
+        <img src="../static/img/{{ pic }}">
+    {% endfor %}
+</body>
+</html>
