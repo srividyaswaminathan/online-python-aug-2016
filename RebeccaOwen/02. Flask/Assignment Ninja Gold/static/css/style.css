@@ -1,0 +1,65 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+13-August-2015
+Python > Flask > Assignment Ninja Gold
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    width: 810px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+form {
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px 5px;
+}
+
+input {
+    width: 175px;
+    display: block;
+    margin: 5px auto;
+}
+
+#activities div {
+    overflow: auto;
+    height: 100px;
+    border: 2px solid black;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+#forms,
+#score,
+#activities {
+    margin-bottom: 10px;
+}
+
+#score div {
+    margin-left: 10px;
+    width: 200px;
+    border: 2px solid black;
+    display: inline-block;
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
