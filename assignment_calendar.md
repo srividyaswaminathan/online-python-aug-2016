@@ -2,7 +2,7 @@
 
 ## Week 1: Python Fundamentals (8/1/16)
 
-| Assignments to Push to Repository (For answersheets, please see the [Learning Platform (http://www.learn.codingdojo.com))
+| Assignments to Push to Repository (For answersheets, please see the [Learning Platform] (http://www.learn.codingdojo.com))
 ---
 Multiples |
 Sum List |
