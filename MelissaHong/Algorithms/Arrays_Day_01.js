@@ -8,8 +8,8 @@ function push_front(arr, value){
 	return arr;
 	}
 
-/* function pushFront(arr, value){ 
-Solution #1  
+/* function pushFront(arr, value){
+Solution #1
  Create a new array with value in first position
   var newArr = [value];
  Iterate through given array, pushing vals in order
@@ -56,7 +56,7 @@ Once we're done looping, paste given value into 0 location
   	return arr;
 */
 
-//Pop Front 
+//Pop Front
 //Given array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop().
 
 function pop_front(arr){
@@ -70,7 +70,7 @@ function pop_front(arr){
 
 
 
-//Insert At 
+//Insert At
 //Given array, index, and additional value, insert the value into array at given index. You can think of PushFront(arr,val) as equivalent to InsertAt(arr,0,val).
 
 function insert_at(arr, index, value){
@@ -80,4 +80,3 @@ function insert_at(arr, index, value){
 	arr[index]=value;
 	return arr;
 }
-
