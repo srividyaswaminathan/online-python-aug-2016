@@ -1,0 +1,21 @@
+* {
+	font-family: sans-serif;
+	
+}
+
+#form {
+	width: 970px;
+	margin: 0px auto;
+	border: 1px solid black;
+}
+h2 {
+	margin:10px;
+	text-align: center
+}
+form,label, option, textarea {
+	display: block;
+	margin: 10px;
+}
+input {
+	margin: 10px;
+} 
