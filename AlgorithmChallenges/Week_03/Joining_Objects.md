@@ -1,4 +1,4 @@
-##Joining objects
+##Joining objects ([Solution](JoiningObjects.js))
 
 This is an excellent challenge to get you ready for database concepts!
 

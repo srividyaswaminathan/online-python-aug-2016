@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+13-August-2015
+Python > Flask > Assignment Ninja Gold
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Assignment Ninja Gold">
+        <title>Assignment Ninja Gold</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="score">
+                <h3>Your Gold: <div>{{session['score']}}</div></h3>
+            </div>
+            <div id="forms">
+                <form action="/process_money" method="post">
+                    <h2>Farm</h2>
+                    <p>(earns 10-20 golds)</p>
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+                <form action="/process_money" method="post">
+                    <h2>Cave</h2>
+                    <p>(earns 5-10 golds)</p>
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+                <form action="/process_money" method="post">
+                    <h2>House</h2>
+                    <p>(earns 2-5 golds)</p>
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+                <form action="/process_money" method="post">
+                    <h2>Casino</h2>
+                    <p>(earns/takes 0-50 golds)</p>
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div id="activities">
+                <h3>Activities:</h3>
+                <div>
+                    {% for msg in session['msg']: %}
+                    <p class={{msg.color}}>{{msg.message}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <a href="/reset"><button>Reset Game</button></a>
+        </div>
+    </body>
+</html>

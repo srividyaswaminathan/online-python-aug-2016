@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <meta name="description" content="Ninja Gold Game">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_theme.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+		<span>Your Gold:</span><span id="your_gold" >{{ gold }}</span>
+        <div id="div_options">
+            <form action="/process_money" method="post">
+                <h2>Farm</h2>
+                <p>(earns 10-20 gold)</p>
+                <input type="submit" name="farm" value="Find Gold!">
+            </form>
+            <form action="/process_money" method="post">
+                <h2>Cave</h2>
+                <p>(earns 5-10 gold)</p>
+                <input type="submit" name="cave" value="Find Gold!">
+            </form>
+            <form action="/process_money" method="post">
+                <h2>House</h2>
+                <p>(earns 2-5 gold)</p>
+                <input type="submit" name="house" value="Find Gold!">
+            </form>
+            <form action="/process_money" method="post">
+                <h2>Casino</h2>
+                <p>(earns/takes 0-50 gold)</p>
+                <input type="submit" name="casino" value="Find Gold!">
+            </form>
+        </div>
+        <span>Activities:</span>
+        <div id="div_activities">
+            {{ activities }}
+        </div>
+	</div>
+</body>
+</html>

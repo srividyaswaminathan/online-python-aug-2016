@@ -2,30 +2,35 @@
 
 ## Week 1: Python Fundamentals (8/1/16)
 
-| Assignments to Push to Repository
+| Assignments to Push to Repository (For answersheets, please see the [Learning Platform] (http://www.learn.codingdojo.com))
 ---
-[Multiples](Solutions/Fundamentals/multiples.py) |
-[Sum List](Solutions/Fundamentals/sum_list.py) |
-[Average List](Solutions/Fundamentals/average_list.py) |
-[Scores and Grades](Solutions/Fundamentals/scores_grades.py) |
-[Coin Tosses](Solutions/Fundamentals/coin_tosses.py) |
-[Names](Solutions/Fundamentals/names.py) |
-[Stars](Solutions/Fundamentals/stars.py) |
+Multiples |
+Sum List |
+Average List |
+Scores and Grades |
+Coin Tosses |
+Names |
+Stars |
 
 | Optional Assignments
 ---
-[Crawler](Solutions/Fundamentals/crawler.py) |
-[CSV](Solutions/Fundamentals/csv.py) |
+Crawler |
+CSV |
 
 ## Week 2: Flask Basics
 
 | Assignments to Push to Repository
 ---
-[Landing Page](Solutions/Flask Basics/Landing Page)  (Monday, Aug. 8)|
-[Dojo Survey](Solutions/Flask Basics/Dojo Survey) |
-[Counter](Solutions/Flask Basics/Counter) |
-[Great Number Game](Solutions/Flask Basics/Great Number Game) |
-**Ninja Gold** (Thursday, Aug. 11) **IMPORTANT** |
+Landing Page (Monday, Aug. 8)|
+Dojo Survey |
+Counter |
+Great Number Game |
+**Ninja Gold** **IMPORTANT** |
 Dojo Survey w/ Validation |
 Registration Form |
 Disappearing Ninja |
+
+## Week 3: MySQL
+
+| Assignments to Push to Repository
+---

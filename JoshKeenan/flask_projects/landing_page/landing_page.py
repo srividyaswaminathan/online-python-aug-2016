@@ -12,7 +12,7 @@ def ninjas():
     return render_template('ninjas.html')
 
 
-@app.route('/dojos')
+@app.route('/dojos/new')
 def dojos():
     return render_template('dojos.html')
 

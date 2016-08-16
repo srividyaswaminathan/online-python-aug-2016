@@ -8,28 +8,26 @@
 	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/style.css") }}'>
 </head>
 <body>
-	<div id='container'>
-		<div class='row'>
-			<div class='col-md-4'></div>
-			<div class='col-md-4'>
-				<h1 class='text-primary text-center'>Submitted Info</h1>
-				<div class='col-md-6'>
-					<p class='identifier'>Name:</p>
-					<p class='identifier'>Email:</p>
-					<p class='identifier'>Dojo Location:</p>
-					<p class='identifier'>Favorite Language:</p>
-					<p class='identifier'>Comment:</p>
-				</div>
-				<div class='col-md-6'>
-					<p>{{ my_name }}</p>
-					<p>{{ my_email }}</p>
-					<p>{{ my_location }}</p>
-					<p>{{ my_language }}</p>
-					<p>{{ my_comments }}</p>
-				</div>
-				<a class='btn btn-primary' href='/'>Go Back!</a>
+	<div id='container' class='text-center'>
+		<div class='inline outline text-left'>
+			<h1 class='text-primary text-center'>Submitted Info</h1>
+			<div class='inline'>
+				<p>Name:</p>
+				<p>Email:</p>
+				<p>Dojo Location:</p>
+				<p>Favorite Language:</p>
+				<p>Comment:</p>
 			</div>
-			<div class='col-md-4'></div>
+			<div class='inline'>
+				<p>{{ my_name }}</p>
+				<p>{{ my_email }}</p>
+				<p>{{ my_location }}</p>
+				<p>{{ my_language }}</p>
+				<p>{{ my_comments }}</p>
+			</div>
+			<div>		
+				<a id='submit' class='btn btn-primary' href='/'>Go Back!</a>
+			</div>
 		</div>
 	</div>
 </body>
