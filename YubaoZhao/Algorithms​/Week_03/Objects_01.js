@@ -99,20 +99,12 @@ function innerJoin(users,books,usersHaveBooks) {
 
 console.log(innerJoin(users,books,usersHaveBooks));
 
-
-
-// object = {
-//   id:1,
-//   user_id:2,
-//   book_id:2,
-//   created_at:'2012-12-31 23:59:59',
-//   updated_at:'2012-12-31 23:59:59'
-// }
-// function leftJoin(object,users,books,usersHaveBooks) {
-//     if(object['book_title'] != undefined) return books;
-//     if(object['first_name'] != undefined) return users;
-//     if(object['user_id'] != undefined) return usersHaveBooks;
-//     return console.log("Nothing!");
-// };
-//
-// console.log(leftJoin(object,users,books,usersHaveBooks));
+function leftJoin(array1,array2,array3) {
+    var array = [];
+    for(var idx = 0; idx < array1.length; idx++) {
+        array[idx] = [];
+        array[idx].push(array1[idx]);
+    }
+    return array;
+};
+console.log(leftJoin(usersHaveBooks,books,users));
