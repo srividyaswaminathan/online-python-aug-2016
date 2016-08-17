@@ -286,13 +286,51 @@ function reverseArr(arr){
   return indexStr;
 }
 
-    function parensValid(){
-
+    function parensValid(str){
+			var num = 0;
+			for (var i = 0; i < str.length; i++){
+				if (str[i] == '('){
+					num++;
+				}
+				if (str[i] == ')'){
+					num--;
+				}
+				if ((num) < 0){
+					return false;
+				}
+			}
+			return (num === 0);
     }
 
-    function joiningObjects(){
-
+    function innerJoin(){
+			{
+			  id: 'a unique number',
+			  first_name: 'a first name',
+			  last_name: 'a last name',
+			  created_at:'datetime',
+			  updated_at:'datetime'
+			}
+			{
+			  id: 'a unique number',
+			  book_title: 'a title',
+			  book_subject: 'a description',
+			  created_at:'datetime',
+			  updated_at:'datetime'
+			}
+			{
+			  id:'a unique number',
+			  user_id:'a number that exists in the id column of the users array',
+			  book_id:'a number that exists in the id column of books array',
+			  created_at:'datetime',
+			  updated_at:'datetime'
+			}
     }
+
+		function zipArrays():
+		 	arr1 = ['abc', 3, 'yo']
+			arr2 = [42, 'wassup', true]
+
+			//return {'abc': 42, 3: 'wassup', 'yo': true} 
   </script>
 </head>
 <body>
