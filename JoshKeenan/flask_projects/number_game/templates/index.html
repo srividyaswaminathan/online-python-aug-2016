@@ -14,10 +14,9 @@
     <div id="color_square" class="{{data['color']}}"><span id="data_text">{{data['accuracy']}}</span></div>
     <form action="/" method="post">
         <input type="number" name="guess">
-        <input type="submit" name="submit"> 
-        {% if data['correct']%}
+        <input type="submit" name="submit"> {% if data['correct']%}
         <form action="/reset">
-            <input type="submit" value="Reset"/>
+            <input type="submit" value="Reset" />
         </form>
         {% endif %}
     </form>

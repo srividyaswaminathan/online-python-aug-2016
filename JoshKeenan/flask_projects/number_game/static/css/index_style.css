@@ -13,18 +13,20 @@
     font-weight: bold;
     text-align: center;
 }
-#container form{
-	text-align: center;
-}
-#color_square {
-	width: 300px;
-	height: 300px;
-	text-align: center;
-}
-#data_text{
-	line-height: 280px;
+
+#container form {
+    text-align: center;
 }
 
+#color_square {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+
+#data_text {
+    line-height: 280px;
+}
 
 .red {
     background-color: red;
