@@ -86,6 +86,7 @@ Parens Valid
 
 Create a function that, given an input string str, returns a boolean whether parentheses in str are valid. Valid sets of parentheses always open before they close, for example. For "Y(3(p)p(3)r)s", return true. Given "N(0(p)3", return false: not every parenthesis is closed. Given "N(0)t )0(k", return false.
 
+
 Joining objects
 
 This is an excellent challenge to get you ready for database concepts!
@@ -205,3 +206,12 @@ var books = [
   updated_at:'2015-01-12 23:59:59'
   },
 ]
+
+Zip Arrays into Map
+
+Associative arrays are sometimes called maps because a key (string) maps to a value. Given two arrays, create an associative array (map) containing keys of the first, and values of the second. For arr1 = ["abc", 3, "yo"] and arr2 = [42, "wassup", true], return {"abc": 42, 3: "wassup", "yo": true}.
+
+Most Repeated Character
+
+Given a string, return the character that's used most often, along with the number of times it's repeated.
+Contact GitHub API Training Shop Blog About
