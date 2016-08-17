@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Great Number Game</title>
+    <meta name="description" content="Guess the number I'm thinking of.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_theme.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+		<h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <form id="frm_replay" name="frm_replay" action="/" style="display: {{ replay_visible }};">
+            <h2>{{ number }} was the number!</h2>
+            <input name="btn_play" type="submit" id="btn_play" value="Play Again!" class="buttons">
+        </form>
+        <div id="div_feedback" style="display: {{ feedback_visible }};">
+            <h2>Too {{ high_low }}!</h2>
+        </div>
+        <form action="/" method="post" id="frm_guess" onsubmit="return validate_number()" style="display: {{ guess_visible }};">
+            <p id="message"></p>
+            <input name="txt_guess" type="text" id="txt_guess" placeholder="Enter number here.">
+            <input name="btn_submit" type="submit" id="btn_guess" value="Guess" class="buttons">
+        </form>
+	</div>
+    
+</body>
+</html>

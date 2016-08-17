@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+</head>
+<body>
+	<div id="container">
+        <form action="/" method='post'>
+            <h1>Thank you for registering!</h1>
+            <ul id="data">
+                <li>Name: <p> {{ first_name }} {{ last_name }}</p></li>
+                <li>Type: <p> {{ sel_type }}</p></li>
+            </ul>
+            <input type='hidden' id='name' name='name' value='{{ name }}'>
+            <input type='hidden' id='dojo_location' name='dojo_location' value='{{ location }}'>
+            <input type='hidden' id='fav_lang' name='fav_lang' value='{{ language }}'>
+            <input type='hidden' id='comments' name='comments' value='{{ comments }}'>
+            <input type='submit' id="go_back" value='Go Back'>
+        </form>
+	</div>
+</body>
+</html>
