@@ -32,5 +32,13 @@ Disappearing Ninja |
 
 ## Week 3: MySQL
 
-| Assignments to Push to Repository
+| Assignments to Push to Repository (Please don't push the actual database...)
 ---
+Books |
+Blogs |
+User Dashboard |
+Normalization |
+**MySQL Countries** **IMPORTANT** |
+**Sakila** **IMPORTANT** |
+Friendships |
+SQLZoo |
