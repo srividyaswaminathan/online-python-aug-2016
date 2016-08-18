@@ -46,7 +46,7 @@
             </div>
         </div>
         <h6>Activities:</h6>
-        <div id ="textarea">{% for counter in range(0, session['counter']) %}
+        <div id="textarea">{% for counter in range(0, session['counter']) %}
             <li class={{ session[ "text_color"][counter] }}>{{ session['activities'][counter]}}</li>
             {% endfor %}
         </div>
