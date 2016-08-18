@@ -1,0 +1,48 @@
+* {
+    margin: 0px auto;
+    font-family: "tahoma";
+}
+
+#container {
+    width: 500px;
+    height: 500px;
+    background-color: gainsboro;
+}
+
+#container p {
+    font-weight: bold;
+    text-align: center;
+}
+
+#container form {
+    text-align: center;
+}
+
+#color_square {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+
+#data_text {
+    line-height: 280px;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.white {
+    background-color: white;
+}
+
+.green {
+    background-color: green;
+    color: white;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
