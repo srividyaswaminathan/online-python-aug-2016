@@ -2,8 +2,8 @@
 
 SELECT YEAR(charged_datetime) AS year, MONTHNAME(charged_datetime) AS month, SUM(amount) AS total_revenue
 FROM billing
-WHERE YEAR(charged_datetime) = 2012 AND MONTHNAME(charged_datetime) = 'march'
-GROUP BY charged_datetime;
+WHERE charged_datetime BETWEEN '2012-03-01' AND '2012-03-31'
+;
 
 2.What query would you run to get total revenue collected from the client with an id of 2?
 
@@ -11,9 +11,8 @@ SELECT client_id, SUM(amount) AS total_revenue
 
 FROM billing
 
-WHERE client_id = 2
+WHERE client_id = 2;
 
-GROUP BY client_id;
 
 3.What query would you run to get all the sites that client=10 owns?
 
@@ -41,6 +40,7 @@ FROM leads
 JOIN sites ON sites.site_id = leads.site_id
 
 WHERE registered_datetime BETWEEN '2011-01-01' AND '2011-02-15'
+
 GROUP BY leads.site_id
 
 ORDER BY registered_datetime;
