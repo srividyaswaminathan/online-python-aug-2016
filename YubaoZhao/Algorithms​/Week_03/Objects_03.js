@@ -8,8 +8,8 @@ function mostRepeatedChar(str) {
         mostRepeated = {},
         max = 0;
     for(var i = 0; i < str.length; i++) {
-        if(char[str[i]] == undefined) char[str[i]] = 1;
-        else char[str[i]] += 1;
+        if(char[str[i]]) char[str[i]] += 1;
+        else char[str[i]] = 1;
     }
     // console.log(char);
     for(var item in char) {
