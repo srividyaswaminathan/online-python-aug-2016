@@ -1,20 +1,27 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash, session
 app = Flask(__name__)
-# our index route will handle rendering our form
+app.secret_key = "KeepitSecret"
+
 @app.route('/')
 def index():
-  return render_template("index.html")
-# this route will handle our form submission
-# notice how we defined which HTTP methods are allowed by this route
+    return render_template("index.html")
+
 @app.route('/result', methods=['POST'])
 def create_user():
-   return render_template("result.html", name=request.form['name'], location=request.form['location'],language=request.form['language'], optional=request.form['optional'])
    print "Got Post Info"
-   # we'll talk about the following two lines after we learn a little more
-   # about forms
-   name = request.form['name']
-   location = request.form['location']
-   language = request.form['language']
-   optional = request.form['optional']
+   session['name'] = request.form['name']
+   session['location'] = request.form['location']
+   session['language'] = request.form['language']
+   session['optional'] = request.form['optional']
+   if len(request.form['name']) < 1:
+       flash("Name cannot be empty!")
+       return redirect('/')
+   if len(request.form['optional']) < 1:
+       flash("Comment field cannot be empty!")
+       return redirect('/')
+   if len(request.form['optional']) > 120:
+       flash("Maximum number of characters is 120.")
+       return redirect('/')
+   return render_template("result.html")
 
-app.run(debug=True) # run our server
+app.run(debug=True)

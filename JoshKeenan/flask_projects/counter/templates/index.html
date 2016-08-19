@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename=" css/index_style.css ")}}">
+    <title>Counter</title>
+</head>
+
+<body>
+    <div id="container">
+        <h4>Counter:</h4>
+        <h6>The number below represents the number of times you have visited this page utilizing a cookie stored with session.</h6>
+        <h3>{{session['counter']}}</h3>
+        <form action='/'>
+            <button>Reload</button>
+        </form>
+        <form action='/reset' method="post">
+            <button>Reset</button>
+        </form>
+    </div>
+</body>
+
+</html>
