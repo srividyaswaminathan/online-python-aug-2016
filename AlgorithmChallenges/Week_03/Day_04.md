@@ -1,4 +1,4 @@
-##Objects Day 4
+##Objects Day 4 ([Solution](Day_04.js))
 
 ###How many items?
 Given an object, `return` the number of items in the object. For example, given:
