@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Counter</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<body>
+		<h1>counter</h1>
+		<h2>{{n}} times</h2>
+		<ul>
+			<li><a href='/plustwo'><button>+2</button></a></li>
+			<li><a href='/reset'><button>reset</button></a></li>
+		</ul>
+	</body>
+</html>
