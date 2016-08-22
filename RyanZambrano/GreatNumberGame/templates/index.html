@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>The Great Number Game</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	<body>
+		<h1>Welcome to the Great Number Game!</h1>
+		<h2>I am thinking of a number between 1 and 100</h2>
+		<h2>Take a guess!</h2>
+		<div class='hi-lo' id='hi'>
+			<h3 id='text'>Too High!</h3>
+		</div>
+		<div class='hi-lo' id='lo'>
+			<h3 id='text'>Too Low!</h3>
+		</div>
+		<div class='hi-lo' id='win'>
+			<h3 id='text'>{{ rand }} was the number!</h3>
+			<script type="text/javascript">
+				function hideDiv() {
+					document.getElementById('win').style.display = 'none';
+				}
+			</script>
+			<a id='play_again' href='/reset'><button onclick='hideDiv()'>Play Again!</button></a>
+		</div>
+
+		{% if wintest == 'high' %}
+			<script type="text/javascript">
+				document.getElementById('hi').style.display = 'block';
+				document.getElementById('lo').style.display = 'none';
+				document.getElementById('win').style.display = 'none';				
+			</script>
+		{% endif %}
+
+		{% if wintest == 'low' %}
+			<script type="text/javascript">
+				document.getElementById('hi').style.display = 'none';
+				document.getElementById('lo').style.display = 'block';
+				document.getElementById('win').style.display = 'none';				
+			</script>
+		{% endif %}
+
+		{% if wintest == 'win' %}
+			<script type="text/javascript">
+				document.getElementById('hi').style.display = 'none';
+				document.getElementById('lo').style.display = 'none';
+				document.getElementById('win').style.display = 'block';		
+			</script>
+		{% endif %}
+
+		<form action='/guess' method='post'>
+			<input type="text" name="n">
+			<input type="submit" name="submit">
+		</form>
+</html>

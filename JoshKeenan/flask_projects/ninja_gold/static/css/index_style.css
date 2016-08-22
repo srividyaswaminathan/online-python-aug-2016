@@ -1,0 +1,66 @@
+* {
+    margin: 0px auto;
+    font-family: 'tahoma';
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+#container {
+    height: 540px;
+    width: 980px;
+    background-color: gainsboro;
+}
+
+#boxes {
+    display: inline-block;
+}
+
+#farm {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    background-color: white;
+}
+
+#cave {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    background-color: white;
+}
+
+#house {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    background-color: white;
+}
+
+#casino {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    background-color: white;
+}
+
+#textarea {
+    width: 940px;
+    height: 200px;
+    font-size: 12px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+#textarea li {
+    list-style: none;
+}

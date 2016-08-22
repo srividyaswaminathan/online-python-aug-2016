@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index_style.css') }}">
+    <title>Ninja Gold!</title>
+</head>
+
+<body>
+    <div id="container">
+        Your Gold:
+        <input type="text" name="gold" value="{{ session['gold'] }}" readonly>
+        <div id="boxes">
+            <div id="farm">
+                <h3>Farm</h3>
+                <h6>(earns 10-20 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="farm">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div id="cave">
+                <h3>Cave</h3>
+                <h6>(earns 5-10 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="cave">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div id="house">
+                <h3>House</h3>
+                <h6>(earns 2-5 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="house">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div id="casino">
+                <h3>Casino</h3>
+                <h6>(earns/takes 0-50 gold)</h6>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="casino">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+        <h6>Activities:</h6>
+        <div id="textarea">{% for counter in range(0, session['counter']) %}
+            <li class={{ session[ "text_color"][counter] }}>{{ session['activities'][counter]}}</li>
+            {% endfor %}
+        </div>
+        <form action='/reset' method='post'>
+            <input type='submit' value='Reset'>
+        </form>
+    </div>
+</body>
+
+</html>
