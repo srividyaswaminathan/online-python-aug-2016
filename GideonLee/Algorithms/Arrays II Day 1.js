@@ -49,7 +49,7 @@ function balanceIndex(arr) {
 	var endSum = arr[endCounter];
 
 	while (frontCounter < endCounter) {
-		if (frontSum === endSum && frontCounter != endCounter-1) {
+		if (frontSum === endSum && frontCounter !== endCounter-1 && frontCounter === endCounter-2) {
 			return endCounter-1; 
 		}
 		else {
@@ -63,8 +63,8 @@ function balanceIndex(arr) {
 			}			
 		}
 	}
-	return false; 
+	return -1; 
 };
 
-var arr = [9, 9];
+var arr = [9, 1, 9];
 console.log(balanceIndex(arr));
