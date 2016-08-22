@@ -1,0 +1,24 @@
+div.empty {
+	display: inline-block;
+}
+div.too_low, div.too_high {
+
+	display: inline-block;
+	background-color: red;
+	border: 1px solid black;
+	height: 100px;
+	width: 100px;
+	margin: 10px;
+	padding: 10px;
+}
+
+div.solved {
+	display: inline-block;
+	background-color: green;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	padding: 10px;
+}
+
