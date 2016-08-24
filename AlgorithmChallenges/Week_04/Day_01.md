@@ -1,4 +1,4 @@
-#Arrays II Day 1
+#Arrays II Day 1 ([Solution](Day_01.js))
 
 Here are your challenges:
 

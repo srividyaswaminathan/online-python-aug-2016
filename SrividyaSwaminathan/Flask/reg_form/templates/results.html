@@ -1,0 +1,11 @@
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<h1>Please correct the following errors</h1>
+			{% for message in messages %}
+				<p>{{ message }} </p>
+			{% endfor %}
+		{% else %}
+			<h1>Thank you for submitting the form</h1>
+   		{% endif %}
+    {% endwith %}

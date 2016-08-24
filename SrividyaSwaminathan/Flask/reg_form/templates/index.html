@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Registration form with validation</title>
+		<link rel="stylesheet"  type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+		<!--<link rel="stylesheet"  type="text/css"  href="../static/styles.css"> -->
+	</head>
+	<body>
+
+		<h2>Please complate the following fields for registration</h2>
+		<div id="registration_form">
+			<form action="/results"  method='post'>
+				<label>
+					Email:<input type="email" name="email_address">
+				<label>	
+				<label>
+					First Name:<input type="text" name="first_name">
+				</label>
+				<label>
+					Last Name:<input type="text" name="last_name">
+				</label>
+				<label>
+					Password:<input type="password" name="password">
+				</label>
+				<label>
+					Confirm Password:<input type="password" name="confirm_password">
+				</label>
+				<label>
+					Birth Date:<input type="date" name="birthday">	
+				</label>		
+				<label>
+					<input type="submit" name="submit_form"  value="Click here to submit">
+				</label>
+			</form>	
+		</div>
+	</body>
+</html>			

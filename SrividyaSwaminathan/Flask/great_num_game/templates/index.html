@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<html lan="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Great Number Game</title>
+			<link rel="stylesheet"  type="text/css"   href="{{url_for('static', filename='styles.css')}}">
+			<script type="text/javascript" src="{{url_for('static', filename='script_1.js')}}"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+			<script>
+				$(document).ready(function(){
+					$('div.hiding').hide();
+					$(".{{session['div']}}").show();
+				})
+			</script>	
+		</head>
+		<body>
+			<div class="game">
+				<h1>Welcome to the great number game</h1>
+				<h4> I am thinking of a number between 1 and 100</h4>
+				<h4>Take a guess</h4>
+			</div>	
+<!-- 			<div class="{{session['div']}}">
+				{{session['div_text']}}
+			</div> -->
+			<div class="hiding empty"></div>
+			<div class="hiding too_low">
+				TOO LOW!
+			</div>
+			<div class="hiding too_high">
+				TOO HIGH!
+			</div>
+			<div class="hiding solved">
+				{{session['random_number']}} was the number! 
+				<form action="/solved" method='post'>
+					<button>PLAY AGAIN</button>
+				</form>	
+			</div>	
+			<form action="/guess" method='post'>
+				<input type="number"  name="guess">
+				<input type="submit" value="submit">
+			</form>	
+		</body>	
+	</html>
