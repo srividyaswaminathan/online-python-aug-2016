@@ -28,3 +28,4 @@ Challenges will be linked to answersheets a few hours after they've been assigne
 | Week 4 |
 | ------------------------------ |
 | [Arrays II Day 1](Week_04/Day_01.md) |
+| [Arrays II Day 2](Week_04/Day_02.md) |
