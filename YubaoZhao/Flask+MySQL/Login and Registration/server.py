@@ -5,7 +5,7 @@ import re
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.secret_key = 'Its A Secret'
-mysql = MySQLConnector(app, 'accountsdb')
+mysql = MySQLConnector(app, 'usersdb')
 name_regex = re.compile('^[A-Za-z\s]*$')
 email_regex = re.compile(r'^[a-zA-Z0-9\.\+_-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]+$')
 pw_regex = re.compile('^[\s]+$')
@@ -16,22 +16,17 @@ def index():
         session['id']
     except:
         return render_template('index.html')
-    url = "/account/" + str(session['id'])
+    url = "/user/" + str(session['id'])
     return redirect(url)
 
 @app.route('/login', methods=['POST'])
 def login():
-    query = "SELECT * FROM accounts WHERE email = :email LIMIT 1"
+    query = "SELECT * FROM users WHERE email = :email LIMIT 1"
     data = {'email': request.form['email']}
     account = mysql.query_db(query, data)
-    try:
-        account[0]
-    except:
-        flash("Email address doesn't exist!","login_account_error")
-        return redirect('/')
-    if account[0]:
+    if account:
         if bcrypt.check_password_hash(account[0]['pw_hash'], request.form['password']):
-            url = "/account/" + str(account[0]['id'])
+            url = "/user/" + str(account[0]['id'])
             session['id'] = account[0]['id']
             return redirect(url)
         else:
@@ -81,7 +76,7 @@ def register():
 
     if invalid:
         return redirect('/')
-    query = "SELECT * FROM accounts WHERE email = :email LIMIT 1"
+    query = "SELECT * FROM users WHERE email = :email LIMIT 1"
     data = {'email': user['email']}
     account = mysql.query_db(query, data)
     if account:
@@ -89,7 +84,7 @@ def register():
         return redirect('/')
     else:
         pw_hash = bcrypt.generate_password_hash(user['pw'])
-        query = "INSERT INTO accounts (first_name, last_name, email, pw_hash, created_at, updated_at) VALUES (:first, :last, :email, :password, NOW(), NOW())"
+        query = "INSERT INTO users (first_name, last_name, email, pw_hash, created_at, updated_at) VALUES (:first, :last, :email, :password, NOW(), NOW())"
         data = {
                 'first': first,
                 'last': last,
@@ -97,16 +92,16 @@ def register():
                 'password': pw_hash
         }
         mysql.query_db(query, data)
-        query = "SELECT * FROM accounts WHERE email = :email"
+        query = "SELECT * FROM users WHERE email = :email"
         data = {'email': user['email']}
         account = mysql.query_db(query, data)
         session['id'] = account[0]['id']
-        url = "/account/" + str(account[0]['id'])
+        url = "/user/" + str(account[0]['id'])
     return redirect(url)
 
-@app.route('/account/<id>')
+@app.route('/user/<id>')
 def account(id):
-    query = "SELECT * FROM accounts WHERE id = :id"
+    query = "SELECT * FROM users WHERE id = :id"
     data = {'id': id}
     user = mysql.query_db(query, data)
     return render_template('success.html', user=user)
