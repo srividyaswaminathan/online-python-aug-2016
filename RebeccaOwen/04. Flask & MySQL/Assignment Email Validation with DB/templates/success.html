@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+24-August-2015
+Python > Flask & MySQL > Assignment: Email Validation with DB
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment: Email Validation with DB">
+        <title>Assignment: Email Validation with DB</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <h3>Email Addresses Entered: </h3>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{category}}">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+
+            {% for email in all_emails: %}
+                <li>{{ email['id'] }} : {{ email['email'] }} -- {{ email['created_at'].strftime('%d/%m/%y %I:%M%p') }}</li>
+               <form action="/delete/{{email['id']}}" method='POST'>
+                   <input type="submit" value="Delete">
+               </form>
+            {% endfor %}
+        </div>
+    </body>
+</html>
