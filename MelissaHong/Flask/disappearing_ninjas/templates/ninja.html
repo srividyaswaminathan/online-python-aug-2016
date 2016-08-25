@@ -3,8 +3,8 @@
      <title>My User Page</title>
   </head>
   <body>
-    {% for element in show %}
-    <img src = 'static/{{show[element]}}'>
+    {% for element in img %}
+    <img src = '{{ url_for('static', filename=element) }}'>
     {% endfor %}
   </body>
 </html>

@@ -302,36 +302,45 @@ function reverseArr(arr){
 			return (num === 0);
     }
 
-    function innerJoin(){
-			{
-			  id: 'a unique number',
-			  first_name: 'a first name',
-			  last_name: 'a last name',
-			  created_at:'datetime',
-			  updated_at:'datetime'
-			}
-			{
-			  id: 'a unique number',
-			  book_title: 'a title',
-			  book_subject: 'a description',
-			  created_at:'datetime',
-			  updated_at:'datetime'
-			}
-			{
-			  id:'a unique number',
-			  user_id:'a number that exists in the id column of the users array',
-			  book_id:'a number that exists in the id column of books array',
-			  created_at:'datetime',
-			  updated_at:'datetime'
-			}
-    }
+    //function innerJoin() in Objects_01 folder
 
-		function zipArrays():
-		 	arr1 = ['abc', 3, 'yo']
-			arr2 = [42, 'wassup', true]
+		function zipArrays(){
+		 	var arr1 = ['abc', 3, 'yo'];
+			var arr2 = [42, 'wassup', true];
+			var miniArr = [];
+			miniArr.push(arr1);
+			for (var i = 0; i < arr1.length; i++){
+				if (arr1[i] === arr2[i]){
+					miniArr.push(arr2[i]);
+				}
+			}
+				return miniArr;
+			}
+			//return {'abc': 42, 3: 'wassup', 'yo': true}
 
-			//return {'abc': 42, 3: 'wassup', 'yo': true} 
-  </script>
+			function zipArray(arr1, arr2){
+				var arr1 = ['abc', 3, 'yo'];
+				var arr2 = [42, 'wassup', true];
+				var return1 = {};
+				for (var i = 0; i < arr1.length; i += 1){
+					return1[arr1[i]] = arr2[i];
+				}
+				return return1;
+			}
+
+			function repeated(str){
+				var str = 'abcaaaabcc';
+				var count = 0;
+				for (var i = 0; i < str.length; i++){
+						if (str[i] === str[i+1]){
+						count++;
+						console.log(str[i]);
+						console.log(count);
+						}
+					}
+				return str;
+			}
+	</script>
 </head>
 <body>
 </body>
