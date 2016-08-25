@@ -50,14 +50,14 @@ def register():
     if len(first) < 1:
         invalid = True
         flash("Please enter your first name!","first_error")
-    elif len(first) < 3 or not name_regex.match(first):
+    elif len(first) < 2 or not name_regex.match(first):
         invalid = True
         flash("First name is not valid!","first_error")
 
     if len(last) < 1:
         invalid = True
         flash("Please enter your last name!","last_error")
-    elif len(last) < 3 or not name_regex.match(last):
+    elif len(last) < 2 or not name_regex.match(last):
         invalid = True
         flash("Last name is not valid!","last_error")
 
@@ -97,7 +97,12 @@ def register():
                 'password': pw_hash
         }
         mysql.query_db(query, data)
-    return redirect('/')
+        query = "SELECT * FROM accounts WHERE email = :email"
+        data = {'email': user['email']}
+        account = mysql.query_db(query, data)
+        session['id'] = account[0]['id']
+        url = "/account/" + str(account[0]['id'])
+    return redirect(url)
 
 @app.route('/account/<id>')
 def account(id):
