@@ -120,7 +120,7 @@ def post_message():
 
 @app.route('/message/<id>/delete', methods=['POST'])
 def message_delete(id):
-    query = "SELECT * FROM messages WHERE TIMESTAMPDIFF(MINUTE, messages.created_at, NOW()) <= 5 and id =:id"
+    query = "SELECT * FROM messages WHERE TIMESTAMPDIFF(MINUTE, messages.created_at, NOW()) <= 30 and id =:id"
     data = {'id': id}
     msg_del = mysql.query_db(query, data)
     if not msg_del:

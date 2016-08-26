@@ -29,7 +29,7 @@
         {% for message in messages %}
             <form id="msg_del" action="/message/{{ message['msg_id'] }}/delete" method="post">
                 <p class="msg_user">{{ message['first_name'] }} {{ message['last_name'] }} - </p><span id="msg_created">{{ message['msg_created'] }}</span>
-                {% if message['user_id'] == session['id'] and message['time_offset'] <= 5 %}
+                {% if message['user_id'] == session['id'] and message['time_offset'] <= 30 %}
                     <input type="submit" value="Delete">
                 {% endif %}
                 <p class="message">{{ message['message'] }}</p>
