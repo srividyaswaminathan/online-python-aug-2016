@@ -8,7 +8,7 @@ app.secret_key = 'Its A Secret'
 mysql = MySQLConnector(app, 'usersdb')
 name_regex = re.compile('^[A-Za-z\s]*$')
 email_regex = re.compile(r'^[a-zA-Z0-9\.\+_-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]+$')
-pw_regex = re.compile('^[\s]+$')
+pw_regex = re.compile(r'\s+')
 
 @app.route('/')
 def index():
@@ -16,8 +16,7 @@ def index():
         session['id']
     except:
         return render_template('index.html')
-    url = "/user/" + str(session['id'])
-    return redirect(url)
+    return redirect('/success')
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -26,9 +25,8 @@ def login():
     account = mysql.query_db(query, data)
     if account:
         if bcrypt.check_password_hash(account[0]['pw_hash'], request.form['password']):
-            url = "/user/" + str(account[0]['id'])
             session['id'] = account[0]['id']
-            return redirect(url)
+            return redirect('/success')
         else:
             flash("Incorrect password!","login_pw_error")
     else:
@@ -68,7 +66,7 @@ def register():
         flash("Please create a new password.","pw_error")
     elif pw_regex.match(user['pw']) or len(pw) < 8:
         invalid = True
-        flash("Please create a new password as per the password criteria.","pw_error")
+        flash("Please create a new password as per the criteria.","pw_error")
 
     if not user['confirm_pw'] == user['pw']:
         invalid = True
@@ -96,13 +94,12 @@ def register():
         data = {'email': user['email']}
         account = mysql.query_db(query, data)
         session['id'] = account[0]['id']
-        url = "/user/" + str(account[0]['id'])
-    return redirect(url)
+    return redirect('/success')
 
-@app.route('/user/<id>')
-def account(id):
+@app.route('/success')
+def success():
     query = "SELECT * FROM users WHERE id = :id"
-    data = {'id': id}
+    data = {'id': session['id']}
     user = mysql.query_db(query, data)
     return render_template('success.html', user=user)
 
