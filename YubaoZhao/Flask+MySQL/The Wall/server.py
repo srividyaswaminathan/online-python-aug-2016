@@ -5,7 +5,7 @@ import re
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.secret_key = 'Its A Secret'
-mysql = MySQLConnector(app, 'usersdb')
+mysql = MySQLConnector(app, 'walldb')
 name_regex = re.compile('^[A-Za-z\s]*$')
 email_regex = re.compile(r'^[a-zA-Z0-9\.\+_-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]+$')
 pw_regex = re.compile('\s+')
@@ -14,8 +14,13 @@ pw_regex = re.compile('\s+')
 def index():
     try:
         session['id']
+        query = "SELECT * FROM users WHERE id = :id"
+        data = {'id': session['id']}
+        user = mysql.query_db(query, data)
+        user[0]
     except:
         return render_template('index.html')
+
     return redirect('/wall')
 
 @app.route('/login', methods=['POST'])
