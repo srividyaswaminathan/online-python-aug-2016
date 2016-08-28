@@ -1,0 +1,61 @@
+body *{
+	margin: 10px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	#container{
+		width: 600px;
+		text-align: center;
+	}
+
+	#friend_container{
+		width: 400px;
+		text-align: right;
+	}
+
+		ul{
+			list-style-type: none;
+		}
+
+		.button{
+			border-style: none;
+			border-radius: 4px;
+			background-color: lightblue;
+			display: inline-block;
+			width: 90px;
+			height: 30px;
+		}
+
+		#add{
+			background-color: green;
+			color: white;
+		}
+
+		#btn_add_update{
+			margin-right: 50px;
+		}
+
+		#email{
+			width: 195px;
+		}
+
+		#message{
+			border: 2px solid;
+			background-color: red;
+			color: white;
+			text-align: center;
+			margin-left: 200px;
+			width: 200px;
+		}
+
+		.button_form{
+			display: inline-block;
+			width: 100px;
+		}
+
+		#btn_delete{
+			margin-left: 145px;
+			width: 120px;
+		}
+

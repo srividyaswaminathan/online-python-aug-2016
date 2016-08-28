@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Emails</title>
+    <meta name="description" content="Email Entry">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_theme.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+        <h1>Friends</h1>
+        <form action="/friends" method="post">
+            <input type="submit" name="add" class="button" id="add" value="Add Friend">
+        </form>
+            <ul>
+                <li>Name | Email | Date Created</li>
+                {% for dict in records %}
+                <li class="record">
+                    {{ dict['first_name'] }} {{ dict['last_name'] }} | {{ dict['email'] }} | {{ dict['created_at']  }} 
+                    <form class="button_form" action="/friends/{{ dict['id'] }}/edit" method="post">
+                        <input type="submit" name="edit" class="button" value="Edit">
+                    </form>
+                    <form class="button_form" action="/friends/{{ dict['id'] }}/delete" method="post">
+                        <input type="submit" name="edit" class="button" value="Delete">
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+	</div>
+</body>
+</html>
