@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<style>
+div {
+    background_color: red;
+    display: inline_block;
+}
+</style>
+
+<head>
+    <title>Great Number Game</title>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <span>I am thinking of a number between 1 and 100</span><br/>
+    <span>Take a Guess!</span><br/>
+
+    <p> Test: {{session['answer']}}</p>
+    <p> Result: {{session['result']}}</p>
+
+
+
+    <form action="/guess" name="guess" method="post">
+    <input type="number" name="guess"><br/>
+    <input name ="submit" type ="submit" value ="submit">
+    </form>
+
+    <form action="/reset">
+    <input name="reset" type="submit" value="reset">
+    </form>
+</body>
