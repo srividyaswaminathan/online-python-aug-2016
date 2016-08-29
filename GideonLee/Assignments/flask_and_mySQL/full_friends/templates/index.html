@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='Your Friends!'>
+	<title>Friends</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="styles/style.css") }}'>
+</head>
+<body>
+	<div class='container'>
+		<h1 class='text-center text-primary'>Add Friend</h1>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			<div class='text-center'>
+			{% for category, message in messages %}
+				<p class='{{ category }}'>{{ message }}</p>
+			{% endfor %}
+			</div>
+		{% endwith %}
+		<div class='formWrapper'>
+			<form action='/friends' method='POST'>
+				<label>
+					<span>First Name:</span><input type='text' name='first_name'>
+				</label>
+				<label>
+					<span>Last Name:</span><input type='text' name='last_name'>
+				</label>
+				<label>
+					<span>Email:</span><input type='email' name='email'>
+				</label>
+				<label>
+					<span></span><input class='btn btn-primary' type='submit' value='Add User'>
+				</label>
+			</form>			
+		</div> <!-- Closing for formWrapper -->
+		<hr>
+		<h1 class='text-center text-primary'>All Friends</h1>
+		{% for friend in friends %}
+		<div id='friendContainer'>
+				<form action='/friends/{{ friend["id"]}}/edit' method='GET'>
+					<input class='btn btn-default' type='submit' value='Edit'>
+				</form>
+				<form action='/friends/{{ friend["id"] }}/delete' method='POST'>
+					<input class='btn btn-danger' type='submit' value='Delete'>
+				</form>
+				<p>{{ friend['first_name'] }} {{ friend['last_name'] }} {{ friend['email'] }}</p>
+		</div>
+		{% endfor %}			
+	</div> <!-- Closing for container -->
+</body>
+</html>
