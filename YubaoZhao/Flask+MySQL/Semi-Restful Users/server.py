@@ -73,62 +73,60 @@ def validate_create(user):
     first = ''.join(user['first_name'].split(' ')).capitalize()
     last = ''.join(user['last_name'].split(' ')).capitalize()
     email = ''.join(user['email'].split(' '))
-    if len(first) < 1:
-        invalid = True
-        flash("Please enter the first name!","first_create")
-    elif not name_regex.match(first):
-        invalid = True
-        flash("First name is not valid!","first_create")
-
-    if len(last) < 1:
-        invalid = True
-        flash("Please enter the last name!","last_create")
-    elif not name_regex.match(last):
-        invalid = True
-        flash("Last name is not valid!","last_create")
-
-    if len(user['email']) < 1:
-        invalid = True
-        flash("Please enter your email!","email_create")
-    elif not email_regex.match(user['email']):
-        invalid = True
-        flash("Email is not valid!","email_create")
     data = {
     'first': first,
     'last': last,
     'email': email
     }
+    if len(first) < 1:
+        invalid = True
+        flash("Please enter the first name!","first_error")
+    elif not name_regex.match(first):
+        invalid = True
+        flash("First name is not valid!","first_error")
+
+    if len(last) < 1:
+        invalid = True
+        flash("Please enter the last name!","last_error")
+    elif not name_regex.match(last):
+        invalid = True
+        flash("Last name is not valid!","last_error")
+
+    if len(user['email']) < 1:
+        invalid = True
+        flash("Please enter your email!","email_error")
+    elif not email_regex.match(user['email']):
+        invalid = True
+        flash("Email is not valid!","email_error")
     return (invalid, data)
 
 def validate_update(new_user, old_user):
-    data = {}
     invalid = False
     first = ''.join(new_user['first_name'].split(' ')).capitalize()
     last = ''.join(new_user['last_name'].split(' ')).capitalize()
     email = ''.join(new_user['email'].split(' '))
+    data = {
+    'first': first,
+    'last': last,
+    'email': email
+    }
     if len(first) < 1:
         data['first'] = old_user[0]['first_name']
     elif not name_regex.match(first):
         invalid = True
-        flash("First name is not valid!","first_update")
-    else:
-        data['first'] = first
+        flash("First name is not valid!","first_error")
 
     if len(last) < 1:
         data['last'] = old_user[0]['last_name']
     elif not name_regex.match(last):
         invalid = True
-        flash("Last name is not valid!","last_update")
-    else:
-        data['last'] = last
+        flash("Last name is not valid!","last_error")
 
     if len(email) < 1:
         data['email'] = old_user[0]['email']
     elif not email_regex.match(new_user['email']):
         invalid = True
-        flash("Email is not valid!","email_update")
-    else:
-        data['email'] = email
+        flash("Email is not valid!","email_error")
 
     if len(first) < 1 and len(last) < 1 and len(email) < 1:
         invalid = True

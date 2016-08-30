@@ -97,15 +97,15 @@ p.error {
     color: orangered;
     position: absolute;
 }
-p#first_create, p#first_update {
+p#first_error {
     top: 220px;
     left: 50px;
 }
-p#last_create, p#last_update {
+p#last_error {
     top: 305px;
     left: 50px;
 }
-p#email_create, p#email_update {
+p#email_error {
     top: 390px;
     left: 50px;
 }
