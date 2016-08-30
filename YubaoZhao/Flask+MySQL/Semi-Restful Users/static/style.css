@@ -92,6 +92,9 @@ ul {
     li {
         margin-bottom: 15px;
     }
+        b {
+            color: #009ac7;
+        }
 
 p.error {
     color: orangered;
