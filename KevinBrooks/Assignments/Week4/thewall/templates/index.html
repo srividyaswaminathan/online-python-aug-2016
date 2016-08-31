@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The Wall</title>
+    <meta name="description" content="The Wall">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_theme.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+        <h1>Welcome to The Wall.</h1>
+        <p>Please register or sign in if you already have an account.</p>
+        <div id="message" style="display: {{ message_display }};">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <p class="messages">{{message}}</p>
+                  {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <form action="/register" method="post">
+            <span>First: <input type="text" name="first" value="{{ first }}"></span>
+            <span>Last: <input type="text" name="last" value="{{ last }}"></span>
+            <span>Email: <input type="text" name="email" value="{{ email }}">
+            </span>
+            <span>Password: <input type="password" name="password" value=""></span>
+            <span>Confirm Password: <input type="password" name="confirm_password" value=""></span>
+            <input type="submit" name="add" class="button" id="add" value="Register">
+        </form>
+        <form action="/login" method="post">
+            <span>Email: <input type="text" name="email" value="{{ email }}">
+            </span>
+            <span>Password: <input type="password" name="password" value=""></span>
+            <input type="submit" name="add" class="button" id="login" value="Login">
+        </form>
+	</div>
+</body>
+</html>

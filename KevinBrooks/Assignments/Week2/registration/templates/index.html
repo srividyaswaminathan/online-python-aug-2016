@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Dojo Registration</title>
+    <meta name="description" content="Register as a coding ninja or hacker.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/dark-hive/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+</head>
+<body>
+	<div id="container">
+        <span id="span_radios" class="radios"><b>Register As:</b>
+            <span class="radios"><input type="radio" class="reg_type" name="reg_type" id="regtype_ninja" value="Ninja" checked="true"> Ninja</span>
+            <span class="radios"><input type="radio" class="reg_type" name="reg_type" id="regtype_hacker" value="Hacker"> Hacker</span>
+        </span>
+        <div id="div_ninja">
+            {% with messages = get_flashed_messages(category_filter=["ninja"]) %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <p class="messages">{{message}}</p>
+                  {% endfor %}
+                {% endif %}
+            {% endwith %}
+    		<form action="result" method='post' id="form_ninja" name="form_ninja">
+                <span>Email: <input type='text' id='email' name='email' value="{{ email }}"></span>
+                <span>First Name: <input type='text' id='first_name' name='first_name' value='{{ first_name }}'></span>
+                <span>Last Name: <input type='text' id='last_name' name='last_name' value='{{ last_name }}'></span>
+                <span>Password: <input type='password' id='password' name='password' value=''></span>
+                <span>Confirm Password: <input type='password' id='confirm_password' name='confirm_password' value=''></span>
+                <input type='submit' id="reg_ninja" text='Register' class="buttons">
+                <input type="hidden" name="reg_type" value="ninja">
+                <input type="hidden" id="sel_type" value="{{ sel_type }}">
+            </form>
+        </div>
+        <div id="div_hacker">
+            {% with messages = get_flashed_messages(category_filter=["hacker"]) %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <p class="messages">{{message}}</p>
+                  {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="result" method='post' id="form_hacker">
+                <span>Email: <input type='text' id='email' name='email' value='{{ email }}'></span>
+                <span>First Name: <input type='text' id='first_name' name='first_name' value='{{ first_name }}'></span>
+                <span>Last Name: <input type='text' id='last_name' name='last_name' value='{{ last_name }}'></span>
+                <span>Password: <input type='password' id='password' name='password' value=''></span>
+                <span>Confirm Password: <input type='password' id='confirm_password' name='confirm_password' value=''></span>
+                <span>Birth Date: <input type="text" name="birth_date" id="birth_date" value="{{ birth_date }}"></span>
+                <input type='submit' id="reg_ninja" text='Register' class="buttons">
+                <input type="hidden" name="reg_type" value="hacker">
+            </form>
+        </div>
+	</div>
+</body>
+</html>

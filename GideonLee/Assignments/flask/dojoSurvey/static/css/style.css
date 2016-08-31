@@ -1,0 +1,44 @@
+* {
+	margin: 0 auto;
+	padding: 0px;
+}
+.outline {
+	outline: 2px solid black;
+}
+.inline {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 20px 30px 20px 30px;
+	vertical-align: top;
+}
+	label {
+		display: block;
+		margin-bottom: 15px;
+	}
+		span.spaceName {
+			margin-right: 120px;
+		}
+		span.spaceEmail {
+			margin-right: 122px;
+		}
+		span.spaceLocation {
+			margin-right: 59px;
+
+		}
+		span.spaceLanguage {
+			margin-right: 23px;
+		}
+		select {
+			width: 185px;
+		}
+		textarea {
+			display: block;
+			width: 348px;
+			resize: none;
+		}
+		a {
+			display: block;
+		}
+#submit {
+	float: right;
+}

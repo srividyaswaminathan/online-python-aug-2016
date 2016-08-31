@@ -21,3 +21,11 @@ Challenges will be linked to answersheets a few hours after they've been assigne
 | Week 3 |
 | ------------------------------ |
 | [Objects Day 1](Week_03/Joining_Objects.md) |
+| [Objects Day 2](Week_03/Day_02.md) |
+| [Objects Day 3](Week_03/Day_03.md) |
+| [Objects Day 4](Week_03/Day_04.md) |
+
+| Week 4 |
+| ------------------------------ |
+| [Arrays II Day 1](Week_04/Day_01.md) |
+| [Arrays II Day 2](Week_04/Day_02.md) |

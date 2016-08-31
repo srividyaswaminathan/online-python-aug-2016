@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<html lan="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Find Gold!</title>
+			<link rel="stylesheet"  type="text/css"   href="{{url_for('static', filename='styles.css')}}"> 
+			<script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script> 
+			<!--<link rel="stylesheet"  type="text/css"   href="../styles.css"> -->
+		</head>
+		<body>
+			<h2>
+				Your Gold: {{session['gold_count']}}
+			</h2>
+			<div id="choices">
+				<form class="option" action="/process_money"  method="post">
+					<label>Farm</label>
+					<input type="hidden"  name="building"  value="farm" />
+					<p>(earns 10-20 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>	
+				<form class="option" action="/process_money"  method="post">
+					<label>Cave</label>
+					<input type="hidden"  name="building"  value="cave" />
+					<p>(earns 5-10 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>	
+				<form class="option" action="/process_money"  method="post">
+					<label>House</label>
+					<input type="hidden"  name="building"  value="house" />
+					<p>(earns 2-5 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>	
+				<form class="option" action="/process_money"  method="post">
+					<label>Casino</label>
+					<input type="hidden"  name="building"  value="casino" />
+					<p>(earns/takes 0-50 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>
+			</div>		
+
+			<h2>Acitivites</h2>
+			<div id="activities">
+
+				{% for i in session['activity'] %}
+					{% if i.startswith('Entered a casino') %}
+					<p class="loss">{{i}}</p>
+					{% else %}
+					<p class="gain">{{i}}</p>
+					{% endif %}
+				{% endfor %}
+
+			</div>
+		</body>	
+	</html>

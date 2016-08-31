@@ -1,0 +1,78 @@
+body *{
+	margin: 10px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	#container{
+		width: 1000px;
+		height: 1000px;
+		text-align: center;
+		border: 2px solid;
+	}
+
+		.button{
+			border-style: none;
+			border-radius: 4px;
+			background-color: rgb(0,128,255);
+			color: white;
+			width: 100px;
+			height: 30px;
+			margin-left: 400px;
+			font-weight: bold;
+		}
+
+		.blue{
+			background-color: rgb(0,193,0);
+			margin-left: 420px;
+		}
+
+		#header{
+			width: 1000px;
+			background-color: white;
+			border-bottom: 2px solid;
+			margin-bottom: 0px;
+			margin-top: 0px;	
+		}
+
+			#header p{
+				display: inline-block;
+				margin-right: 20px;
+			}
+
+			#header h1{
+				display: inline-block;
+				margin-right: 600px;
+			}
+		
+		#main_content{
+			width: 575px;
+			height: 938px;
+			background-color: white;
+			border: 2px solid;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			overflow: scroll;
+
+		}
+
+		.comment{
+			margin-left: 30px;
+			font-size: .85em;
+			color: grey;
+		}
+
+		#messages{
+			text-align: left;
+			padding-left:20px;
+		}
+
+			.msg{
+				font-size: .9em;
+				margin-left: 15px;
+			}
+
+			.msg_comment{
+				margin-bottom: 0px;
+			}
+

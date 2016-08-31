@@ -1,0 +1,63 @@
+body *{
+	margin: 10px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	h1{
+		font-size: 1.3em;
+	}
+
+	form{
+		width: 400px;
+	}
+
+		form input{
+			display: block;
+			
+		}
+		
+
+	#container{
+		width: 400px;
+		text-align: center;
+	}
+
+		#div_feedback{
+			width: 200px;
+			background-color: red;
+			color: white;
+			text-align: center;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			border: 2px solid;
+			border-color: black;
+		}
+
+		form .buttons{
+			border: 0px;
+			height: 30px;
+			width: 90px;
+			color: white;
+			background-color: blue;
+			font-weight: bold;
+		}
+
+		form #message{
+			color: red;
+		}
+
+		#frm_guess{
+			position: absolute;
+		}
+
+		#frm_replay{
+			background-color: green;
+			color: white;
+			width: 200px;
+			padding-top: 50px;
+			padding-bottom: 15px;
+			border: 2px solid;
+			border-color: black;
+		}
+

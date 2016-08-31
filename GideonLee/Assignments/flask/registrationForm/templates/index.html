@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='This is a registration form that will test to make sure that all the flash validations are met. (1) All fields are required and must not be blank, (2) First and Last Name cannot contain any numbers, (3) password should be more than 8 characters, (3) Email should be a valid email, (4) password and password confirmation should match, (5) password must contain at least 1 uppercase and 1 numeric value, and (6) birth-date field must be valid date (and must be from the past) '>
+	<title>Registration Form </title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Passion+One'>
+	<link rel='stylesheet' type='text/css' href='../static/styles/style.css'>
+</head>
+<body>
+	<div class='container text-center'>
+		<div class='inline outline'>
+			<img src='../static/images/header.png' alt='header image'>
+			<h1 class='text-primary'>SIGN UP FOR UPDATES AND RIDICULOUS DEALS!</h1>
+			<div class='inline'>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						<ul>
+						{% for category, message in messages %}
+							<li class='flashMessages {{ category }}'>{{ message }}</li>
+						{% endfor %}
+						</ul>
+					{% endif %}
+				{% endwith %}
+				<form action='/process' method='post'>
+					<label>
+						First Name: <input class='floatRight' type='text' name='first_name'>
+					</label>
+					<label>
+						Last Name: <input class='floatRight' type='text' name='last_name'>
+					</label>
+					<label>
+						Email: <input class='floatRight' type='text' name='email'>
+					</label>
+					<label>
+						Date of Birth (dd/mm/yyyy): <input class='floatRight' type='text' name='dob'>
+					</label>
+					<label>
+						Password:<input class='floatRight' type='password' name='password'>
+					</label>
+					<label>
+						<span class='extraInputMargin'>Retype Password:</span><input class='floatRight' type='password' name='retype_password'>
+					</label>
+					<label>
+						<input type='checkbox' name='smsPromotion'> I would like to receive promotional SMS messages and updates.
+					</label>
+					<label>
+						<input type='checkbox' name=''> I heard about this from Twitter/Facebook/Instagram.
+					</label>
+					<label>
+						<input type='checkbox' name=''> I received any invite from another member.
+					</label>
+					<input class='btn btn-primary floatRight' type='submit' value='Submit'>
+				</form>			
+			</div>
+			<div class='inline'>
+				<img class='happyGuy' src='../static/images/happy-guy.png' alt='a happy dude'>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

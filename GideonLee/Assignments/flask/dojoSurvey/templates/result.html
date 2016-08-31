@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content="Now that you've learned about setting up basic routes your first assignment is to build a new Flask project that does what is shown below. The goal is to help you get familiar with sending POST requests through a form and displaying that information:">
+	<title>Dojo Survey Results</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/style.css") }}'>
+</head>
+<body>
+	<div id='container' class='text-center'>
+		<div class='inline outline text-left'>
+			<h1 class='text-primary text-center'>Submitted Info</h1>
+			<div class='inline'>
+				<p>Name:</p>
+				<p>Email:</p>
+				<p>Dojo Location:</p>
+				<p>Favorite Language:</p>
+				<p>Comment:</p>
+			</div>
+			<div class='inline'>
+				<p>{{ my_name }}</p>
+				<p>{{ my_email }}</p>
+				<p>{{ my_location }}</p>
+				<p>{{ my_language }}</p>
+				<p>{{ my_comments }}</p>
+			</div>
+			<div>		
+				<a id='submit' class='btn btn-primary' href='/'>Go Back!</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

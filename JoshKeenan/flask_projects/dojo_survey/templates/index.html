@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index_style.css') }}" >
+  <title>Dojo Survey!</title>
+</head>
+<body>
+  <div id="container">
+    <form action="/result" method="post">
+      <h5>Your Name:</h5>
+      <input type = 'text' placeholder = 'Name' name = 'name'><span class="red"> {{session['name_err']}}</span>
+      <select name="location">
+        <option value="San Jose">San Jose</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Seattle">Seattle</option>
+        <option value="Burbank">Burbank</option>
+        <option value="Dallas">Dallas</option>
+      </select>
+      <h5>Favorite Language:</h5>
+      <select name="language">
+        <option value="Javascript">Javascript</option>
+        <option value="Swift">Swift</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Python">Python</option>
+        <option value="PHP">PHP</option>
+      </select>
+      <h5>About Me:</h5>
+      <textarea name = 'about'></textarea><span class="red"> {{session['about_err']}}</span>
+      <input type = 'submit' value = 'submit'>
+    </form>
+  </div>
+</body>
+</html>

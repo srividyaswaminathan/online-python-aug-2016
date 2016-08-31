@@ -1,0 +1,66 @@
+* {
+	/*outline: 2px solid black;*/
+	margin: 0 auto;
+}
+.container {
+	width: 600px;
+}
+.container2 {
+	width: 600px;
+}
+	h1 {
+		margin-bottom: 20px;
+	}
+	form {
+		display: inline-block;
+	}
+		label {
+			margin-top: 10px;
+		}
+.error {
+	width: 150px;
+	text-align: center;
+	background-color: red;
+	outline: 2px solid black;
+	color: white;
+	font-weight: bold;
+	margin: 0 auto;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.green {
+	width: 350px;
+	background-color: #009933;
+	border: 2px solid black;
+	margin-bottom: 10px;
+}
+	.green p {
+		padding: 10px;
+		color: white;
+	}
+#printedEmails {
+	text-align: center;
+}
+	#printedEmails div {
+		display: inline-block;
+		margin: 5px;
+		vertical-align: top;
+	}
+	.outer1 {
+		width: 300px;
+		text-align: left;
+	}
+	.outer2 {
+		width: 200px;
+		text-align: left;
+	}
+		.inner .emailInfo {
+			display: inline-block;
+			margin-bottom: 0px;
+			padding: 17px;
+		}
+		.timeInfo {
+			display: inline-block;
+			margin-bottom: 10px;
+			padding: 17px;
+		}

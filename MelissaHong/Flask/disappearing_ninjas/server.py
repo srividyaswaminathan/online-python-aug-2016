@@ -2,6 +2,17 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 url_for = 'static'
 
+<<<<<<< HEAD
+=======
+ninjaturtles = {
+    'blue':'leonardo.jpg',
+    'orange':'michelangelo.jpg',
+    'red':'raphael.jpg',
+    'purple':'donatello.jpg',
+    'april':'notapril.jpg'
+}
+
+>>>>>>> CodingDojoInc/master
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -18,11 +29,18 @@ def show(ninjaturtle):
     img = []
     ninjaturtles = {'blue':'leonardo.jpg', 'orange':'michelangelo.jpg', 'red':'raphael.jpg', 'purple':'donatello.jpg', 'april':'notapril.jpg'}
     if ninjaturtle == 'blue' or ninjaturtle == 'orange' or ninjaturtle == 'red' or ninjaturtle =='purple':
+<<<<<<< HEAD
         img.append(ninjaturtles[ninjaturtle])
         print img
     else:
         img.append(ninjaturtles['april'])
         print img
+=======
+        img = ninjaturtles[ninjaturtle]
+    else:
+        img = ninjaturtles['april']
+
+>>>>>>> CodingDojoInc/master
     return render_template("ninja.html", img = img)
 
 if __name__ == '__main__':

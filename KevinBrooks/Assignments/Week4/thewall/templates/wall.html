@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The Wall</title>
+    <meta name="description" content="Pink Floyd Wall Theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wall.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container" style="background: url('{{ url_for('static', filename='img/wall.png') }}')">
+        <div id="header">
+            <h1>The Wall</h1>
+            <p>Welcome {{ first }}</p>
+            <a href="/logoff">log off</a>
+        </div>
+        <div id="main_content">
+            <form id="post_message" action="/post_message" method="post">
+                <textarea name="message" rows="4" cols="75" ></textarea>
+                <input type="submit" value="Post Message" class="button">
+            </form>
+            <div id="messages">
+                {% for msg in messages %}
+                <form action="/post_comment" method="post">
+                    <input type="hidden" name="msg_id" value="{{ msg['message_id'] }}">
+                    <p><b>{{ msg['first_name'] }} {{ msg['last_name'] }} - {{ msg['message_date'] }}</b></p>
+                    <p class="msg">{{ msg['message'] }}</p>
+                        {% for comment in msg['comments'] %}
+                            {% if comment['comment_first'] != None %}
+                            <p class="comment comment_by"><b>{{ comment['comment_first'] }} {{ comment['comment_last'] }} - {{ comment['comment_date'] }}</b></p>
+                            <p class="comment">{{ comment['comment'] }}</p>
+                            {% endif %}
+                        {% endfor %}        
+                    <p class="comment msg_comment">Post a comment</p>
+                    <textarea class="comment" name="commentdata" rows="4" cols="70" ></textarea>
+                    <input type="submit" value="Post Comment" class="button blue"> 
+                </form>
+                {% endfor %}
+            </div>
+        </div>
+	</div>
+</body>
+</html>
