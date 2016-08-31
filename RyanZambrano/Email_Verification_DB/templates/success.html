@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Email Validation</title>
+</head>
+<body>
+	<h1>SUCCESS!</h1>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+				<li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endwith %}
+
+	<div class="emails">
+		{% for record in emails %}
+			<li>{{ record['email'] }} -- {{ record['created_at'].strftime('%d/%m/%y %I:%M %p') }}</li>
+			<form action="/{{ record['id'] }}" method="post">
+				<input type="submit" value="Delete Email">
+			</form>
+		{% endfor %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS TESTER PAGE</title>
+	<style type="text/css">
+		* {
+			font-family: sans-serif;
+			font-weight: 300;
+		}
+		h1 {
+
+		}
+		.fileVar{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<!--_____________________change src here: v___________________-->
+	<script id="file" type="text/javascript" src="day01.js"></script>
+	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<h1>Change script src for the JS file you want to run.</h1>
+	<h1>'Cmd + Opt + J' to access the console in Chrome.</h1>
+	<h2>Current file is <span class="fileVar"></span></h2>
+	
+	<script type="text/javascript">
+		var fileText = document.getElementById('file').src;
+		var fileVar = document.querySelector('.fileVar');
+		fileVar.innerHTML = fileText;
+	</script>
+
+</body>
+</html>

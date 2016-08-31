@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INDEX</title>
+</head>
+<body>
+	<h1>Home</h1><form action="/friends" method="post">
+		First Name: <input type="text" name="first_name">
+		Last Name: <input type="text" name="last_name">
+		Email: <input type="email" name="email">
+		<input type="submit" name="Add Friend">
+	</form>
+	
+	<h3>List of all friends</h3>
+	<ul>
+		{% for friend in friends %}
+		<li>{{ friend.first_name }} {{ friend.last_name }}
+		<a href="/friends/{{friend.id}}/edit"><button>Edit</button></a>
+		<form class='delete' action="/friends/{{friend.id}}/delete" method="post"><input type="submit" value="delete"></form>
+		</li>
+		{% endfor %}
+	</ul>
+
+	<style type="text/css">
+		.delete{
+			display: inline;
+		}
+	</style>
+</body>
+</html>
