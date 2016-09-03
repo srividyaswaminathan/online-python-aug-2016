@@ -42,8 +42,6 @@ queries = {
 
 }
 
-print db.query_db("SELECT * FROM users")
-
 # ROUTING
 @app.route('/')                                     # '/' (GET) login/registration form
 def index():
@@ -53,7 +51,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/logout')
+@app.route('/logout')                               # '/logout' (GET) pop user from session and redirect to root
 def logout():
     session.pop('user')
     return redirect('/')
