@@ -20,7 +20,6 @@ Python > Flask & MySQL > Assignment: The Wall
                 <a href="/logout"><button>logout</button></a>
             </div>
 
-
             <form action='/message' method='POST' class="mForm">
                 <h4>Post a message </h4>
                 <textarea name="message" rows="4"></textarea>
@@ -29,46 +28,49 @@ Python > Flask & MySQL > Assignment: The Wall
             </form>
 
             {% if messages %}
-                <ul>
-
+                <div id='wall'>
                     {% for message in messages|sort(attribute="updated_at",reverse=True) %}
+                    <div class='message'>
                         {% for user in users %}
                             {% if user['id'] == message['user_id'] %}
-                                <li>
-                                    {{user['first_name']}} {{user['last_name']}} - {{ message['updated_at'].strftime('%B %d, %Y @ %I:%M%p') }}
-                                    <p>{{ message['message'] }}</p>
-                                </li>
+                                <h4>
+                                {{user['first_name']}} {{user['last_name']}} - {{ message['updated_at'].strftime('%B %d, %Y @ %I:%M%p') }}
+                                </h4>
+                                <p>{{ message['message'] }}</p>
+
                             {% endif %}
                         {% endfor %}
 
                         <ul>
                             {% if comments %}
                                 {% for comment in comments|sort(attribute="updated_at") %}
-                                        {% if comment['message_id'] == message['id'] %}
-                                            {% for user in users %}
-                                                {% if comment['user_id'] == user['id'] %}
-                                                    <li>
-                                                        {{user['first_name']}} {{user['last_name']}} - {{ comment['updated_at'].strftime('%B %d, %Y @ %I:%M%p') }}
-                                                        <p>{{comment['comment']}}</p>
-                                                    </li>
-                                                {% endif %}
-                                            {% endfor %}
-                                        {% endif %}
+                                    {% if comment['message_id'] == message['id'] %}
+                                        {% for user in users %}
+                                            {% if comment['user_id'] == user['id'] %}
+                                                <li class='comment'>
+                                                    <h5>
+                                                    {{user['first_name']}} {{user['last_name']}} - {{ comment['updated_at'].strftime('%B %d, %Y @ %I:%M%p') }}
+                                                    </h5>
+                                                    <p>{{comment['comment']}}</p>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
                                 {% endfor %}
                             {% endif %}
                             {% set message_id = message['id'] %}
                             <form action='/comment' method='POST' class="cForm">
-                                <h4>Post a comment </h4>
+                                <h5>Post a comment </h5>
                                 <textarea name="comment" rows="3"></textarea>
                                 <br>
                                 <input type="hidden" name="message_id" value="{{ message_id }}">
                                 <input type="submit" value="Post a comment">
                             </form>
                         </ul>
+                    </div>
                     {% endfor %}
-                </ul>
+                </div>
             {% endif %}
-
         </div>
     </body>
 </html>

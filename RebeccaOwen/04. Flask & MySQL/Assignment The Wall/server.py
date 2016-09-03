@@ -65,7 +65,6 @@ def login():
     }
 
     pot_user = db.query_db(query, data)
-    print pot_user
 
     if len(pot_user) < 1:
         flash('No such user found', 'error')
