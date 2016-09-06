@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login and registration</title>
+		<meta charset="utf-8" />
+		<meta name="description"  content="Login and registration" />
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul class="flashes">
+					{% for message in messages %}
+						<li> {{message}} </li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}					
+
+		<h3>Please enter the following information to SignUp!</h3>
+		<form action="/success" method="post">
+			First Name: <input type="text" name="first_name">
+			Last Name: <input type="text" name="last_name">
+			Email: <input type="email" name="email">
+			Password: <input type="password" name="password">
+			Password Confirm: <input type="password" name="password_confirm">
+			<input type="Submit" value="Register!">
+		</form>	
+		<h3>Registered users login here</h3>
+		<form action="/login" method="post">
+			Email <input type="text" name="email">
+			Password <input type="password" name="password">
+			<input type="Submit" value="Login!">
+		</form>		
+	</body>	
+</html>	

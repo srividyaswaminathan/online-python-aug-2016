@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Semi Restful Users</title>
+		<meta charset="utf-8" />
+		<meta name="description"  content="Email validation forms" />
+		<link rel="stylesheet"  type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<h3>Edit user: {{id}}</h3>
+		<form id="edit"  action="/users/{{id}}" method="post">
+			First Name <input type="text"  name="first_name">
+			Last Name <input type="text"  name="last_name">
+			Email <input type="email"  name="email">
+			<input class="submit_button" type="submit"  name="submit" value="Edit User">
+		</form>	
+		<a href="/users/{{ id}}">Show</a>
+		<a href="javascript:history.back()">Go back</a>
+	</body>
+</html>		
