@@ -62,8 +62,8 @@ Semi-RESTful Users |
 ## Week 6: AJAX, APIs, & OOP (9/6/16)
 | Assignments to Push to Repository
 ---
-Pokedex|
-Weather API|
+Build Your Own Pokedex|
+Weather Forecast App|
 Ajax Posts|
-Ajax Notes ***IMPORTANT*** |
-Animal ***IMPORTANT*** |
+**Ajax Notes - IMPORTANT** |
+**Animal - IMPORTANT** |
