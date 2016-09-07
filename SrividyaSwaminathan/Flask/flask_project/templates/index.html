@@ -7,6 +7,15 @@
 	<body>
 		<h2>Welcome to Coding Dojo Survey Form</h2> 
 		<div id="form">
+			<h1>Please read the error message below:</h1>
+				{% with messages = get_flashed_messages() %}
+					{% if messages}
+						{% for message in messages %}
+						  <p>{{messages}}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}		  
+
 			<form action='/results' method='post'>
 				<label>
 					Your Name:<input type="text"  name="name">	

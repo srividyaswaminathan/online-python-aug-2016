@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='Your login/registration page for ...'>
+	<title>Member Sign-In</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="styles/style.css") }}'>
+</head>
+<body>
+	<div class='jumbotron'>
+		<div class='container text-center'>
+			<img id='logo' src='{{ url_for("static", filename="images/logo.png") }}' alt='chase logo'>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %} 
+					{% for category, message in messages %}
+						<p class='{{ category }}'>{{ message }}</p>	
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			<hr>
+			<h3>Member Sign-In</h3>
+			<hr>
+			<div class='formContainer'>
+				<form action='/account/login/' method='POST'>
+					<label>
+						<span>Email Address:</span><input type='email' name='email'>
+					</label>
+					<label>
+						<span>Password:</span><input type='password' name='password'>
+					</label>
+					<label>
+						<span></span><input class='btn btn-primary loginBtn' type='submit' value='Sign In'>
+					</label>
+				</form>
+			</div> <!-- Closing for formContainer -->
+			<hr>			
+			<h3>New User Sign-In</h3>
+			<hr>
+			<div class='formContainer'>
+				<form action='/account/register' method='POST'>
+					<label>
+						<span>First Name:</span><input type='text' name='first_name'>
+					</label>
+					<label>
+						<span>Last Name:</span><input type='text' name='last_name'>
+					</label>
+					<label>
+						<span>Email:</span><input type='email' name='email'>
+					</label>
+					<label>
+						<span>Password:</span><input type='password' name='password'>
+					</label>
+					<label>
+						<span>Confirm Password:</span><input type='password' name='confirm_password'>
+					</label>
+					<label>
+						<span></span><input class='btn btn-primary loginBtn' type='submit' value='Sign Up'>
+					</label>
+				</form>	
+			</div> <!-- Closing for formContainer -->
+		</div> <!-- Closing for container --> 
+	</div> <!-- Closing for jumbotron -->
+</body>
+</html>

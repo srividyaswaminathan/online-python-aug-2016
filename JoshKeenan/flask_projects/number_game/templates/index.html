@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index_style.css')}}">
+    <title>Great Number Game!</title>
+</head>
+<div id="container">
+    <p>I'm thinking of a number between 1 and 100.</p>
+    <p>Can you guess it?</p>
+    <br>
+    <p>Current Guess: {{data['guess']}}</p>
+    <div id="color_square" class="{{data['color']}}"><span id="data_text">{{data['accuracy']}}</span></div>
+    <form action="/" method="post">
+        <input type="number" name="guess">
+        <input type="submit" name="submit"> {% if data['correct']%}
+        <form action="/reset">
+            <input type="submit" value="Reset" />
+        </form>
+        {% endif %}
+    </form>
+</div>
+
+<body>
+</body>
+
+</html>

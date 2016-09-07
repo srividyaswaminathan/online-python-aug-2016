@@ -1,0 +1,57 @@
+<!doctype html>
+<head>
+</head>
+
+<style>
+form {
+    width: 220px;
+    height: 220 px;
+    display: inline-block;
+    border-style: solid;
+    padding:10px;
+}
+
+#activities {
+    border-style: solid;
+    width: 600px;
+    height: 220px;
+}
+</style>
+<body>
+    <h3>Your Gold: {{session['totalgold']}}</h3>
+
+<form action="/process_money" method="post">
+    Farm</br>
+    <span>(earns 10-20 golds)</span></br>
+    <input type="hidden" name="action" value="farm"/>
+    <input type="submit" value="Find Gold!"/>
+</form>
+
+
+<form action="/process_money" method="post">
+    Cave</br>
+    <span>(earns 5-10 golds)</span></br>
+    <input type="hidden" name="action" value="cave"/>
+    <input type="submit" value="Find Gold!"/>
+</form>
+
+<form action="/process_money" method="post">
+    House</br>
+    <span>(earns 2-5 golds)</span></br>
+    <input type="hidden" name="action" value="house" />
+    <input type="submit" value="Find Gold!"/>
+</form>
+
+<form action="/process_money" method="post">
+    Casino</br>
+    <span>(earns/takes 0-50 golds)</span></br>
+    <input type="hidden" name="action" value="casino" />
+    <input type="submit" value="Find Gold!"/>
+</form>
+
+<div id="activities">
+ {% for activity in session['activities'] %}
+ <p>{{session['activities']}}</p>
+ {% endfor %}
+</div>
+</body>

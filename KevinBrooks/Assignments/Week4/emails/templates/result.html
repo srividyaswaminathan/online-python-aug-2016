@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Emails</title>
+    <meta name="description" content="Email Entry">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_theme.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+        <div id="result">
+            <p>{{ result_message }}</p>
+        </div>
+        <form action="/manage_email" method="post">
+            <input type="submit" class="button" id="btn_delete" value="Delete Selected">
+            <ul>
+                {% for dict in records %}
+                <li class="record">{{ dict['email'] }} {{dict['updated_at']  }} <input type="checkbox" name="email_check" value="{{ dict['id'] }}"></li>
+                {% endfor %}
+            </ul>
+        </form>
+	</div>
+</body>
+</html>

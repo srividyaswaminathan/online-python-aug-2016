@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Dojo Survey Result</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<h1>Submitted Info</h1>
+			<div id="left">
+				<ul>
+					<li>Name:</li>
+					<li>Dojo Location:</li>
+					<li>Favorite Language:</li>
+					<li>Comment:</li>
+					<li><a href="/">Go Back</a></li>
+				</ul>
+			</div>
+			<div id="right">
+				<ul>
+					<li>{{name}}</li>
+					<li>{{location}}</li>
+					<li>{{language}}</li>
+					<li>{{comment}}</li>
+				</ul>
+			</div>	
+		</div>
+	</body>
+</html>
+
+<!-- not very pretty, but it gets the info from the form and displays it. -->
