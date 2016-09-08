@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+03-September-2015
+Python > Flask & MySQL > Optional Assignment: Semi-Restful Users
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Optional Assignment: Semi-Restful Users">
+        <title>Optional Assignment: Semi-Restful Users</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <h1>User {{ user['id'] }} </h1>
+            <div id='user'>
+                <p>Full Name: {{ user['first_name'] }} {{ user['last_name'] }}</p>
+                <p>Email: {{ user['email'] }}</p>
+                <p>Created at: {{ user['created_at'].strftime('%B %d, %Y @ %I:%M%p') }}</p>
+            </div>
+
+
+            <a href="/users/{{user['id']}}/edit">Edit</a> <span>|</span> <a href="/users/{{user['id']}}/destroy">Delete</a>|</span> <a href="/users">Go Back</a>
+        </div>
+    </body>
+</html>

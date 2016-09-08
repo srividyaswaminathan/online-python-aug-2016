@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+02-September-2015
+Python > Flask & MySQL > Assignment: Login and Registration
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment: Login and Registration">
+        <title>Assignment: Login and Registration</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <h1>Welcome all Ninja Turtles!!!</h1>
+            <h2>Hi there {{session['user']['first_name'] }} </h2>
+            <img src="{{ url_for('static', filename='img/tmnt.png' ) }}">
+            <a href="/logout"><button>logout</button></a>
+        </div>
+    </body>
+</html>
