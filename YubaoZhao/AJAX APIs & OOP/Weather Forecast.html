@@ -9,12 +9,11 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("form").submit(function() {
-                var url = "http://api.openweathermap.org/data/2.5/weather?q=" + $("#city").val() + "&APPID=fe1ecb7799dc27c1275043bbd8ff1e0d";
+                var url = "http://api.openweathermap.org/data/2.5/weather?q=" + $("#city").val() + "&units=imperial&APPID=fe1ecb7799dc27c1275043bbd8ff1e0d";
                 $.get(url, function(res){
                     console.log(res);
                     $("h1#city").html(res.name);
-                    fahrenheit = Math.round(((res.main.temp-273.15)*9/5+32)*10)/10;
-                    $("p").html("Temperature:&nbsp;" + fahrenheit + "&deg;F");
+                    $("p").html("Temperature:&nbsp;" + res.main.temp + "&deg;F");
                 }, 'json');
                 $("#city").val("");
                 return false;
