@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Semi Restful Users</title>
+		<meta charset="utf-8" />
+		<meta name="description"  content="Email validation forms" />
+		<link rel="stylesheet"  type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<h3>Details of user with id: {{user['id']}}</h3>
+		<p> Full Name: {{user['first_name']}} {{ user['last_name']}}</p>
+		<p> Email: {{user['email']}}</p>
+		<p> Created at : {{user['created_at']}}</p>
+
+	</body>
+</html>		
