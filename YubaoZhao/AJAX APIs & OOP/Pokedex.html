@@ -11,15 +11,11 @@
             for(var i = 1; i <= 151; i++) {
                 var num = ("00"+i).slice(-3);
                 $("#pokedex").append("<div class='pokemon'><span id='num'>#" + num + "</span><img class='sprites' id='" + i + "' src='http://pokeapi.co/media/img/" + i + ".png' title='Click for details!'></div>");
-                
             }
-            var style = {
-                border: "1px solid #215aa4"
-            };
-            var id = "";
-            $("body").on("click",".pokemon",function() {
-                id = $("img",this).attr("id");
-                $.get('http://pokeapi.co/api/v2/pokemon/' + id + '/', function(data){
+            $("#pokedex").on("click","img",function() {
+                var id = $(this).attr("id");
+                var url = 'http://pokeapi.co/api/v2/pokemon/' + id;
+                $.get(url, function(data){
                     var html_str = "";
                     var num = ("00"+id).slice(-3);
                     html_str += "<h2>" + data.name + "</h2>";
