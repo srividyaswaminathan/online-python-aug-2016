@@ -7,7 +7,6 @@ def multiple5():
     for num in range (5, 1000005):
         if (num % 5 == 0):
             print num
-multiple5()
 
 def sum():
     a = [1,2,5,10,255,3]
@@ -102,5 +101,55 @@ def draw_stars2(list):
             for num in range(len(x)):
                 star += letter
         print star
+def names():
+    students = [
+         {'first_name':  'Michael', 'last_name' : 'Jordan'},
+         {'first_name' : 'John', 'last_name' : 'Rosales'},
+         {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+         {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
 
-draw_stars2(y)
+    for item in students:
+        print '{} {}'.format(item['first_name'], item['last_name'])
+
+
+users = {
+'Students': [
+    {'first_name' : 'Michael', 'last_name' : 'Jordan'},
+    {'first_name' : 'Melissa', 'last_name' : 'Hong'},
+    {'first_name' : 'Salvador', 'last_name' : 'Cuevas'},
+    {'first_name' : 'Sky', 'last_name' : 'Cuevas'}
+],
+'Instructors': [
+    {'first_name': 'Michael', 'last_name': 'Choi'},
+    {'first_name': 'Martin', 'last_name' : 'Puryear'}
+]
+}
+def names2(dict):
+    for key in dict:
+        print key
+        for i, user in enumerate(dict[key]):
+            print "{} - {} {} - {}".format(i+1, user['first_name'], user['last_name'], len(user['first_name'] + (user['last_name'])))
+
+import re
+str = 'aaple'
+
+if re.search(r"a.*a", str):
+   print("That string had at least two 'a's in it!")
+else:
+   print("No more than one 'a' found!")
+
+words = ["aimlessness", "assassin", "baby", "beekeeper", "belladonna", "cannonball", "crybaby", "denver", "embraceable", "facetious", "flashbulb", "gaslight", "hobgoblin", "iconoclast", "issue", "kebab", "kilo", "laundered", "mattress", "millennia", "natural", "obsessive", "paranoia", "queen", "rabble", "reabsorb", "sacrilegious", "schoolroom", "tabby", "tabloid", "unbearable", "union", "videotape"]
+
+def get_matching_words(regex):
+    words = ["aimlessness", "assassin", "baby", "beekeeper", "belladonna", "cannonball", "crybaby", "denver", "embraceable", "facetious", "flashbulb", "gaslight", "hobgoblin", "iconoclast", "issue", "kebab", "kilo", "laundered", "mattress", "millennia", "natural", "obsessive", "paranoia", "queen", "rabble", "reabsorb", "sacrilegious", "schoolroom", "tabby", "tabloid", "unbearable", "union", "videotape"]
+    print [word for word in words if re.search(r"v", word)]
+    print [word for word in words if re.search(r"ss", word)]
+    print [word for word in words if re.search(r"e$", word)]
+    print [word for word in words if re.search(r"b.b", word)]
+    print [word for word in words if re.search(r"b[a-z]+b", word)]
+    print [word for word in words if re.search(r"b+\w+b", word)]
+    print [word for word in words if re.search(r"aeiou", word)]
+    print [word for word in words if re.search(r"r*e*g*u*l*a*r*e*x*p*r*e*s*s*i*o*n*", word)]
+    print [word for word in words if re.search(r"\w\w", word)]
+get_matching_words(words)
