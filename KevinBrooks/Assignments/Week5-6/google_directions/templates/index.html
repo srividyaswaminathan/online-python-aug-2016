@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Directions</title>
+    <meta name="description" content="Directions">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_theme.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+<body>
+	<div id="container">
+        <form>
+            <span>From: <input type="text" name="origin" ></span>
+            <span>To: <input type="text" name="destination" ></span>
+            <input type="submit" value="Get Directions" class="button">
+        </form>
+        <div id="wait">
+            <img src="{{ url_for('static', filename='img/wait.gif') }}">
+        </div>
+        <div id="result">
+            
+        </div>
+	</div>
+</body>
+</html>
