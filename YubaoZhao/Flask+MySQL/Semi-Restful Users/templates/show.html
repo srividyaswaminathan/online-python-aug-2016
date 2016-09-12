@@ -13,9 +13,9 @@
 <body>
     <h1>User {{ id }}</h1>
     <ul>
-        <li>Full Name: &nbsp;&nbsp;&nbsp;{{ user[0]['full_name'] }}</li>
-        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;{{ user[0]['email'] }}</li>
-        <li>Created at: &nbsp;&nbsp;&nbsp;{{ user[0]['created'] }}</li>
+        <li><b>Full Name:</b> &nbsp;&nbsp;&nbsp;{{ user[0]['full_name'] }}</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email:</b> &nbsp;&nbsp;&nbsp;{{ user[0]['email'] }}</li>
+        <li><b>Created at:</b> &nbsp;&nbsp;&nbsp;{{ user[0]['created'] }}</li>
     </ul>
     <a id="edit" href="/users/{{ id }}/edit">Edit</a>
     <a id="del" href="/users/{{ id }}/destroy" onClick=deleteConfirm()>Delete</a>

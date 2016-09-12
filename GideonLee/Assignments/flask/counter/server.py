@@ -6,12 +6,8 @@ app.secret_key = 'ThisIsSecret'
 
 @app.route('/')
 def index():
-	try:
-		session['count']
-	except:
-		session['count'] = 0
-	session['count'] += 1
-	return render_template('index.html')
+	session['counter'] += 1
+	return render_template('index.html', counter=session['counter'])
 
 # , counter=session['counter']
 
@@ -22,7 +18,7 @@ def plusTwo():
 
 @app.route('/reset', methods=['POST'])
 def reset():
-	session['count'] = 0
+	session['counter'] = 0
 	return redirect('/')
 
 app.run(debug=True)
@@ -33,11 +29,11 @@ app.run(debug=True)
 
 
 
-
- # Create a simple web application that holds a counter that increments every
+ 
+ # Create a simple web application that holds a counter that increments every 
  # time the page is visited. Complete this using session.
-
- # For ninjas: add a +2 button underneath the counter that increments the
+ 
+ # For ninjas: add a +2 button underneath the counter that increments the 
  # counter by 2 and reloads the page.
-
+ 
  # For hackers: add a reset button that will reset the counter to 1
