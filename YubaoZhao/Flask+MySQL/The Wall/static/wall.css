@@ -59,6 +59,7 @@ p.error {
         background-color: #009ac7;
         border: none;
         border-radius: 2px;
+        outline: none;
         box-shadow: 1px 1px 2px #ccc;
         padding: 4px 10px;
     }
@@ -98,8 +99,17 @@ form#message {
 
 form#msg_del {
     width: 780px;
+    color: #3c4c5b;
     margin: 10px 0 20px 378px;
 }
+    form#msg_del input {
+        background-color: red;
+        font-size: 0.7em;
+        font-weight: bold;
+    }
+    form#msg_del input:hover {
+        background-color: firebrick;
+    }
 p.msg_user {
     font-size: 1.05em;
     font-weight: bold;

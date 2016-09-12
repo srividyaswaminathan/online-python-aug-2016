@@ -1,0 +1,82 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+02-September-2015
+Python > Flask & MySQL > Assignment: Login and Registration
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    width: 550px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+.aForm > input[type=submit] {
+    margin: 5px 0 5px 75%;
+    padding: 0 2px;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+.aForm {
+    border: 5px ridge darkgray;
+    border-radius: 5px;
+    background-color: aqua;
+    padding: 5px;
+    margin: 20px 65px;
+}
+form > h3 {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.error {
+    color: white;
+    background-color: red;
+    border: solid 1px black;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.success {
+    color: black;
+    background-color: green;
+    border: solid 1px black;
+    margin: 20px auto;
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 15px;
+}
+
+li > form {
+    display: inline-block;
+    float: right;
+}
+
+button {
+    font-size: 12px;
+    float: right;
+    margin: 1px;
+    cursor: pointer;
+}

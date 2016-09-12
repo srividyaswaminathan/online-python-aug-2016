@@ -1,0 +1,29 @@
+#wrapper{
+	     margin: 0px auto;
+	     width: 970px;
+	     padding: 150px; 
+}
+
+.flashes {
+	border: 1px solid black;
+	background-color: red;
+	color: white;
+	width: 200px;
+	height: 20px;
+}
+
+.success {
+	border: 1px solid black;
+	background-color: green;
+	color: black;
+	width: 200px;
+	height: 50px;
+}
+
+.display {
+	display: inline-block;
+}
+
+.display form {
+	display: inline-block;
+}

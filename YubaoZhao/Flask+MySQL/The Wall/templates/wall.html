@@ -6,6 +6,13 @@
     <title>The Wall</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wall.css') }}">
     <!-- <link rel="stylesheet" type="text/css" href="../static/user.css"> -->
+    <script type="text/javascript">
+        function deleteConfirm() {
+            if (!confirm("Confirm Delete?")) {
+                window.event.returnValue = false;
+            }
+        }
+    </script>
 </head>
 <body>
     <div>
@@ -30,7 +37,7 @@
             <form id="msg_del" action="/message/{{ message['msg_id'] }}/delete" method="post">
                 <p class="msg_user">{{ message['first_name'] }} {{ message['last_name'] }} - </p><span id="msg_created">{{ message['msg_created'] }}</span>
                 {% if message['user_id'] == session['id'] and message['time_offset'] <= 30 %}
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Delete" onClick=deleteConfirm()>
                 {% endif %}
                 <p class="message">{{ message['message'] }}</p>
             </form>

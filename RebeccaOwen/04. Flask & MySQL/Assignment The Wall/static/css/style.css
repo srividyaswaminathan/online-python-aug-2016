@@ -1,0 +1,145 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+02-September-2015
+Python > Flask & MySQL > Assignment: The Wall
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    width: 550px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+#header {
+    border-bottom: 2px solid black;
+    margin-bottom: 1em;
+}
+
+#header > h1,
+#header > p {
+    display: inline-block;
+}
+
+textarea {
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+.mForm > input[type=submit] {
+    margin: 5px 0 5px 446px;
+    padding: 0 2px;
+    color: white;
+    background-color: blue;
+    border-color: black;
+    box-shadow: 1px 1px 2px 1px black;
+
+}
+
+.cForm > input[type=submit] {
+    margin: 5px 0 5px 415px;
+    padding: 0 2px;
+    color: white;
+    background-color: green;
+    border-color: black;
+    box-shadow: 1px 1px 2px 1px black;
+
+}
+
+.aForm > input[type=submit] {
+    margin: 5px 0 5px 75%;
+    padding: 0 2px;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+p {
+    margin-left: 25px;
+    margin-bottom: 1em;
+}
+
+.aForm {
+    border: 5px ridge darkgray;
+    border-radius: 5px;
+    background-color: aqua;
+    padding: 5px;
+    margin: 20px 65px;
+}
+
+
+form > h3 {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.error {
+    color: white;
+    background-color: red;
+    border: solid 1px black;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.success {
+    color: black;
+    background-color: green;
+    border: solid 1px black;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.message {
+    border-bottom: 2px solid #404040;
+    margin-bottom: 1em;
+}
+
+.message > p {
+    font-size: 16px;
+}
+
+.comment > p {
+    font-size: 14px;
+}
+
+ul {
+    margin-left: 15px;
+}
+
+ul > form {
+    margin-left: 15px;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 15px;
+    margin-bottom: 2em;
+}
+
+li > form {
+    display: inline-block;
+    float: right;
+}
+
+button {
+    font-size: 12px;
+    float: right;
+    margin: 1px;
+    cursor: pointer;
+}
