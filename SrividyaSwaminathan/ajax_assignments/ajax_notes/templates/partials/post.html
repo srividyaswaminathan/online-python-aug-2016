@@ -1,0 +1,14 @@
+{% for post in posts %}
+	<form class="editpost" action="/notes/edit/{{post['id']}}" method="post">
+		<input class="heading" type="text" name="heading" value="{{post['title']}}"/>
+    <br/> <br/>
+		<textarea class="description" name="text">{% if post['description'] %}{{post['description']}}{% else %}Enter description here.. {% endif %}</textarea>
+		<input class="update_button" type="submit"  name="update" value="update" />
+    <br/>
+	</form>	
+
+  <form class="deletepost" action="/notes/delete/{{post['id']}}" method="post">
+		<input type="submit" name="delete"  value="delete"/>  			
+	</form>
+	<br/><hr/><br/>
+{% endfor %}

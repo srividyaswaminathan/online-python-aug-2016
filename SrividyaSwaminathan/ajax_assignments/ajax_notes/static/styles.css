@@ -1,0 +1,7 @@
+.heading, #django_description, .description {
+	      display: block
+}
+
+input[type="submit"] {
+	      display: inline-block;
+}

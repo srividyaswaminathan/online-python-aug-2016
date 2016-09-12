@@ -1,0 +1,17 @@
+
+#images {
+	width: 70%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+#box {
+	width: 28%;
+	border: 12px solid red;
+	height: 450px;
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+}
+
