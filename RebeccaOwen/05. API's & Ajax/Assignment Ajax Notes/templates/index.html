@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-September-2015
+Python > API's & Ajax > Assignment: Ajax Notes
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment: Ajax Notes">
+        <title>Assignment: Ajax Notes</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h4>Notes</h4>
+            <div id="notes">
+                {% for note in notes %}
+                <div class="note {{ note['id'] }}">
+                    <h2>{{ note['title'] }}</h2>
+                    <a href="/notes/{{ note['id'] }}/delete">delete</a>
+                    <form action="/notes/{{ note['id'] }}/update" method="post" name="update">
+                        {% if note['note'] %}
+                            <textarea name="note" rows="8" class="note {{ note['id'] }}" placeholder="Enter description here...">{{note['note']}}</textarea>
+                        {% else %}
+                            <textarea name="note" rows="8" class="note {{ note['id'] }}" placeholder="Enter description here..."></textarea>
+                        {% endif %}
+                        <input type="submit" value="+" class='updateBtn hide'>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <form action="/notes/create" method="post" name="new">
+                <p><input type="text" name="title" placeholder="Insert note title here..."></input></p>
+                <p><input type="submit" value="Add Note"></p>
+            </form>
+
+
+        </div>
+    </body>
+</html>

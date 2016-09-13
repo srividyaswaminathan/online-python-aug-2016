@@ -1,0 +1,14 @@
+{% for note in notes %}
+    <div class="note {{ note['id'] }}">
+        <h2>{{ note['title'] }}</h2>
+        <a href="/notes/{{ note['id'] }}/delete">delete</a>
+        <form action="/notes/{{ note['id'] }}/update" method="post" name="update">
+            {% if note['note'] %}
+                <textarea name="note" rows="8" class="note {{ note['id'] }}" placeholder="Enter description here...">{{note['note']}}</textarea>
+            {% else %}
+                <textarea name="note" rows="8" class="note {{ note['id'] }}" placeholder="Enter description here..."></textarea>
+            {% endif %}
+            <input type="submit" value="+" class='updateBtn hide'>
+        </form>
+    </div>
+{% endfor %}

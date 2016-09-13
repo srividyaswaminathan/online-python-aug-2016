@@ -1,0 +1,60 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+08-September-2015
+Python > API's & Ajax > Assignment: Ajax Posts
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#container {
+    width: 650px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+input[type=submit] {
+    font-size: 1.5em;
+    color: white;
+    background-color: blue;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+textarea {
+    width: 50%;
+}
+
+p {
+    margin-bottom: .5em;
+}
+
+.post {
+    display: inline-block;
+    margin: 0.5em;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    font-size: .75em;
+    vertical-align: top;
+}
+
+.post > p {
+    margin: 5px;
+}
+
+form {
+    margin-top: 15px;
+}
