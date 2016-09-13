@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax Posts</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('form').submit(function(){
+          $.post('/posts/create', $(this).serialize(), function(res) {
+            $('#notes').html(res);
+          });
+          return false;
+        });
+      });
+    </script>
+    <style>
+ form {
+    margin-bottom: 30px;
+ }
+    </style>
+  </head>
+  <body>
+    <h1>My Posts</h1>
+
+    <div id="notes">
+      {% for note in posts %}
+        <div class='note'>
+          <p>{{ note['note'] }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <form action="/posts/create" method="post">
+       <p>
+          <label>Add a note: </label>
+          <textarea name="note"></textarea>
+       </p>
+       <input type="submit" value="Post It!">
+    </form>
+  </body>
+</html>
