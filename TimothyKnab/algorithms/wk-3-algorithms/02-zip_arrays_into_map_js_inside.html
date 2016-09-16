@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zip Arrays Into Map</title>
+</head>
+<body>
+	<h1>Zip Arrays Into Map</h1>
+	<h3>convert two arrays into an object, where each index value of each array is correlated to the other</h3>
+	<h3>arr1 = ["abc", 3, "yo"]</h3>
+	<h3>arr 2 = [42, "wassup", true]</h3>
+	<div id='output'></div>
+
+	<script>
+		// Objects Day 2 ([Solution](Day_02.js))
+
+		// Zip Arrays into Map
+
+		// Associative arrays are sometimes called maps because a key (string) maps to a value. Given two arrays, create an associative array (map) containing keys of the first, and values of the second. For `arr1 = ["abc", 3, "yo"]` and `arr2 = [42, "wassup", true]`, return `{"abc": 42, 3: "wassup", "yo": true}`.
+
+		var arr1 = ["abc", 3, "yo"];		// our first array
+		var arr2 = [42, "wassup", true, 4];	// our second array
+
+		function zipArrsIntoMap(arr1, arr2){	// define our function
+			var objToReturn = {};					// create an empty object
+
+			for (var i = 0; i < arr2.length; i ++){		// iterates over arr1
+			    objToReturn[arr1[i]] = arr2[i];			// sends to object arr1[i] : arr2[i]
+			}
+		  
+			return objToReturn;							// returns our object
+		}
+
+		zipArrsIntoMap(arr1, arr2);
+
+		document.getElementById('output').innerHTML = zipArrsIntoMap(arr1, arr2);
+		// QUESTION: How can I get the contents of the object to print into HTML?
+
+	</script>
+
+</body>
+</html>

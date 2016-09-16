@@ -24,3 +24,8 @@ Challenges will be linked to answersheets a few hours after they've been assigne
 | [Objects Day 2](Week_03/Day_02.md) |
 | [Objects Day 3](Week_03/Day_03.md) |
 | [Objects Day 4](Week_03/Day_04.md) |
+
+| Week 4 |
+| ------------------------------ |
+| [Arrays II Day 1](Week_04/Day_01.md) |
+| [Arrays II Day 2](Week_04/Day_02.md) |

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='content' description='This is my Open Weather Project that will show you the weather of the city of your choice!'>
+	<title>Weather Forecast</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+	<script>
+		$(document).ready(function(){
+			//Put focus on the input
+			$('input[name=city]').focus();
+
+
+			$('form').submit(function(){
+				if ($('input[name=city]').val() === '') {
+					return false; 
+				}
+				else {			
+					var location = $('input[name=city]').val();
+
+					//Clear the input field		
+					$('input[name=city]').val('');
+					
+					//Ajax
+					$.get('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&APPID=9cbfb08e405ee18ae9f93269929a7572', function(result){
+						$('h5').text(result.weather[0].description);
+						$('h1').text(result.name);
+						$('h4').text(result.main.temp + ' °F');
+
+						//Determines which image to use -- not very specific --
+						if (result.main.humidity < 50 && result.main.temp > 80) {
+							$('body').css('background-image', 'url("desert.jpg")').css('background-size', '100%').css('background-repeat', 'no-repeat');
+						}
+						else if (result.main.temp < 50) {
+							$('body').css('background-image', 'url("snowy.jpg")').css('background-size', '100%').css('background-repeat', 'no-repeat');
+						}
+						else if (result.main.temp > 50 && result.main.temp < 70) {
+							$('body').css('background-image', 'url("chilly.jpg")').css('background-size', '100%').css('background-repeat', 'no-repeat');
+						}
+						else if (result.main.temp > 75) {
+							$('body').css('background-image', 'url("sunny.jpg")').css('background-size', '100%').css('background-repeat', 'no-repeat');
+						}
+					}, 'json');
+					return false; 
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class='container'>
+		<div class='row'>
+			<form>
+				<input type='text' name='city'>
+				<input class='btn btn-default' type='submit' value='Search Weather'>
+			</form>
+		</div>
+		<h1 class='text-center'></h1>
+		<h5 class='text-center'></h5>
+		<h4 class='text-center'></h4>
+	</div>
+</body>
+</html>

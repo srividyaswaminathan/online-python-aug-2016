@@ -23,20 +23,19 @@ console.log("The number of items in the object:",numberOfItems(obj));
 // The value associated with properties should be a count of the initial object's non-function items.
 // The value associated with methods should be a count of the initial object's functions.
 function numberOfPropertiesAndMethods(obj) {
-    var counterOfprop = 0,
-        counterOfMeth = 0,
-        count = {};
+    var  counterObj = {
+             properties : 0,
+             methods : 0
+        };
     for(var item in obj) {
         if(typeof(obj[item]) == "function") {
-            counterOfMeth += 1;
+            counterObj['methods'] += 1;
         }
         else {
-            counterOfprop += 1;
+            counterObj['properties'] += 1;
         }
     }
-    count['properties'] = counterOfprop;
-    count['methods'] = counterOfMeth;
-    return count;
+    return counterObj;
 }
 
 console.log(numberOfPropertiesAndMethods(obj));

@@ -1,0 +1,47 @@
+* {
+	/*outline: 2px solid green;*/
+	margin: 0 auto;
+	padding: 0px;
+}
+/*Login Page*/
+.container {
+	background-color: white;
+	width: 75%;
+}
+#logo {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 35%;
+}
+	.formContainer {
+		width: 400px;
+		display: inline-block;
+	}
+		.formContainer label {
+			display: block;
+			float: left;
+			margin-bottom: 10px;
+		}
+			.formContainer span {
+				float: left;	
+				width: 150px;
+				text-align: right;
+				margin-right: 20px;
+				color: #666666;
+			}
+			.loginBtn {
+				float: right;
+				vertical-align: top;
+			}
+	.error {
+		font-weight: bold;
+		color: red; 
+	}
+/*Summary Page*/
+.accountInfo {
+	width: 50%;
+	border: 2px solid #dddddd;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 50px;
+}

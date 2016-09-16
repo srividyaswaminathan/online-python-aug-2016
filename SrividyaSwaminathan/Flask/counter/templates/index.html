@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lan="en">
+	<head>
+		<title>Counter</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet"  type="text/css"   href="{{url_for('static', filename='styles.css')}}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="{{url_for('static', filename='script_1.js')}}"></script>
+	</head>	
+	<body>
+		<h2>{{session['counter']}}</h2>
+		<form action="/ninjas"  method="post">
+			<input type="submit"  value="Click here to increment counter">
+		</form>	
+		<h3>{{session['counter']}}</h3>
+		<form action="/increment" method="post">
+			<button id="add_2">This button adds plus 2</button>
+		</form>	
+		<h3>{{session['counter']}}</h3>
+		<form action="/reset" method="post">
+			<button id="reset_1">Reset counter to 1</button>
+		</form>	
+	</body>	
+</html>

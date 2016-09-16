@@ -17,7 +17,7 @@ Stars |
 Crawler |
 CSV |
 
-## Week 2: Flask Basics
+## Week 2: Flask Basics (8/7/16)
 
 | Assignments to Push to Repository
 ---
@@ -30,7 +30,7 @@ Dojo Survey w/ Validation |
 Registration Form |
 Disappearing Ninja |
 
-## Week 3: MySQL
+## Week 3: MySQL (8/14/16)
 
 | Assignments to Push to Repository (Please don't push the actual database...)
 ---
@@ -42,3 +42,28 @@ Normalization |
 **Sakila** **IMPORTANT** |
 Friendships |
 SQLZoo |
+
+## Week 4: Flask + MySQL (8/22/16)
+
+> This is an extremely important week. The assignments integrate everything we've learned so far to build our **first** full-stack application. That means it's essential you work through each of them.
+
+| Assignments to Push to Repository (Make **sure** not to push your virtual environment directory...)
+---
+Email Validation w/ DB |
+Full Friends |
+**Login & Registration - IMPORTANT** |
+**The Wall - ESSENTIAL - MUST BE COMPLETED BY 9/2/16** |
+Semi-RESTful Users |
+
+## Week 5: Catch-up week (8/29/16)
+
+> This week is your opportunity to finish any incomplete assignments or review previous subject matter. **Make sure** you have completed both **The Wall** and **Login & Registration**. We'll be moving to **OOP** next week.
+
+## Week 6: AJAX, APIs, & OOP (9/6/16)
+| Assignments to Push to **YOUR OWN** Repository
+---
+Build Your Own Pokedex|
+Weather Forecast App|
+Ajax Posts|
+**Ajax Notes - IMPORTANT** |
+**Animal - IMPORTANT** |

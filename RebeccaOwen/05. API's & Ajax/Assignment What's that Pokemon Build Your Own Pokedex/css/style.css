@@ -1,0 +1,53 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+07-September-2015
+Python > API's & Ajax > Assignment: What's that Pokemon? Build Your Own Pokedex
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+#container {
+    max-width: 800px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+.P75 {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.P25 {
+    width: calc(30% - 5px);
+    display: inline-block;
+    vertical-align: top;
+}
+
+#pokemon {
+
+}
+
+#pokedex {
+    position: fixed;
+    top: 20px;
+    width: 215px;
+    border: 10px solid red;
+    height: 580px;
+
+}
+
+li {
+    margin-left: 1.5em;
+}
+
+h1 {
+    text-align: center;
+}

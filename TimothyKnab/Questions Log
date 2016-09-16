@@ -1,0 +1,203 @@
+Questions for Mentor
+
+TO DO LIST FOR EXTRA PRACTICE
+		-- 1. Work on RemoveDuplicates in Python
+		-- 2. Try to use some slice selectors
+		-- 3. Rewrite Palindome Algorithm
+		-- 5. Basic 13 in Python
+
+
+
+
+
+//////////
+// Week 2 
+/////////
+
+	1. my arrays_2 algorithm solution:
+
+		QUESTION (RESOLVED): (See arrays2 file) Remove Duplicates -- (python) How can I remove the set() from output?
+		The proper usage of set()?
+
+
+	2. General Python Question:
+
+		':' and '::'  -- how are these used to assess a list? 
+		QUESTION (RESOLVED): (See below) I'm a little confused on how exactly we can use these...
+
+			Here's how it works:
+
+			[1,2,3,4,5,6,7,8,9,10,11]
+			[start:end:jumpBy]  // this is the general format
+			[::2] // this would jump through entire list by groups of 2
+			[1:3:1] // this would retrieve items at index 1 to index 3, one item at a time
+
+
+
+	3. QUESTION(RESOLVED): (See below) Can I chain regular javascript functions, or is this only available in jQuery?
+				
+			Yes you can!
+			str.split('').reverse().join('')
+
+
+	4. strings_02_algorithm:
+
+		QUESTION (RESOLVED): (See below) Why are we referencing 'str.length-1' here?
+
+			Because string.length is going to give us length of string, say if it's 'car', than it would be 3
+			What we really want is the index of 'r', for example, which is string[2]
+			Thus by referencing 'string.length-1', we're ensuring that we're getting the last character index of the string.
+			If we used 'string.length' only, we'd likely get an index out of range error...? (something to self-investigate)
+
+
+		function isPalindrome(str) {
+		    for (var idx = str.length - 1; idx >= str.length / 2; idx -= 1) {   
+		        if (str[idx] != str[str.length - 1 - idx]) {
+		            return false;
+		        }
+		    }
+		    return true;
+		}
+
+		"racecar"
+		strings length is 7
+		BUT that means the string has only 6 indices
+
+		idx=5
+		until idx=3
+
+
+
+
+
+
+//////////
+// Week 3
+//////////
+
+	QUESTION 1:
+		
+		JoiningObjects Algorithm: 
+
+		Would like to walk through this Algorithm together.
+
+		QUESTION(RESOLVED) (see below): if we're creating multiple objects, as in the code example below,
+		is there a way to define a variable name for each object? When I tried this, I received an error.
+
+			ANSWER TO QUESTION: You're unable to define a variable inside a list this way, I think the syntax and line breaks was confusing you and you weren't able to see the elements are nested!
+
+
+			var checkedOut = [];
+
+			function myFunction(){
+
+				checkedOut.push([
+				
+							var someName = { 
+							
+							// QUESTION: Can I define a name for these objects? Why var give error? 
+
+								book_Currently_Checked_Out: bookTitle,   	
+								book_Checked_Out_Subject: bookSubject
+							}, 
+							{
+								book_Checked_Out_ID: bookID, 
+								book_Checked_Out_On: whenCheckedOut
+							}, 
+							{
+								book_Checked_Out_By: userID, 
+								book_Checked_Out_First_Name: userFirstName, 
+								book_Checked_Out_Last_Name: userLastName
+							}
+				]);
+			}
+
+
+
+
+
+
+
+////////////
+// Week 4-5 (break week)
+////////////
+
+	QUESTION 1:  MONTHNAME() function
+
+		Not seeing on official SQL pages (ie, w3schools) - is there a good place to find these documented?
+
+
+
+
+
+
+	QUESTION 2 (RESOLVED): Email Validation Assignment
+
+		Can we go over this?
+		strftime('%d/%m/%y %I:%M%p')
+
+
+		Solution: 'string format time' essentially allows us to return a string representing the date in a specific format. Here's a link for a list of what each character represents in regards to time formatting:
+
+			https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior
+
+
+
+
+
+	QUESTIONS 3-6:
+
+		From Full Friends Assignment:
+
+		+ QUESTION 3 (RESOLVED): Can we review the concept of '[0]' for our flask variables? (See question 5 below as well as this is basically the same question!)
+
+			Essentially, a dictionary/object is returned, and we use the [0] bucket to give us the index of 0, which is the list inside of the dictionary object.
+
+
+
+
+
+
+		From Login Registration Assignment:
+
+		+ QUESTION 4 (WILL PRACTICE): 
+
+			Try an example of flash messaging with filtering? 
+			Only go over this with mentor if you've tried this first on your own.
+
+			(Note: I'll go ahead and try this first before I ask anything too specific..)
+		
+
+
+
+		From Login Registration Assignment:
+
+		+ QUESTION 5 (RESOLVED): [0] bucket question, resolved above.
+
+
+
+////////////
+// Week 6
+////////////
+
+	QUESTION 1 (RESOLVED):
+
+		How can I use `request.form` when the name of what I'm requesting has a variable name, such as "`comment` + id"?
+
+			SOLUTION:
+
+				Store your form in a variable, and then call to whatever key you're interested in. Here's an example.
+
+				-----python-----
+
+				def getForm(id):
+					form = request.form
+					data = {
+						'name' = form['name'],
+						comment = form['comment' + id] #this is where we'll get our dynamic name, ie `comment38`, if `id=38`
+					}
+				
+				---end python---
+
+
+

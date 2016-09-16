@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Flask+MySQL">
+    <title>The Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wall.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/user.css"> -->
+    <script type="text/javascript">
+        function deleteConfirm() {
+            if (!confirm("Confirm Delete?")) {
+                window.event.returnValue = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>CodingDojo Wall</h2>
+        <a href="/logout">Logout</a>
+        <span>Welcome {{ user[0]['first_name'] }} !</span>
+    </div>
+    {% with errors = get_flashed_messages() %}
+  		{% if errors %}
+	    	{% for error in errors %}
+				<p class="error">{{ error }}</p>
+	    	{% endfor %}
+  		{% endif %}
+	{% endwith %}
+    <form id="message" action="/message" method="post">
+        <p>Post a message</p>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Post a message">
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <form id="msg_del" action="/message/{{ message['msg_id'] }}/delete" method="post">
+                <p class="msg_user">{{ message['first_name'] }} {{ message['last_name'] }} - </p><span id="msg_created">{{ message['msg_created'] }}</span>
+                {% if message['user_id'] == session['id'] and message['time_offset'] <= 30 %}
+                    <input type="submit" value="Delete" onClick=deleteConfirm()>
+                {% endif %}
+                <p class="message">{{ message['message'] }}</p>
+            </form>
+            {% if comments %}
+                {% for comment in comments %}
+                    {% if message['msg_id'] == comment['msg_id'] %}
+                        <p class="comment_user">{{ comment['first_name'] }} {{ comment['last_name'] }} - </p><span id="comment_created">{{ comment['comment_created'] }}</span>
+                        <p class="comment">{{ comment['comment'] }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <form id="comment" action="/comment/{{ message['msg_id'] }}" method="post">
+                <p>Post a comment</p>
+                <textarea name="comment"></textarea>
+                <input type="submit" value="Post a comment">
+            </form>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

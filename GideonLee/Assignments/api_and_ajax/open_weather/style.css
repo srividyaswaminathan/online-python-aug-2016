@@ -1,0 +1,30 @@
+* {
+	/*outline: 2px solid black;*/
+	margin: 0 auto;
+	font-family: Arial;
+}
+.container {
+
+}
+		form {
+			margin-top: 100px;
+			text-align: center;
+		}
+			input[type=text] {
+				border-radius: 5px;
+				border-style: solid;
+				text-align: center;
+				box-shadow: none;
+				outline: none;
+				margin: 0 auto;
+				display: block;
+				height: 32px;
+			}
+			input[type='submit'] {
+				margin-top: 10px;
+			}
+	h1, h4, h5 {
+		color: white;
+		margin-top: 10px;
+		text-shadow: 1px 1px black;
+	}

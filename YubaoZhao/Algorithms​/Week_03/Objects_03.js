@@ -8,17 +8,21 @@ function mostRepeatedChar(str) {
         mostRepeated = {},
         max = 0;
     for(var i = 0; i < str.length; i++) {
-        if(char[str[i]] == undefined) char[str[i]] = 1;
-        else char[str[i]] += 1;
+        if(char[str[i]]) {
+            char[str[i]] += 1;
+        }
+        else {
+            char[str[i]] = 1;
+        }
+        if(char[str[i]] >= max) {
+            max = char[str[i]];
+        }
     }
-    // console.log(char);
-    for(var item in char) {
-        if(char[item] >= max) max = char[item];
+    for(item in char) {
+        if(char[item] == max) {
+            mostRepeated[item] = max;
+        }
     }
-    for(var item in char) {
-        if(char[item] == max) mostRepeated[item] = max;
-    }
-    // console.log(mostRepeated);
     return mostRepeated;
 }
 
@@ -26,6 +30,6 @@ str = prompt("Please input a string:","");
 console.log("The string you input: \"%s\"",str);
 obj = mostRepeatedChar(str);
 console.log("Most Repeated Character:");
-for(var item in obj) {
+for(item in obj) {
     console.log("\"%s\" repeated %d times.",item,obj[item]);
 }
