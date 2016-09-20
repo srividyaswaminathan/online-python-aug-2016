@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Time Display</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'timedisplay/css/theme.css' %}" media="screen" title="no title"  charset="utf-8">
+    <meta name="description" content="Displays the current time.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="container">
+        <p>The current time and date:</p>
+        <h1>{{date}}<br>{{time}}</h1>
+	</div>
+</body>
+</html>

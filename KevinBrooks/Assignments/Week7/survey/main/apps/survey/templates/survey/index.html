@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Survey</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'survey/css/theme.css' %}" media="screen" title="no title"  charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static 'survey/js/main.js' %}"></script>
+    <meta name="description" content="Coding Dojo survey.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="container">
+        <form action="survey/process" method='post'>
+            {% csrf_token %}
+            <span>Your Name: </span><input type='text' id='name' name='name' value='{{ name }}'>
+            <span>Dojo Location: </span><select id='dojo_location' name='dojo' value='{{ dojo }}'></select>
+            <span>Favorite Language: </span><select id='fav_lang' name='lang' value='{{ lang }}'></select>
+            <span>Comment :</span>
+            <textarea name='comment' rows='4' cols='40' >{{ comment }}</textarea>
+            <input type='submit' id="submit_survey" text='Submit'>
+        </form>
+	</div>
+</body>
+</html>
