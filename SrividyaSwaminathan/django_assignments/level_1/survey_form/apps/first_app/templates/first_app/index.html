@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Survey Form</title>
+			{% load staticfiles %}
+			<meta charset="utf-8" />
+			<meta name="description"  content="Email validation forms" />
+			<link rel="stylesheet" href="{% static 'styles.css' %}"media="screen" title="no title"  charset="utf-8">
+		</head>
+		<body>
+			<div id="wrapper">
+				<h3>Survey Form:</h3>
+				<div id="container"> 
+					<form action="/process/surveys"  method="post" name="survey_form">
+						{% csrf_token %}
+						<div class="elements">
+							<label>Your Name:</label><input type="text" name="first_name">  
+						</div>
+						<div class="elements">
+							<label>Dojo Location:</label>
+							<select name="location">
+								<option value="Seattle">Seattle</option>
+								<option value="San Jose">San Jose</option>
+								<option value="DC">DC</option> 
+							</select>
+						</div>
+						<div class="elements">	
+							<label>Favorite Language</label>
+							<select name="language">
+								<option value="Python">Python</option>
+								<option value="C++">C++</option>
+								<option value="Ruby">Ruby</option> 
+							</select>
+						</div>
+						<div class="elements">	
+							<label>Comment (optional)</label>
+							<textarea name="comment"></textarea>
+							<input type="submit"  value="submit">
+						</div>	
+					</form>
+				</div>		
+			</div>	
+		</body>
+	</html>		

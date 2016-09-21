@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+	<html lan="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Find Gold!</title>
+			{% load staticfiles %}
+			
+			<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+		</head>
+		<body>
+			<h2>
+				Your Gold: {{gold_count}}
+			</h2>
+			<div id="choices">
+				{% csrf_token %}
+				<form class="option" action="/process_money"  method="post">
+					{% csrf_token %}
+					<label>Farm</label>
+					<input type="hidden"  name="building"  value="farm" />
+					<p>(earns 10-20 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>	
+				<form class="option" action="/process_money"  method="post">
+					{% csrf_token %}
+					<label>Cave</label>
+					<input type="hidden"  name="building"  value="cave" />
+					<p>(earns 5-10 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>	
+				<form class="option" action="/process_money"  method="post">
+					{% csrf_token %}
+					<label>House</label>
+					<input type="hidden"  name="building"  value="house" />
+					<p>(earns 2-5 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>	
+				<form class="option" action="/process_money"  method="post">
+					{% csrf_token %}
+					<label>Casino</label>
+					<input type="hidden"  name="building"  value="casino" />
+					<p>(earns/takes 0-50 golds)</p>
+					<input type="submit" value="Find Gold!" />   
+				</form>
+			</div>		
+
+			<h2>Acitivites</h2>
+			<div id="activities">
+
+				{% for act, type, date in activities %}
+					
+					<p class="{{type}}">{{act}} at {{date}}</p>						
+				{% endfor %}
+			</div>
+		</body>	
+	</html>

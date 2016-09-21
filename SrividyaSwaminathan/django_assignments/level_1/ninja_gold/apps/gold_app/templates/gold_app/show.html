@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<html lan="en">
+		<head>
+			<meta charset="utf-8">
+			<title>Find Gold!</title>
+			{% load staticfiles %}
+			
+			<link rel="stylesheet" href="{% static 'first_app/css/styles.css' %}">
+		</head>
+		<body>
+			<h2>Acitivites</h2>
+			<div id="activities">
+				{% for i in request.session.activity %}
+					{% if i.startswith('Entered a casino') %}
+					<p class="loss">{{i}}</p>
+					{% else %}
+					<p class="gain">{{i}}</p>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</body>	
+	</html>

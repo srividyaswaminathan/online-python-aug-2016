@@ -1,0 +1,27 @@
+#choices {
+	display: inline-block;
+	}
+
+.option {
+	display: inline-block;
+	height: 250px;
+	width: 250px;
+	border: 1px solid black;
+	margin: 15px;
+	padding: 15px;
+	font-weight: bolder;
+	text-align: center;
+}	
+
+#choices input[type ='submit'] {
+	padding: 30px;
+	margin: 30px
+}
+
+p.gain {
+	color: green;
+}
+
+p.loss {
+	color: red;
+}

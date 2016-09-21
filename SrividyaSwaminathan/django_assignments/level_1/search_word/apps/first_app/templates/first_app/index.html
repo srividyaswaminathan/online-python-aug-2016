@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Random Word Generator</title>
+			{% load staticfiles %}
+			<meta charset="utf-8" />
+			<meta name="description"  content="Email validation forms" />
+			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+			<link rel="stylesheet" href="{% static 'css/styles.css' %}"media="screen" title="no title"  charset="utf-8">
+			<script>
+
+				$(document).ready(function(){
+					var attempt = 0;
+					$('form.random_word').submit( function() {
+						$.post($(this).attr('action'), $(this).serialize(), function(response) {
+							var html_str = "<p class='show_random'>Random Word Generator Attempt# " + attempt + "<br/>";
+							html_str +=response
+							$('div#random').html(html_str);
+						});
+						attempt++;
+						return false;
+									
+					})
+				})	
+			</script>
+		</head>
+		<body>
+			<div id ="wrapper">
+				
+				<div class="show_attempt">
+					
+				</div>
+				<div id="random"></div>
+				<form class="random_word" action="/random_word" method="post" name="word">
+					{% csrf_token %}
+					
+					<input type="submit"   value="Generate">
+				</form>	
+			</div>	
+		</body>
+	</html>		
