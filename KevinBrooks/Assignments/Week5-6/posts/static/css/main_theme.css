@@ -1,0 +1,35 @@
+body *{
+	margin: 10px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	form{
+		width: 500px;
+		margin-left: 0px;
+	}
+
+	p{
+		border: 2px solid;
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		margin: 4px;
+		vertical-align: top;
+	}
+
+	#container{
+		width: 1000px;
+		text-align: left;
+	}
+
+	.button{
+		border-radius: 4px;
+		height: 30px;
+		width: 90px;
+		color: white;
+		background-color: blue;
+		display: block;
+		border: 0px;
+		margin-left: 350px;
+	}

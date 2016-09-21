@@ -1,0 +1,85 @@
+body *{
+	margin: 10px auto;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+	form{
+		margin-left: 10px;
+		text-align: left;
+	}
+
+	p{
+		border: 2px solid;
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		margin: 4px;
+		vertical-align: top;
+	}
+
+	h3{
+		width: 290px;
+		display: inline-block;
+	}
+
+	.button{
+		border-radius: 4px;
+		height: 30px;
+		width: 90px;
+		color: white;
+		background: linear-gradient(to top, blue 80%, lightblue);
+		display: block;
+		border: 0px;
+		margin-left: 0px;
+	}
+
+	.delete{
+		color: blue;
+		background-color: transparent;
+		border:0px;
+		font-weight: bold;
+		display: inline-block;
+	}
+
+	.note_container{
+		width: 400px;
+		border-top: 1px solid lightgray;
+	}
+
+	#container{
+		width: 1000px;
+		text-align: left;
+	}
+
+		#notes{
+			width: 420px;
+			margin: 0px;
+		}
+
+		.note{
+			width: 290px;
+			display: inline-block;
+			height: 160px;
+			border: 1px solid lightgray;
+			overflow: auto;
+		}
+
+		.del_form{
+			width: 95px;
+			margin-left:5px;
+			display: inline-block;
+		}
+
+		.post_note{
+			margin-left: 0px;
+			display: none;
+		}
+
+		#new_note{
+			border-top: 1px solid lightgray;
+			width: 400px;
+		}
+
+
+		

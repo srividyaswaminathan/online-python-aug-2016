@@ -21,7 +21,8 @@ console.log(remove_val([2,3,4,5]))
 //Given array, index, and additional value, insert the value into array at given index. You can think of PushFront(arr,val) as equivalent to InsertAt(arr,0,val).
 
 function insert_at_index(array, idx, val){
-	for(var i=array.length; i<idx; i--){
+	array.length = array.length+1
+	for(var i=array.length-1; i>idx; i--){
 		array[i] =array[i-1]
 	}
 	array[idx] = val

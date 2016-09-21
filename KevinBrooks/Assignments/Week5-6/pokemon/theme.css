@@ -1,0 +1,42 @@
+body *{
+	margin: 10px auto;
+	padding: 5px;
+	font-family: sans-serif;
+}
+
+	div{
+		display: inline-block;
+	}
+
+	ul{
+		margin-top: 0px;
+		margin-left: 20px;
+		
+	}
+
+	li{
+		padding: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 20px;
+	}
+
+	#imgs{
+		width: 1000px;
+	}
+
+	#stats{
+		width: 200px;
+		height: 500px;
+		border: 10px solid red;
+		vertical-align: top;
+		position: fixed;
+		top: 10px;
+		left: 1010px;
+		padding: 0px;
+	}
+
+	#stat{
+		margin-left: 10px;
+	}
+

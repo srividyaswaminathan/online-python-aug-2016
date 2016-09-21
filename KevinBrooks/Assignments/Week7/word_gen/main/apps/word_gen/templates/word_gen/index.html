@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Word Generator</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'word_gen/css/theme.css' %}" media="screen" title="no title"  charset="utf-8">
+    <meta name="description" content="Generates a random word.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="container">
+        <p>Random word attempt ({{attempts}})</p>
+        <h1>{{new_word}}</h1>
+        <form action="/new-word" method="post">
+            {% csrf_token %}
+            <input type="submit" name="generate" value="Generate">
+        </form>
+	</div>
+</body>
+</html>

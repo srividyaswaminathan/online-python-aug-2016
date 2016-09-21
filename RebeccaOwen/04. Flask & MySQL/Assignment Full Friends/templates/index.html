@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+30-August-2015
+Python > Flask & MySQL > Assignment: Full Friends
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment: Full Friends">
+        <title>Assignment: Full Friends</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{category}}">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form action='/friends' method='POST' class="aForm">
+                <h3>Add Friend: </h3>
+                <label>First Name: </label><input type="text" name="first_name">
+                <br>
+                <label>Last Name: </label><input type="text" name="last_name">
+                <br>
+                <label>Email Address: </label><input type="email" name="email">
+                <br>
+                <input type="submit" value="submit">
+            </form>
+
+
+            <h3>All of My Friends: </h3>
+
+            {% for friend in all_friends: %}
+                <li>
+                    {{ friend['id'] }} : {{ friend['first_name'] }} {{ friend['last_name'] }} -- {{ friend['email'] }}
+                    <form action="/friends/{{ friend['id'] }}/delete" method='POST'><button>Delete</button></form>
+                    <a href="/friends/{{ friend['id'] }}/edit"><button>Edit</button></a>
+                </li>
+            {% endfor %}
+
+        </div>
+    </body>
+</html>

@@ -10,8 +10,17 @@ app.secret_key = "ThisIsSecret"
 
 @app.route('/')
 def index():
-    session['counter'] = session['counter'] + 1
-    return render_template("index.html")
+	try:
+		session['count']
+	except:
+		session['count'] = 0
+	session['count'] += 1
+	return render_template('index.html')
+
+@app.route('/reset', methods=['POST'])
+def reset():
+    session['count'] = 0
+    return redirect('/')
 # this route will handle our form submission
 # notice how we defined which HTTP methods are allowed by this route
 

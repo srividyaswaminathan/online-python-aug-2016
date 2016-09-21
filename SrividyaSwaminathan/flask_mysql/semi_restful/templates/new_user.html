@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Semi Restful Users</title>
+		<meta charset="utf-8" />
+		<meta name="description"  content="Email validation forms" />
+		<link rel="stylesheet"  type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+	<!--Creating new user-->
+	<h3>Add a new user</h3>
+		<form id="new_user"  action="/users/create" method="post">
+			First Name <input type="text"  name="first_name">
+			Last Name <input type="text"  name="last_name">
+			Email <input type="email"  name="email">
+			<input class="submit_button" type="submit"  name="submit" value="Create User">
+			<a href="/user">Go back</a> 
+		</form>  
+		<!-- ask why it appears three times-->
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<ul>
+						{{messages}}
+					</ul>	
+				{% endfor %}
+			{% endif %}
+		{% endwith %}			
+	</body>
+</html>
