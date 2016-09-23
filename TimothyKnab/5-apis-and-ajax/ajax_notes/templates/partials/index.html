@@ -1,0 +1,21 @@
+<!-- begin for loop below retrieves our notes -->
+      {% for note in notes %}
+        <div class='note'>
+          <!-- update title -->
+          <form action="/{{ note['id'] }}/update/title" method="POST" id="updateTitle{{ note['id'] }}" class="updateTitle">
+            <h2 class='title' id="{{ note['id'] }}" value="{{ note['title'] }}"><input type="text" value="{{ note['title'] }}" name="title{{ note['id'] }}"></h2>
+            <button form="updateTitle{{ note['id'] }}" type="submit" action="/{{ note['id'] }}/update/title" method="POST">update title</button>
+          </form>
+          <!-- delete post -->
+          <form action="/{{ note['id'] }}/delete" method="POST" id="deletePost{{ note['id'] }}">
+            <button type="submit" formaction="/{{ note['id'] }}/delete" formmethod="POST" form="deletePost{{ note['id'] }}">delete</button>
+          </form>
+          <!-- update description -->
+          <form action="/{{ note['id'] }}/update/description" method="POST" id="updateDescription{{ note['id'] }}">
+            <textarea name='description{{ note['id'] }}'>{% if note['description'] is not none %}{{ note['description'] }}{% endif %}
+            </textarea>
+            <input type="submit" value="update">
+          </form>
+        </div>
+      {% endfor %}
+      <!-- end for loop -->
