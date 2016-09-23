@@ -14,13 +14,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema quotes
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `myownapi` DEFAULT CHARACTER SET latin1 ;
-USE `myownapi` ;
+CREATE SCHEMA IF NOT EXISTS `quotes_api` DEFAULT CHARACTER SET latin1 ;
+USE `quotes_api` ;
 
 -- -----------------------------------------------------
 -- Table `quotes`.`quotes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `myownapi`.`quotes` (
+CREATE TABLE IF NOT EXISTS `quotes_api`.`quotes` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
       `quote` TEXT NULL DEFAULT NULL,
         `author` VARCHAR(255) NULL DEFAULT NULL,

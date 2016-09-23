@@ -1,88 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Notes</title>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('.updateTitle').submit(function(){
-          var id = $(this).attr('id');
-          console.log(id);
-          $.post('/' + id + '/update/title', $(this).serialize(), function(note) {
-            $('#notes').html(note);
-          });
-          return false;
-        }); // end .submit
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX Notes</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
 
-        $('.deletePost').submit(function(){
-          console.log('clicked');
-          var id = $(this).attr('id');
-          console.log(id);
-          $.post('/' + id + '/delete', $(this).serialize(), function(note) {
-            $('#notes').html(note);
-          });
-          return false;
-        }); // end .submit
+		$(document).ready(function(){
 
-        $('.updateDescription').submit(function(){
-          var id = $(this).attr('id');
-          console.log(id);
-          $.post('/' + id + '/update/description', $(this).serialize(), function(note) {
-            $('#notes').html(note);
-          });
-          return false;
-        }); // end .submit
+			// create note
+			$('form').submit(function(){
+				
+				$.post($(this).attr('action'), $(this).serialize(), function(notes){
+					console.log(notes);
+					$('#notes').html(notes);
+					$('input[type="text"]').val("");
+				}, 'html')
+			
+			return false;
+			}); // end submit
 
-        $('#addnote').submit(function(){
-          $.post('/create', $(this).serialize(), function(note) {
-            console.log(note)
-            $('#notes').html(note);
-          }, 'html');
-          return false;
-        }); // end .submit
+			// delete note
+			$('#notes').on('submit', 'form', function(){
 
-      }); // end .ready
-    </script>
-    <style>
-        form {
-            margin-bottom: 30px;
-        }
-    </style>
-  </head>
-  <body>
-    <h1>AJAX Notes Assignment - Coding Dojo - September 2016</h1>
-      <div>
-        <div id="notes">
-          <!-- begin for loop below retrieves our notes -->
-          {% for note in notes %}
-            <div class='note'>
-              <!-- update title -->
-              <form action="/{{ note['id'] }}/update/title" method="POST" id="{{ note['id'] }}" class="updateTitle">
-                <input type="text" value="{{ note['title'] }}" name="title{{ note['id'] }}">
-                <button form="{{ note['id'] }}" type="submit" action="/{{ note['id'] }}/update/title" method="POST">update title</button>
-              </form>
-              <!-- delete post -->
-              <form action="/{{ note['id'] }}/delete" method="POST" id="deletePost{{ note['id'] }}" class="deletePost">
-                <button type="submit" formaction="/{{ note['id'] }}/delete" formmethod="POST" form="deletePost{{ note['id'] }}">delete</button>
-              </form>
-              <!-- update description -->
-              <form action="/{{ note['id'] }}/update/description" method="POST" id="{{ note['id'] }}" class="updateDescription">
-                <textarea name="description{{ note['id'] }}">{% if note['description'] is not none %}{{ note['description'] }}{% endif %}</textarea>
-                <input type="submit" value="update">
-              </form>
-            </div>
-          {% endfor %}
-          <!-- end for loop -->
-        </div>
-      </div>
-    <div id="createNote">
-      <!-- begin add new post -->
-      <form action="/create" method="post" id='addNote'>
-        <input type='text' placeholder='Insert note title here...' name="title">
-        <input type="submit" value="Add Note!">
-      </form>
-      <!-- end add new post -->
-    </div>
-  </body>
+				$.get($(this).attr('action'), function(notes){
+					$('#notes').html(notes);
+				}, 'html');
+
+			return false;
+			}); // end submit
+
+			// update description
+			$('#notes').on('focusout', 'textarea', function(){
+				console.log(this);
+				console.log($(this).parent());
+
+				$.post('/notes/'+$(this).attr("data-id")+'/update', $(this).serialize($(this).val()), function(notes){
+					$('#notes').html(notes);
+				}, 'html');
+			}); // end focus out
+
+		}); // end doc ready
+
+	</script>
+</head>
+<body>
+	<div id='notes'>
+		{% for note in notes %}
+		<div class='note'>
+			<h3>{{note.title}}
+				<form style="float:right;" action="/notes/{{note.id}}/destroy" method='GET'>
+					<input type="submit" value='delete'>
+				</form>
+			</h3>
+			<form action="/notes/{{note.id}}/update" method="POST">
+			{% if note.description %}
+				<textarea name='description' data-id='{{note.id}}'>{{note.description}}</textarea>
+			{% else %}
+				<textarea name='description' data-id='{{note.id}}'></textarea>
+			{% endif %}	
+			</form>
+		</div>
+		{% endfor %}
+	</div>
+	<h1>Notes</h1>
+	<form action='/notes/create' method='post'>
+		<input type="text" name='title' placeholder='Enter title...'>
+		<input type="submit" value='Add Note!'>
+	</form>
+</body>
 </html>

@@ -1,7 +1,7 @@
 class DevelopmentDBConfig(DBConfig):
     DB_USERNAME = 'root'
     DB_PASSWORD = 'root'
-    DB_DATABASE_NAME = 'myownapi' # change this line to connect to our database!!!!
+    DB_DATABASE_NAME = 'quotes_api' # change this line to connect to our database!!!!
     DB_HOST = 'localhost'
     """ unix_socket is used for connecting with MAMP. Take this out if you aren't using MAMP """
     DB_OPTIONS = {

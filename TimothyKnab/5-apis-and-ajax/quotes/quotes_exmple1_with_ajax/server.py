@@ -7,7 +7,7 @@ Set variable 'mysql' to be an instance of the MySQLConnector class,
 taking our entire application as the first argument and the database
 name as the second argument.
 '''
-mysql = MySQLConnector(app, 'myownapi')
+mysql = MySQLConnector(app, 'quotes_api')
 
 @app.route('/quotes')
 def index():

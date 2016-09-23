@@ -10,7 +10,7 @@ Set variable 'mysql' to be an instance of the MySQLConnector class,
 taking our entire application as the first argument and the database
 name as the second argument.
 '''
-mysql = MySQLConnector(app, 'ajax_notes_db')
+mysql = MySQLConnector(app, 'ajax_posts')
 
 #ROUTES
 @app.route('/')
