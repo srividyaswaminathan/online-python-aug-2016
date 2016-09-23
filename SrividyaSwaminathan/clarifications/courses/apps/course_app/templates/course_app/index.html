@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Course App</title>
+			{% load staticfiles %}
+			<meta charset="utf-8" />
+			<meta name="description"  content="Email validation forms" />
+			{% load staticfiles %}
+			<!--<link rel="stylesheet" href="{% static 'css/styles.css' %}"media="screen" title="no title"  charset="utf-8">-->
+		</head>
+		<body>	
+			<h4>Add a new course</h4>
+			<form id="course_form" action="/create" method="post">
+				{% csrf_token %}
+				Name: <input type="text" name="course_name" id="course_name" display="block">
+				Description: <textarea name="content" cols="50"  row="4" id="content" display="block"></textarea> 
+				<input type="submit" value="Add" name="submit_course">
+			</form>	
+			{% for course in course_name %}
+				{{request.session.course_name}}
+				{{request.session.content}}
+			{% endfor %}
+		</body>	
