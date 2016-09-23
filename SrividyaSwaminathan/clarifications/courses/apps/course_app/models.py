@@ -10,6 +10,6 @@ class Course(models.Model):
 
 class Description(models.Model):
 	content= models.CharField(max_length=255)
-	course_id= models.ForeignKey(Course) 
+	course_id= models.ForeignKey('Course', related_name="coursetodescription") 
 	created_at= models.DateTimeField(auto_now_add=True)
 	updated_at= models.DateTimeField(auto_now=True)

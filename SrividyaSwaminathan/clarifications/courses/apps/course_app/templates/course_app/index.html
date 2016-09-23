@@ -17,7 +17,10 @@
 				<input type="submit" value="Add" name="submit_course">
 			</form>	
 			{% for course in course_name %}
-				{{request.session.course_name}}
-				{{request.session.content}}
+				{{request.session.course}}
 			{% endfor %}
+			{% for content in content %}
+				{{request.session.content}}
+			{% endfor %}	
 		</body>	
+	</html>	
