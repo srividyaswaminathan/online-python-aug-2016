@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+  
+
+    <div id="images">
+      <table style="width:100%">
+        <tr>
+          <script>
+            for (x = 1; x < 152; x++) {
+              document.write("<td>");
+              document.write('<img id="' + x + '" src="http://pokeapi.co/media/img/' + x + '.png"></td>');
+              if (x % 7 == 0 ) {
+                document.write("</tr>");
+                document.write("<tr>");
+              }
+            }
+          </script>
+        </tr>
+      </table>
+     </div>
+
+    <div id="info">
+   
+      <table id="ptbl" style="width:100%">
+        <td>
+          <script>
+            $("img").click(function(){
+              $.get('http://pokeapi.co/api/v1/pokemon/'+this.id, function(data){
+                $("#info").html('<h2>' + data.name + '</h2>' +
+                '<img src="http://pokeapi.co/media/img/' + parseInt(data.national_id, 10) + '.png">' +
+                '<h3>Types:</h3>' + '<ul><li>' + data.types[0].name + '</li><li>' + data.types[1].name + '</li></ul>'
+                + '<h3>Height:</h3>' +
+                '<p>' + data.height + '</p>'
+                + '<h3>Weight:</h3>' +
+                '<p>' + data.weight + '</p>');
+              });
+            });
+          </script>
+        </td>
+      </table>
+    </div>
+
+   
+  </body>
+</html>

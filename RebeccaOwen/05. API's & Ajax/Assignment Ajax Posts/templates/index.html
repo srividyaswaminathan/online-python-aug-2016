@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+08-September-2015
+Python > API's & Ajax > Assignment: Ajax Posts
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Assignment: Ajax Posts">
+        <title>Assignment: Ajax Posts</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>My Posts</h1>
+            <div id="posts">
+                {% for post in posts %}
+                <div class='post'>
+                    <p>{{ post['post'] }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <form action="/posts/create" method="post">
+                <p><label>Add a note: </label></p>
+                <p><textarea name="post" rows="4"></textarea></p>
+                <p><input type="submit" value="Post It!"></p>
+            </form>
+
+
+        </div>
+    </body>
+</html>

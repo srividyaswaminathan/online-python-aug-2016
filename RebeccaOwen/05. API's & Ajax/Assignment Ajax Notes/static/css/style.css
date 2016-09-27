@@ -1,0 +1,74 @@
+/*
+Pajama Programmer
+Coding Dojo - July 5 Online Flex
+10-September-2015
+Python > API's & Ajax > Assignment: Ajax Notes
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#container {
+    width: 350px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+    box-shadow: 1px 1px 2px 1px #808080;
+    padding: 20px;
+}
+
+h4 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+
+h2 {
+    margin-bottom: 15px;
+    width: 65%;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #0063CC;
+}
+
+input[type=submit] {
+    font-size: 1em;
+    color: white;
+    background-color: #0063CC;
+    padding: 2px;
+    border-style: none;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+input[type=text] {
+    width: 172.34px;
+}
+
+textarea {
+    width: 50%;
+}
+
+div.note {
+    border-bottom: 1px solid gray;
+    font-size: .75em;
+    margin-bottom: 1em;
+}
+
+.updateBtn {
+    vertical-align: top;
+    margin-top: 15px !important;
+}
+textarea {
+    margin: 15px 0;
+}
+
+.hide {
+    display: none;
+}

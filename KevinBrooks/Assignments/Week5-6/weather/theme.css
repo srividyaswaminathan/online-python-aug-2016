@@ -1,0 +1,17 @@
+body *{
+	margin: 10px auto;
+	padding: 5px;
+	font-family: sans-serif;
+}
+
+	#container{
+		width: 400px;
+	}
+
+	#search{
+		border-radius: 4px;
+		color: white;
+		background-color: blue;
+		width: 120px;
+		height: 30px;
+	}

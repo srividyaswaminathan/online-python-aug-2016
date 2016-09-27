@@ -1,0 +1,7 @@
+source djangoEnv/bin/activate in django venv folder
+django-admin startproject '' in file you want to start project
+cd ''
+mkdir apps
+cd apps
+touch __init__.py
+python ../manage.py startapp "what you wantl"

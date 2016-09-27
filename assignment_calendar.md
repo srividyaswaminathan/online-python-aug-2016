@@ -58,3 +58,12 @@ Semi-RESTful Users |
 ## Week 5: Catch-up week (8/29/16)
 
 > This week is your opportunity to finish any incomplete assignments or review previous subject matter. **Make sure** you have completed both **The Wall** and **Login & Registration**. We'll be moving to **OOP** next week.
+
+## Week 6: AJAX, APIs, & OOP (9/6/16)
+| Assignments to Push to **YOUR OWN** Repository
+---
+Build Your Own Pokedex|
+Weather Forecast App|
+Ajax Posts|
+**Ajax Notes - IMPORTANT** |
+**Animal - IMPORTANT** |
