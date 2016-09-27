@@ -1,0 +1,7 @@
+
+	<h4>Product {{product_in_db.id}}</h4>
+	<p>Name: {{product_in_db.product_name}}</p>
+	<p>Description: {{product_in_db.product_description}}</p>
+	<p>Price(in $): {{product_in_db.product_price}}</p>
+	<p><a href={%url 'edit' id=product_in_db.id %}>Edit</a> | <a href="{%url 'index' %}">Back</a></p>
+	

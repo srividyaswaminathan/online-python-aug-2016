@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Products App</title>
+			<meta charset="utf-8" />
+			<meta name="description"  content="Django Application for new products" />
+			{% load staticfiles %}
+			<link rel="stylesheet" href="{% static 'css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+		</head>
+		<body>
+			<h3>Products</h3>
+			<table>
+				<thead>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Actions</th>
+				</thead>
+				{% for product in all_products %}	
+					<tr>
+						<td>{{product.product_name}}</td>
+						<td>{{product.product_description}}</td>
+						<td>{{product.product_price}}</td>
+						<td><a href={%url 'show' id=product.id %}>Show</a> | <a href={%url 'edit' id=product.id %}>Edit</a> | <a href={%url 'destroy' id=product.id %}>Remove</a></td>
+					</tr>	
+				{% endfor %}	
+			</table>
+			<br/><br/>
+			<a href="{%url 'new' %}">Add a new product</a>
+		</body>
+	</html>		

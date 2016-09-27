@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+	<html>
+		<body>
+			<!--display all email -->
+			{% if messages %}
+				<ul class="messages">
+    				{% for message in messages %}
+    					<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    				{% endfor %}
+				</ul>
+			{% endif %}
+			{% for email in emails %}
+				<p>{{email.email}} {{email.created_at}} </p>
+				<form action="delete/{{email.id}}" method="post">
+				 {% csrf_token %}	
+					<input type="submit" value="Delete">
+				</form>	
+			{% endfor %}	
+		</body>
+	</html>		

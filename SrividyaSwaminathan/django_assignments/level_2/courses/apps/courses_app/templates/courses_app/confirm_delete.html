@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Courses App</title>
+			<meta charset="utf-8" />
+			{% load staticfiles %}
+			<link rel="stylesheet" href="{% static 'css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+		</head>
+		<body>
+			<h4>Are you sure you want ot delete the following course</h4>
+			<p>Name: {{course_to_delete.name}}</p>
+			<p>Description: {{course_to_delete.description}}</p>
+			<button id="no_button">No</button>
+			<br/>	
+			<form action={%url 'destroy' id=course_to_delete.id %} method="post">
+				 {% csrf_token %}
+      				<input class="submit" type="submit" value="Yes! I want to delete this.">
+			</form>	
+		</body>
+	</html>		

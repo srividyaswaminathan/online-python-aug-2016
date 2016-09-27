@@ -1,0 +1,16 @@
+table, th, td {
+   border: 1px solid black;
+}
+
+th {
+    height: 50px;
+}
+
+#no_button {
+		display: inline-block;
+}
+
+.submit {
+		display: inline-block;
+
+}

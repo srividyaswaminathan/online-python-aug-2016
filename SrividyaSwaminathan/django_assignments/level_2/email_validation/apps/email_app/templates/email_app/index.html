@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Email App</title>
+			<meta charset="utf-8" />
+			<meta name="description"  content="Email validation forms" />
+		</head>
+		<body>
+			{% if messages %}
+				<ul class="messages">
+    				{% for message in messages %}
+    					<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    				{% endfor %}
+				</ul>
+			{% endif %}
+			<form action="/process_email"  method="post">
+				{% csrf_token %}
+				Email <input type="text"  name="email" id="email">
+				<input type="submit" value="Add Email Address">
+			</form> 
+		</body>
+	</html>		

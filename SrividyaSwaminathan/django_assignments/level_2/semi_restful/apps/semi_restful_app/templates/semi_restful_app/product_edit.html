@@ -1,0 +1,10 @@
+<h4>Edit Product {{edit_product.id}}</h4>
+<form action="{% url 'update' id=edit_product.id %}" method="post">
+	{% csrf_token %} 
+	<p>Name: <input type="text" value="{{edit_product.product_name}}" name="product_name"></p>
+	<p>Description: <input type="text" value="{{edit_product.product_description}}" name="product_description"></p>
+	<p>Price: <input type="text" value="{{edit_product.product_price}}" name="product_price"></p>
+	<p><input type="submit" value="Update"></p>	
+
+</form>
+<p><a href="{%url 'index' %}">Go back</a></p>
